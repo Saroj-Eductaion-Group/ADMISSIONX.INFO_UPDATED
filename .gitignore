@@ -1,0 +1,42 @@
+# EXCLUDE HEAVY DEPENDENCIES
+/vendor/
+/vendor1/
+/node_modules/
+
+# EXCLUDE ARCHIVES & EXECUTABLES
+*.zip
+*.tar.gz
+*.phar
+composer.phar
+vendor.zip
+vendor.tar.gz
+
+# EXCLUDE ENVIRONMENT SETTINGS
+.env*
+.env
+.env.backup
+.env.save
+.env.local
+.env.production
+.env.staging
+
+# EXCLUDE SYSTEM FILES
+.DS_Store
+Thumbs.db
+
+# EXCLUDE BUILD/STORAGE
+/storage/*.key
+/public/storage
+/public/hot
+mix-manifest.json
+
+# USER UPLOADS
+/Users/
+
+# EXCLUDE LONG FILENAME DIRECTORIES
+/public/gallery/
+/public/document/
+/public/photos/
+/public/files/
+/public/resume/
+/public/provisional-letters/

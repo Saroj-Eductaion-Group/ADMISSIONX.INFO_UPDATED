@@ -1,0 +1,46 @@
+<?php
+
+use Illuminate\Database\Seeder;
+
+class ApplicationModeTableSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+   	public function run()
+    {
+        DB::table('application_modes')->delete();
+
+
+        $application_modes = array(
+            array(
+                'name'              => 'ONLINE',
+                'status'            => 1,
+                'slug'              => 'online',
+                'employee_id'       => 1,
+                'created_at'        => new DateTime,
+                'updated_at'        => new DateTime,
+            ),
+            array(
+                'name'              => 'OFFLINE',
+                'status'            => 1,
+                'slug'              => 'offline',
+                'employee_id'       => 1,
+                'created_at'        => new DateTime,
+                'updated_at'        => new DateTime,
+            ),
+            array(
+                'name'              => 'ONLINE & OFFLINE BOTH',
+                'status'            => 1,
+                'slug'              => 'online-offline-both',
+                'employee_id'       => 1,
+                'created_at'        => new DateTime,
+                'updated_at'        => new DateTime,
+            ),
+        );
+
+        DB::table('application_modes')->insert( $application_modes );
+    }
+}

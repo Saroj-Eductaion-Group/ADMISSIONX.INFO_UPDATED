@@ -1,0 +1,35 @@
+<?php if(sizeof($getCourseObj) > 0): ?>
+<div class="stream-type fillter-type <?php if(sizeof($getCourseObj) > 5): ?> sy <?php endif; ?> single-item">
+    <div class="ft-title">Courses</div>
+    <div class="ft-content content">
+        <div style="margin-top:10px;">
+        <?php foreach( $getCourseObj as $item ): ?>
+            <?php /**/ $courseFlag = 0 /**/ ?>
+            <?php if( !empty(Request::get('course')) ): ?>
+                <?php foreach(Request::get('course') as $data): ?>
+                    <?php if( $data == $item->id ): ?>
+                        <span class="input-main-select">
+                            <label for="course_<?php echo e($item->id); ?>" class="input-top-select">
+                                <input type="checkbox" id="course_<?php echo e($item->id); ?>" name="course[]" class="ft-checkbox searchParam" checked="" value="<?php echo e($item->id); ?>">
+                                <?php echo e($item->name); ?>
+
+                            </label>    
+                        </span>
+                        <?php /**/ $courseFlag = 1 /**/ ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            <?php if( $courseFlag == '0' ): ?>
+                <span class="input-main-select">
+                    <label for="course_<?php echo e($item->id); ?>" class="input-top-select">
+                        <input type="checkbox" id="course_<?php echo e($item->id); ?>" name="course[]" class="ft-checkbox searchParam" value="<?php echo e($item->id); ?>">
+                        <?php echo e($item->name); ?>
+
+                    </label>    
+                </span>
+            <?php endif; ?>
+        <?php endforeach; ?>
+        </div>
+    </div>
+</div>
+<?php endif; ?>

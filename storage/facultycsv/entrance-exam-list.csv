@@ -1,0 +1,490 @@
+fullname,sortname,examsection_id,status,applicationFrom,applicationTo,exminationDate,resultAnnounce,modeofapplication,modeofpayment,examinationtype,applicationandexamstatus,examinationmode,eligibilitycriteria
+Joint Entrance Examination ,JEE ,1,1,null,null,null,null,3,3,1,1,3,5
+Graduate Aptitude Test in Engineering,GATE,1,1,null,null,null,null,3,3,1,1,3,5
+Birla Institute of Technology and Science Admission Test ,BITSAT,1,1,null,null,null,null,3,3,1,1,3,5
+The Manipal Entrance Test ,MET     ,1,1,null,null,null,null,3,3,1,1,3,5
+Symbiosis Institute of Technology Engineering Entrance Exam,SITEEE,1,1,null,null,null,null,3,3,1,1,3,5
+The SRM Joint Engineering Entrance Examination ,SRMJEEE ,1,1,null,null,null,null,3,3,1,1,3,5
+Kerala Engineering Agricultural Medical,KEAM,1,1,null,null,null,null,3,3,2,1,3,5
+Odisha Joint Entrance Examination,OJEE,1,1,null,null,null,null,3,3,2,1,3,5
+Rajasthan Pre-Engineering Test ,RPET ,1,1,null,null,null,null,3,3,2,1,3,5
+Rajasthan Engineering Admission Process ,REAP,1,1,null,null,null,null,3,3,2,1,3,5
+Rajasthan Engineering Admission Process ,REAP,1,1,null,null,null,null,3,3,2,1,3,5
+Tamil Nadu Engineering Admission,TEAP,1,1,null,null,null,null,3,3,2,1,3,5
+Engineering Agricultural and Medical Common Entrance Test ,EAMCET,1,1,null,null,null,null,3,3,2,1,3,5
+Lovely Professional University National Eligibility and Scholarship Test ,LPU NEST,1,1,null,null,null,null,3,3,1,1,3,5
+VIT Engineering Entrance Examination is the university level entrance test,VITEEE ,1,1,null,null,null,null,3,3,1,1,3,5
+Manipal University Online Entrance Test ,MU OET ,1,1,null,null,null,null,3,3,1,1,1,5
+Bharti Vidyapeeth Deemed University Common Entrance Test ,BVP CET ,1,1,null,null,null,null,3,3,1,1,3,5
+Amrita Engineering Entrance Examination ,AEEE,1,1,null,null,null,null,3,3,1,1,3,5
+Indian Statistical Institute Entrance Exam,ISIEE,1,1,null,null,null,null,3,3,1,1,3,5
+Central Universities Common Entrance Test,CUCET,1,1,null,null,null,null,3,3,1,1,3,5
+Indraprastha University Common Entrance Test ,IPU CET,1,1,null,null,null,null,3,3,1,1,3,5
+Indian Maritime University Common Entrance Test ,IMU CET ,1,1,null,null,null,null,3,3,1,1,3,5
+"Andhra Pradesh Engineering, Agriculture and Medical Common Entrance Test ",AP EAMCET ,1,1,null,null,null,null,3,3,2,1,3,5
+Jawaharlal Nehru University Entrance Exam ,JNUEE ,1,1,null,null,null,null,3,3,1,1,3,5
+Andhra Pradesh Post-Graduate Engineering Common entrance Test ,AP PGECET,1,1,null,null,null,null,3,3,2,1,3,1
+Assam Combined Entrance Examination ,Assam CEE,1,1,null,null,null,null,3,3,2,1,3,5
+Uttaranchal University Entrance Examination ,UUEE,1,1,null,null,null,null,3,3,2,1,3,5
+Pondicherry University Entrance Exam.,PUEE,1,1,null,null,null,null,3,3,2,1,3,5
+Cochin University of Science and Technology,CUSAT,1,1,null,null,null,null,3,3,2,1,3,5
+Common Entrance Test,CAT,2,1,null,null,null,null,3,3,1,1,3,5
+Graduate Management Admission Test  ,GMAT,2,1,null,null,null,null,3,3,1,1,3,5
+Maharashtra Common Entrance Test ,MAH CET,2,1,null,null,null,null,3,3,2,1,3,5
+Management Aptitude Test ,MAT,2,1,null,null,null,null,3,3,1,1,3,5
+Xavier Aptitude Test ,XAT,2,1,null,null,null,null,3,3,1,1,3,5
+Symbiosis National Aptitude Test,SNAP,2,1,null,null,null,null,3,3,1,1,3,5
+Joint Entrance Management Aptitude Test ,JEMAT,2,1,null,null,null,null,3,3,1,1,3,5
+Kalinga Institute of Industrial Technology Entrance Examination ,KIITEE,2,1,null,null,null,null,3,3,1,1,3,5
+NMIMS Management Aptitude Test ,NMIMS,2,1,null,null,null,null,3,3,1,1,3,5
+Indian Institute of Foreign Trade ,IIFT ,2,1,null,null,null,null,3,3,1,1,3,5
+AIMS Test for Management Admissions ,ATMA,2,1,null,null,null,null,3,3,1,1,3,5
+IFCAI Business School Aptitude Test,IBSAT,2,1,null,null,null,null,3,3,1,1,3,5
+Maharashtra Common Entrance Test ,MAH-CET,2,1,null,null,null,null,3,3,2,1,3,5
+Institute of Rural Management Anand Admission Test,IRMA,2,1,null,null,null,null,3,3,1,1,3,5
+KIITEE Management Test ,KIITEE MBA,2,1,null,null,null,null,3,3,1,1,3,5
+Odisha Joint Entrance Examination ,OJEE,2,1,null,null,null,null,3,3,2,1,3,5
+Karnataka Management Aptitude Test ,KMAT,2,1,null,null,null,null,3,3,2,1,3,5
+Andhra Pradesh-Integrated Common Entrance Test ,APICET,2,1,null,null,null,null,3,3,2,1,3,5
+Telangana State Integrated Common Entrance Test ,TSICET,2,1,null,null,null,null,3,3,2,1,3,5
+Tamil Nadu Common Entrance Test ,TANCET,2,1,null,null,null,null,3,3,2,1,3,5
+Tata Institute of Social Sciences National Entrance Test ,TISSNET,2,1,null,null,null,null,3,3,2,1,3,5
+HP University Management Aptitude Test ,HPU-MAT,2,1,null,null,null,null,3,3,2,1,3,5
+Indian Institute of Technology Joint Admission Test ,IIT JAM,3,1,null,null,null,null,3,3,1,1,3,5
+Joint Entrance Examination  ,JEE Advanced,3,1,null,null,null,null,3,3,1,1,3,5
+Birla Institute of  Technology  and  Science Admission Test ,BITSAT,3,1,null,null,null,null,3,3,1,1,3,5
+Indian Statistical Institute Admission Test ,ISI Admission Test,3,1,null,null,null,null,3,3,1,1,3,5
+Uttar  Pradesh State Entrance  Exam ,UPSEE,3,1,null,null,null,null,3,3,2,1,3,5
+Kalinga Institute of Industrial Technology Entrance Exam ,KIITEE,3,1,null,null,null,null,3,3,1,1,3,5
+Cochin University of Science and Technology Common Admission Test ,CUSAT CAT,3,1,null,null,null,null,3,3,2,1,3,5
+"Andhra Pradesh Engineering, Agriculture and Medical Common Entrance Test ",AP EAMCET,3,1,null,null,null,null,3,3,2,1,3,5
+Guru Gobind Singh Indraprastha University Common Entrance Test ,IPU CET,3,1,null,null,null,null,3,3,1,1,3,5
+Symbiosis Entrance Test ,SET Exam,3,1,null,null,null,null,3,3,1,1,3,5
+Indian Maritime University Common Entrance Test ,IMU CET,3,1,null,null,null,null,3,3,1,1,3,5
+Tolani Maritime Institute of Science Aptitude Test ,TMISAT,3,1,null,null,null,null,3,3,1,1,3,5
+"Sam Higginbottom Institute of Agriculture, Technology & Sciences Entrance Test ",SHIATS Exam,3,1,null,null,null,null,3,3,1,1,3,5
+Jharkhand Combined Entrance Competitive Examination ,JCECE,3,1,null,null,null,null,3,3,2,1,3,5
+"Visvesvaraya Technological University, University Level Research Aptitude Test ",VTU ULRAT,3,1,null,null,null,null,3,3,1,1,3,5
+Telangana State Engineering Agriculture & Medical Common Entrance Test ,TS EAMCET,3,1,null,null,null,null,3,3,2,1,3,5
+Madhya Pradesh Dental/Medical Association Test ,MP DMAT,3,1,null,null,null,null,3,3,2,1,3,5
+Manipal University Online Entrance Test ,MU OET,3,1,null,null,null,null,3,3,1,1,1,5
+Kerala Engineering Agricultural Medical Entrance Examination ,KEAM,3,1,null,null,null,null,3,3,2,1,3,5
+Central Universities Common Entrance Test ,CUCET,3,1,null,null,null,null,3,3,1,1,3,5
+"International Institute of Information Technology, Hyderabad Post Graduate Entrance Examination ",IIITH PGEE,3,1,null,null,null,null,3,3,1,1,3,1
+National Entrance Screening Test ,NEST,3,1,null,null,null,null,3,3,1,1,3,5
+Indian Institute of Technology Joint Admission Test ,IIT JAM,3,1,null,null,null,null,3,3,1,1,3,5
+IISER Entrance Exam,IISER,3,1,null,null,null,null,3,3,1,1,3,5
+Punjab University Combined Entrance Test ,PU CET,3,1,null,null,null,null,3,3,2,1,3,5
+Tata Institute of Social Sciences National Entrance Test ,TISSNET,3,1,null,null,null,null,3,3,1,1,3,5
+Mahatma Gandhi University Common Admission Test ,MGU CAT,3,1,null,null,null,null,3,3,1,1,3,5
+All India Pre Veterinary Test ,AIPVT,3,1,null,null,null,null,3,3,1,1,3,5
+Integral University Entrance Test  , IUET,3,1,null,null,null,null,3,3,1,1,3,5
+Dayananda Sagar Admission Test ,DSAT,3,1,null,null,null,null,3,3,1,1,3,5
+Sharda University Admission Test ,SUAT,3,1,null,null,null,null,3,3,1,1,3,5
+Uttarakhand State Entrance Examination ,UKSEE,3,1,null,null,null,null,3,3,2,1,3,5
+West Bengal Joint Entrance for Sister Nivedita University ,JESNU,3,1,null,null,null,null,3,3,2,1,3,5
+Delhi University Entrance Test ,DUET,3,1,null,null,null,null,3,3,1,1,3,5
+Joint National Entrance Examination ,JNEE,3,1,null,null,null,null,3,3,1,1,3,5
+Madhya Pradesh Dental/Medical Association Test ,MP DMAT,3,1,null,null,null,null,3,3,2,1,3,5
+Assam Joint MCA Entrance Examination ,JMEE,4,1,null,null,null,null,3,3,2,1,3,5
+GITAM Science Admissions Test ,GSAT,4,1,null,null,null,null,3,3,1,1,3,5
+Goa University MCA Entrance Exam,GUMCET,4,1,null,null,null,null,3,3,2,1,3,5
+Himachal Pradesh University MCA Entrance Test,HPUMCET,4,1,null,null,null,null,3,3,2,1,3,5
+Under Graduate Aptitude Test ,UGAT,4,1,null,null,null,null,3,3,1,1,3,5
+WIT Darbhanga Entrance Exam,WIT,4,1,null,null,null,null,3,3,1,1,3,5
+Dibrugarh University Entrance Exam,DUEE,4,1,null,null,null,null,3,3,2,1,3,5
+Institute of Engineering & Management Joint Entrance Examination ,IEMJEE,4,1,null,null,null,null,3,3,1,1,3,5
+NIT MCA Common Entrance Test ,NIMCET,4,1,null,null,null,null,3,3,1,1,3,5
+Birla Institute of Technology MCA Entrance Exam,BITMCET,4,1,null,null,null,null,3,3,1,1,3,5
+Purvanchal University Combined Admission Test ,PUCAT,4,1,null,null,null,null,3,3,1,1,3,5
+Sri Padampat Singhania Admission Test ,SPSAT,4,1,null,null,null,null,3,3,1,1,3,5
+Andhra Pradesh Integrated Common Entrance Test ,AP ICET,4,1,null,null,null,null,3,3,2,1,3,5
+Yogi Vemana University Common Entrance Test ,YVUCET,4,1,null,null,null,null,3,3,1,1,3,5
+Delhi University Entrance Test ,DUET,4,1,null,null,null,null,3,3,1,1,3,5
+Tamil Nadu Common Entrance Test ,TANCET,4,1,null,null,null,null,3,3,2,1,3,5
+Gandhi Institute of Technology and Management University ,GITAM,4,1,null,null,null,null,3,3,1,1,3,5
+Odisha Joint Entrance Examination Board (OJEEB)e Test ,KMAT,4,1,null,null,null,null,3,3,2,1,3,5
+ITM National Entrance and Scholarship Test ,ITM NEST,4,1,null,null,null,null,3,3,1,1,3,5
+Uttarakhand State Entrance Examination ,UKSEE,4,1,null,null,null,null,3,3,1,1,3,5
+Telangana State Integrated Common Entrance Test ,TS ICET,4,1,null,null,null,null,3,3,2,1,3,5
+Jammu University Entrance Test ,JUET,4,1,null,null,null,null,3,3,2,1,3,5
+Chhattisgarh Pre MCA ,CG Pre MCA,4,1,null,null,null,null,3,3,2,1,3,5
+Bharati Vidyapeeth Undergraduate Management Aptitude Test ,BUMAT,4,1,null,null,null,null,3,3,1,1,3,5
+GLA Entrance Test,LA Entrance Tes,4,1,null,null,null,null,3,3,1,1,3,5
+Karnataka Post Graduate Common Entrance Test ,Karnataka PGCET,4,1,null,null,null,null,3,3,2,1,3,1
+People’s Education Society University ,PES University,4,1,null,null,null,null,3,3,1,1,3,5
+Jagannath University Entrance Exam ,JUEE,4,1,null,null,null,null,3,3,1,1,3,5
+Indraprastha University Common Entrance Test ,IPU CET,4,1,null,null,null,null,3,3,1,1,3,5
+West Bengal Joint Entrance Exam MCA,WBJCET,4,1,null,null,null,null,3,3,2,1,3,5
+Rajasthan Master of Computer Application Admission Test,RMCET,4,1,null,null,null,null,3,3,2,1,3,5
+Lovely Professional University National Entrance and Scholarship Test ,LPU NEST,4,1,null,null,null,null,3,3,1,1,3,5
+Association of Indian Management Schools ,AIMS,4,1,null,null,null,null,3,3,1,1,3,5
+AMPAI Common Entrance Examination ,AMPAI CEE,4,1,null,null,null,null,3,3,1,1,3,5
+Cochin University of Science and Technology Common Admission Test ,CUSAT CAT,4,1,null,null,null,null,3,3,2,1,3,5
+Maharashtra Masters in Computer Application Common Entrance Test,MAH MCA CET,4,1,null,null,null,null,3,3,2,1,3,5
+"Symbiosis Entrance Test (SET) – General, SLAT (SET Law), SEED (SET Design), SITEEE (SET Engineering)",SET,4,1,null,null,null,null,3,3,1,1,3,5
+Uttar Pradesh State Entrance Examination ,UPSEE,4,1,null,null,null,null,3,3,2,1,3,5
+Bharati Vidyapeeth University Common Entrance Test ,BVP CET,4,1,null,null,null,null,3,3,1,1,3,5
+Dayanand Sagar Admission Test ,DSAT,4,1,null,null,null,null,3,3,1,1,3,5
+Kalinga Institute of Industrial Technology Entrance Exam ,KIITEE,4,1,null,null,null,null,3,3,1,1,3,5
+Jain Entrance Test ,JET,4,1,null,null,null,null,3,3,1,1,3,5
+Rajasthan Technical University Centralized Admission for M.Tech/ M.Arch Common Admission Test ,CAT,4,1,null,null,null,null,3,3,2,1,3,5
+CDAC Computerized-Common Admission Test ,CDAC C-CAT,4,1,null,null,null,null,3,3,1,1,3,5
+Computer Proficiency Certification Test ,CPCT,4,1,null,null,null,null,3,3,1,1,3,5
+Mody University Engineering Entrance Test ,MEET,4,1,null,null,null,null,3,3,1,1,3,5
+Sikkim Manipal Institute of Technology Online Test,SMIT Online Test,4,1,null,null,null,null,3,3,1,1,1,5
+Mohammad Ali Jauhar University  Entrance Exam,MAJUCET,4,1,null,null,null,null,3,3,1,1,3,5
+Common Post Graduate Entrance Tests ,CPGET,4,1,null,null,null,null,3,3,1,1,3,1
+Mahatma Gandhi Kashi Vidyapith University Entrance Exam,MGKVUCET,4,1,null,null,null,null,3,3,1,1,3,5
+South Asian University Entrance Exam,SAUCET,4,1,null,null,null,null,3,3,1,1,3,5
+Assam Joint MCA Entrance Exam ,Assam JMEE,4,1,null,null,null,null,3,3,1,1,3,5
+Himachal Pradesh University MCA Entrance Exam,HPUMCET,4,1,null,null,null,null,3,3,2,1,3,5
+UP Rajarshi Tandon Open University MBA MCA Entrance Test,UPRTOU-CET,4,1,null,null,null,null,3,3,1,1,3,5
+Agriculture Aptitude Test ,AAT,4,1,null,null,null,null,3,3,1,1,3,5
+Common Entrance Test ,CET,4,1,null,null,null,null,3,3,1,1,3,5
+Master’s Entrance Exam ,MET,4,1,null,null,null,null,3,3,1,1,3,5
+Rajiv Gandhi University Common Entrance Test ,RGUCET,4,1,null,null,null,null,3,3,1,1,3,5
+Common Law Admission Test ,CLAT ,5,1,null,null,null,null,3,3,1,1,3,5
+All India Law Entrance Test,AILET,5,1,null,null,null,null,3,3,1,1,3,5
+Law School Admission Test ,LSAT,5,1,null,null,null,null,3,3,1,1,3,5
+Indian Law Institute Common Admission Test ,ILI CAT,5,1,null,null,null,null,3,3,1,1,3,5
+Lovely Professional University National Entrance and Scholarship Test ,LPU NEST,5,1,null,null,null,null,3,3,1,1,3,5
+Christ University Law Entrance Exam ,CULEE,5,1,null,null,null,null,3,3,1,1,3,5
+Maharashtra Common Entrance Test for Law ,MH CET Law,5,1,null,null,null,null,3,3,1,1,3,5
+University of Petroleum and Energy Studies ,UPES,5,1,null,null,null,null,3,3,1,1,3,5
+University of Law Studies Aptitude Test ,ULSAT,5,1,null,null,null,null,3,3,1,1,3,5
+Kerala LLB Entrance Exam ,KLLB CET,5,1,null,null,null,null,3,3,2,1,3,5
+Andhra Pradesh Law Common Entrance Test,APL CET,5,1,null,null,null,null,3,3,2,1,3,5
+Telangana State Law Common Entrance Test,TL CET,5,1,null,null,null,null,3,3,2,1,3,5
+The Army Institute of Law  Entrance Test ,AIL CET,5,1,null,null,null,null,3,3,1,1,3,5
+Delhi University LLB Entrance Exam,DULLB CET,5,1,null,null,null,null,3,3,1,1,3,5
+Allahabad University Law Entrance Exam,AUL CET,5,1,null,null,null,null,3,3,2,1,3,5
+The Telangana Post Graduate Law Common Entrance Test ,TS PGLCE,5,1,null,null,null,null,3,3,1,1,3,1
+Andhra Pradesh Postgraduate Law Common Entrance Test  ,AP PGLCET,5,1,null,null,null,null,3,3,2,1,3,1
+Kalinga Institute of Industrial Technology Entrance Examination,KIIT CET,5,1,null,null,null,null,3,3,1,1,3,5
+Indraprastha University Common Entrance Test,IPU CET,5,1,null,null,null,null,3,3,1,1,3,5
+Bharati Vidyapeeth University Common Entrance Test ,BVP CET,5,1,null,null,null,null,3,3,1,1,3,5
+Banaras Hindu University Undergraduate Entrance Test,BHU CET,5,1,null,null,null,null,3,3,1,1,3,5
+Graduate Pharmacy Aptitude Test ,GPAT,6,1,null,null,null,null,3,3,1,1,3,5
+"Telangana State Engineering, Agriculture & Medical Entrance Test ",TS EAMCET,6,1,null,null,null,null,3,3,2,1,3,5
+Telangana State Polytechnic Common Entrance Test ,TS PCET,6,1,null,null,null,null,3,3,2,1,3,5
+Telangana State Engineering Common Entrance Test ,TS ECET,6,1,null,null,null,null,3,3,2,1,3,5
+Telangana State Post Graduate Engineering Common Entrance ,TS PGECET,6,1,null,null,null,null,3,3,2,1,3,1
+Andhra Pradesh Polytechnic Common Entrance Test ,AP POLYCET,6,1,null,null,null,null,3,3,2,1,3,5
+Andhra Pradesh Post-Graduate Engineering Common Entrance Test ,AP PGECET,6,1,null,null,null,null,3,3,2,1,3,1
+Andhra Pradesh Engineering Common Entrance Test ,AP ECET,6,1,null,null,null,null,3,3,2,1,3,5
+Engineering Agricultural and Medical Common Entrance Test ,EAMCET,6,1,null,null,null,null,3,3,1,1,3,5
+The Assam Polytechnic ,PAT,6,1,null,null,null,null,3,3,1,1,3,5
+Bihar Combined Entrance Competitive Examination ,BCECE,6,1,null,null,null,null,3,3,2,1,3,5
+"Directorate of Technical Education, Government of Goa conducts the Goa Common Entrance Test",GCET,6,1,null,null,null,null,3,3,1,1,3,5
+Karnataka Common Entrance Test ,KCET,6,1,null,null,null,null,3,3,2,1,3,5
+Karnataka Polytechnic ,KP CET,6,1,null,null,null,null,3,3,2,1,3,5
+Uttarakhand State Entrance Exam ,UKSEE,6,1,null,null,null,null,3,3,2,1,3,5
+Uttarakhand Polytechnic ,JEEP,6,1,null,null,null,null,3,3,2,1,3,5
+Uttar Pradesh State Entrance Exam ,UPSEE,6,1,null,null,null,null,3,3,2,1,3,5
+Joint Entrance Examination Council of UP ,JEECUP,6,1,null,null,null,null,3,3,1,1,3,5
+Gujarat Common Entrance Test ,GUJCET,6,1,null,null,null,null,3,3,2,1,3,5
+Maharashtra Common Entrance Test ,MHT-CET or MAHA-CET,6,1,null,null,null,null,3,3,2,1,3,5
+Birla Institute of Technology Science Admission Test ,BITSAT,6,1,null,null,null,null,3,3,1,1,3,5
+Uttar Pradesh State Entrance Examination ,UPSEE,6,1,null,null,null,null,3,3,2,1,3,5
+Yogi Vemana University Common Entrance Test,YVUCET,7,1,null,null,null,null,3,3,1,1,3,5
+Regional Institute of Education Common Entrance Examination,RIE CEE,7,1,null,null,null,null,3,3,1,1,3,5
+Purvanchal University Combined Admission Test,PUCAT,7,1,null,null,null,null,3,3,1,1,3,5
+CMR University Admission Test,CMRUAT,7,1,null,null,null,null,3,3,1,1,3,5
+Dravidian University Common Entrance Test,DUCET,7,1,null,null,null,null,3,3,1,1,3,5
+Jammu University Entrance Test,JUET,7,1,null,null,null,null,3,3,2,1,3,5
+Joint Admission Test,JAT,7,1,null,null,null,null,3,3,1,1,3,5
+Tezpur University Entrance Exam,TUEE,7,1,null,null,null,null,3,3,1,1,3,5
+Cochin University of Science and Technology Common Admission Test,CUSAT CAT,7,1,null,null,null,null,3,3,1,1,3,5
+Uttar Pradesh State Entrance Examination,UPSEE,7,1,null,null,null,null,3,3,2,1,3,5
+BHU Undergraduate Entrance Test,UET,7,1,null,null,null,null,3,3,1,1,3,5
+Dayanand Sagar Admission Test,DSAT,7,1,null,null,null,null,3,3,1,1,3,5
+VELS Entrance Examination,VEE,7,1,null,null,null,null,3,3,1,1,3,5
+Tata Institute of Social Sciences Bachelor Admission Test,TISSBAT,7,1,null,null,null,null,3,3,1,1,3,5
+Indian Institute of Art and Design Entrance Exam,IIAD CET,7,1,null,null,null,null,3,3,1,1,3,5
+Delhi University Entrance Test,DUET,7,1,null,null,null,null,3,3,1,1,3,5
+Jawaharlal Nehru University Entrance Exam,JNUEE,7,1,null,null,null,null,3,3,1,1,3,5
+Sharda University Admission Test,SUAT,7,1,null,null,null,null,3,3,1,1,3,5
+Xavier Aptitude Test,XAT,7,1,null,null,null,null,3,3,1,1,3,5
+Integral University Entrance Test,IUET,7,1,null,null,null,null,3,3,1,1,3,5
+Karunya Entrance Examination,KEE,7,1,null,null,null,null,3,3,1,1,3,5
+Humanities and Social Sciences Entrance Examination,HSEE,7,1,null,null,null,null,3,3,1,1,3,5
+Presidency University Master Degree Entrance Test,PUMDET,7,1,null,null,null,null,3,3,1,1,3,5
+Maharashtra Applied Arts and Crafts Common Entrance Test,MAH AAC CET,7,1,null,null,null,null,3,3,2,1,3,5
+Joint National Entrance Exam,JNEE,7,1,null,null,null,null,3,3,1,1,3,5
+Madurai Kamaraj University  Entrance Exam,MKU CET,7,1,null,null,null,null,3,3,2,1,3,5
+Common Post Graduate Entrance Tests,CPGET,7,1,null,null,null,null,3,3,1,1,3,1
+Mahatma Gandhi Kashi Vidyapith University,MGKVP Entrance Exa,7,1,null,null,null,null,3,3,1,1,3,5
+South Asian University,SAU Entrance Exa,7,1,null,null,null,null,3,3,1,1,3,5
+Symbiosis Entrance Test,SET,7,1,null,null,null,null,3,3,1,1,3,5
+Uttar Pradesh State Entrance Examination,UPSEE,7,1,null,null,null,null,3,3,1,1,3,5
+Indraprastha University Common Entrance Test,IPU CET,8,1,null,null,null,null,3,3,1,1,3,5
+Tata Institute of Social Sciences National Entrance Test,TISSNET,8,1,null,null,null,null,3,3,1,1,3,5
+Banaras Hindu University Undergraduate Entrance Test,BHU UCET,8,1,null,null,null,null,3,3,1,1,3,5
+Mahatma Gandhi University Common Admission Test,MGU CET,8,1,null,null,null,null,3,3,1,1,3,5
+Chhattisgarh Pre-B.Ed. Entrance Exam,CH B.Ed,8,1,null,null,null,null,3,3,2,1,3,5
+Central Universities Common Entrance Test,CU CET,8,1,null,null,null,null,3,3,1,1,3,5
+Jagannath University Entrance Examination,JUEE,8,1,null,null,null,null,3,3,1,1,3,5
+Combined Shiksha Shastri Entrance Test,CSSET,8,1,null,null,null,null,3,3,1,1,3,5
+GLA University Entrance Test,GLAET,8,1,null,null,null,null,3,3,1,1,3,5
+Adikavi Nannaya University Common Entrance Test,ANU CET,8,1,null,null,null,null,3,3,1,1,3,5
+Andhra Pradesh Education Common Entrance Test,APE CET,8,1,null,null,null,null,3,3,2,1,3,5
+Osmania University Common Entrance Test,OUCET,8,1,null,null,null,null,3,3,1,1,3,5
+Maharashtra Bachelor’s of Education Common Entrance Test,MAH B.Ed CET,8,1,null,null,null,null,3,3,2,1,3,5
+Yogi Vemana University Common Entrance Test,YVU CET,8,1,null,null,null,null,3,3,1,1,3,5
+Dravidian University Common Entrance Test,DUCET,8,1,null,null,null,null,3,3,1,1,3,5
+ Allahabad University PGAT Exam,PGAT,8,1,null,null,null,null,3,3,2,1,3,5
+Regional Institute of Education – Common Entrance Examination,RIE CEE,8,1,null,null,null,null,3,3,1,1,3,5
+Indraprastha University Common Entrance Test,IPU CET,8,1,null,null,null,null,3,3,1,1,3,5
+Banaras Hindu University Undergraduate Entrance Test,BHU UET,8,1,null,null,null,null,3,3,1,1,3,5
+GLA Entrance Test ,GLAET,8,1,null,null,null,null,3,3,1,1,3,5
+ Delhi University Entrance Test,GLA,8,1,null,null,null,null,3,3,2,1,3,5
+Madhya Pradesh Pre B.Ed Exam,MPP EDE,8,1,null,null,null,null,3,3,2,1,3,5
+Indira Gandhi National Open University B.Ed Exam,IGNOU B.Ed,8,1,null,null,null,null,3,3,1,1,3,5
+Bihar B.Ed CET Exam,BBECETE,8,1,null,null,null,null,3,3,2,1,3,5
+ Rajasthan Pre-Teacher Education Test,RPTET,8,1,null,null,null,null,3,3,2,1,3,5
+Gauhati University B.Ed  Exam ,GUBEE,8,1,null,null,null,null,3,3,2,1,3,5
+MAH B.Ed-M.Ed CET Exam,MAH CET,8,1,null,null,null,null,3,3,2,1,3,5
+COMMON ADMISSION TEST,CAT,9,1,null,null,null,null,3,3,1,1,3,5
+XAVIER APTITUDE TEST,XAT,9,1,null,null,null,null,3,3,1,1,3,5
+GURU GOBIND SINGH INDRAPRASTHA UNIVERSITY COMMON ENTRANCE TEST,IPU CET,9,1,null,null,null,null,3,3,1,1,3,5
+NATIONAL TEST FOR PROGRAMS AFTER TWELFTH,NMIMS NPAT ,9,1,null,null,null,null,3,3,1,1,3,5
+PUNJAB UNIVERSITY COMBINED ENTRANCE TEST,PU CET,9,1,null,null,null,null,3,3,2,1,3,5
+BANARAS HINDU UNIVERSITY UNDERGRADUATE ENTRANCE TEST,BHU UET,9,1,null,null,null,null,3,3,1,1,3,5
+UNIVERSITY OF PETROLEUM AND ENERGY STUDIES DESIGN APTITUDE TEST,UPES DAT,9,1,null,null,null,null,3,3,1,1,3,5
+ANDHRA UNIVERSITY COMMON ENTRANCE TEST,AUCET ,9,1,null,null,null,null,3,3,2,1,3,5
+SRI KRISHNADEVARAYA UNIVERSITY COMMON ENTRANCE TEST,SKUCET ,9,1,null,null,null,null,3,3,1,1,3,5
+SRM COMMON ADMISSION TEST,SRMHCAT ,9,1,null,null,null,null,3,3,1,1,3,5
+INTEGRAL UNIVERSITY ENTRANCE TEST,IUET,9,1,null,null,null,null,3,3,1,1,3,5
+YOGI VEMANA UNIVERSITY COMMON ENTRANCE TEST,YVUCET ,9,1,null,null,null,null,3,3,1,1,3,5
+JAGANNATH UNIVERSITY ENTRANCE EXAM,JUEE ,9,1,null,null,null,null,3,3,1,1,3,5
+ADIKAVI NANNAYA UNIVERSITY COMMON ENTRANCE TEST,AKNUCET ,9,1,null,null,null,null,3,3,1,1,3,5
+CENTRAL UNIVERSITIES COMMON ENTRANCE TEST,CUCET ,9,1,null,null,null,null,3,3,1,1,3,5
+CMR UNIVERSITY ADMISSION TEST,CMRUAT ,9,1,null,null,null,null,3,3,1,1,3,5
+INSTITUTE OF ENGINEERING AND MANAGEMENT JOINT ENTRANCE EXAM,IEMJEE ,9,1,null,null,null,null,3,3,1,1,3,5
+DRAVIDIAN UNIVERSITY COMMON ENTRANCE TEST,DUCET,9,1,null,null,null,null,3,3,1,1,3,5
+ALLAHABAD UNIVERSITY POST GRADUATE ADMISSION TEST,ALLAHABAD UNIVERSITY PGAT,9,1,null,null,null,null,3,3,2,1,3,1
+KU POST GRADUATE COMMON ENTRANCE TEST,KU PGCET,9,1,null,null,null,null,3,3,1,1,3,1
+OSMANIA UNIVERSITY COMMON ENTRANCE TEST,OUCET ,9,1,null,null,null,null,3,3,1,1,3,5
+ANDHRA UNIVERSITY COMMON ENTRANCE TEST,AUCET ,9,1,null,null,null,null,3,3,2,1,3,5
+JAMMU UNIVERSITY ENTRANCE TEST,JUET ,9,1,null,null,null,null,3,3,2,1,3,5
+ACHARYA NAGARJUNA UNIVERSITY POST GRADUATE COMMON ENTRANCE TEST,ANUPGCET ,9,1,null,null,null,null,3,3,1,1,3,1
+LPU NATIONAL ENTRANCE AND SCHOLARSHIP TEST,LPUNEST,9,1,null,null,null,null,3,3,1,1,3,5
+KALINGA INSTITUTE OF INDUSTRIAL TECHNOLOGY ENTRANCE EXAM,KIITEE ,9,1,null,null,null,null,3,3,1,1,3,5
+UTTARANCHAL UNIVERSITY ENTRANCE EXAMINATION,UUEE,9,1,null,null,null,null,3,3,2,1,3,5
+JAIN ENTRANCE TEST ,JAIN ENTRANCE TEST,9,1,null,null,null,null,3,3,1,1,3,5
+JINDAL SCHOLASTIC APTITUDE TEST,JSAT ,9,1,null,null,null,null,3,3,1,1,3,5
+SHARDA UNIVERSITY ADMISSION TEST,SUAT ,9,1,null,null,null,null,3,3,1,1,3,5
+VELS ENTRANCE EXAMINATION,VEE,9,1,null,null,null,null,3,3,1,1,3,5
+ALL INDIA MANAGEMENT ASSOCIATION UNDER GRADUATE APTITUDE TEST,AIMA UGAT ,9,1,null,null,null,null,3,3,1,1,3,5
+GLA UNIVERSITY ENTRANCE TEST,GLAET ,9,1,null,null,null,null,3,3,1,1,3,5
+DAYANAND SAGAR ADMISSION TEST,DSAT ,9,1,null,null,null,null,3,3,1,1,3,5
+QUANTUM UNIVERSITY ENTRANCE TEST,Q CARE,9,1,null,null,null,null,3,3,1,1,3,5
+ITM NATIONAL ENTRANCE AND SCHOLARSHIP TEST,ITM NEST,9,1,null,null,null,null,3,3,1,1,3,5
+BANARAS HINDU UNIVERSITY POSTGRADUATE ENTRANCE TEST,BHU PET,9,1,null,null,null,null,3,3,1,1,3,1
+RAMA UNIVERSITY ENTRANCE TEST,RUET,9,1,null,null,null,null,3,3,1,1,3,5
+Chartered Accountant Common Proficiency Test,CA CPT,9,1,null,null,null,null,3,3,1,1,3,5
+Company Secretary Executive Entrance Test,CSEET,9,1,null,null,null,null,3,3,1,1,3,5
+Cost and Management Accountant,CMA Entrance Exam,9,1,null,null,null,null,3,3,1,1,3,5
+Narsee Monjee Institute of Management Studies,NMIMS-NPAT,9,1,null,null,null,null,3,3,1,1,3,5
+Delhi University Joint Admission Test,DU JAT,9,1,null,null,null,null,3,3,1,1,3,5
+Symbiosis Entrance Test,SET,9,1,null,null,null,null,3,3,1,1,3,5
+Guru Gobind Singh Indraprastha University,IPU CET,9,1,null,null,null,null,3,3,1,1,3,5
+Institute of Actuaries of India,IAI,9,1,null,null,null,null,3,3,1,1,3,5
+Actuary Science Courses,ACET,9,1,null,null,null,null,3,3,1,1,3,5
+Certified Financial Planner Exam,CFP ,9,1,null,null,null,null,3,3,1,1,3,5
+Banaras Hindu University,BHU UET,9,1,null,null,null,null,3,3,1,1,3,5
+Lovely Professional University,LPU - NEST,9,1,null,null,null,null,3,3,1,1,3,5
+Patna Women’s College B.Com Entrance Exam,PUCET,9,1,null,null,null,null,3,3,2,1,3,5
+National Eligibility Cum Entrance Test,NEET,11,1,null,null,null,null,3,3,1,1,3,5
+National Eligibility Cum Entrance Test – Post Graduate,NEET PG,11,1,null,null,null,null,3,3,1,1,3,1
+National Eligibility cum Entrance Test for MDS,NEET MDS,11,1,null,null,null,null,3,3,1,1,3,5
+All India Institute of Medical Sciences,AIIMS,11,1,null,null,null,null,3,3,1,1,3,5
+All India Common Entrance Exam,AICEE,11,1,null,null,null,null,3,3,1,1,3,5
+Kerala Engineering Architecture Medical ,KEAM,11,1,null,null,null,null,3,3,2,1,3,5
+MH Common Entrance Test ,MH CET,11,1,null,null,null,null,3,3,2,1,3,5
+Manipal Undergraduate Entrance Test,MU CET,11,1,null,null,null,null,3,3,1,1,3,5
+Armed Forces Medical College,AFMC,11,1,null,null,null,null,3,3,1,1,3,5
+Amrita Institute of Medical Sciences Common Entrance Test,AIMS CET,11,1,null,null,null,null,3,3,1,1,3,5
+All India Pre Medical Test,AIPMT,11,1,null,null,null,null,3,3,1,1,3,5
+All India Pre-Veterinary Test,AIPVT,11,1,null,null,null,null,3,3,1,1,3,5
+Aligarh Muslim University Common Admission Test,AMU CAT,11,1,null,null,null,null,3,3,1,1,3,5
+Association of Management of Unaided Private Medical and Dental Colleges,AMUPMDC,11,1,null,null,null,null,3,3,1,1,3,5
+Annamalai University Medical Entrance Exam,AU MEE,11,1,null,null,null,null,3,3,1,1,3,5
+Banaras Hindu University Pre Medical Test ,BHU PMT,11,1,null,null,null,null,3,3,1,1,3,5
+Bharati Vidyapeeth University Common Entrance Test,BVU CET,11,1,null,null,null,null,3,3,1,1,3,5
+Combined Entrance Examination Kerala,CEE Kerala,11,1,null,null,null,null,3,3,1,1,3,5
+Common Entrance Test Karnataka,CET Karnataka,11,1,null,null,null,null,3,3,1,1,3,5
+Common Entrance Test Punjab,CET Punjab,11,1,null,null,null,null,3,3,1,1,3,5
+Christian Medical College Vellore,CMC Vellore,11,1,null,null,null,null,3,3,1,1,3,5
+"Consortium of Medical, Engineering and Dental Colleges of Karnataka",COMEDK,11,1,null,null,null,null,3,3,1,1,3,5
+Directorate of Medical Education and Research Maharashtra,DMER,11,1,null,null,null,null,3,3,1,1,3,5
+Delhi University Medical-Dental Entrance Test,DUMET,11,1,null,null,null,null,3,3,1,1,3,5
+"Engineering, Agriculture & Medical Common Entrance Test",EAMCET,11,1,null,null,null,null,3,3,1,1,3,5
+Guru Gobind Singh Indraprastha University Common Entrance Test ,GGSIPU CET,11,1,null,null,null,null,3,3,1,1,3,5
+Gujarat Common Entrance Test,GUJ CET,11,1,null,null,null,null,3,3,2,1,3,5
+Himachal Pradesh Combined Pre-Medical Test,HPCPMT,11,1,null,null,null,null,3,3,2,1,3,5
+"Jawaharlal Institute of Post-Graduate Medical Education and Research, Pondicherry",JIPMER,11,1,null,null,null,null,3,3,1,1,3,1
+Meenakshi Academy Of Higher Education And Research,MAHER,11,1,null,null,null,null,3,3,1,1,3,5
+Mahatma Gandhi Institute of Medical Sciences Competitive Entrance Examination,MGIMS CEE,11,1,null,null,null,null,3,3,1,1,3,5
+Maharashtra Super Speciality Entrance Test,MH SSET,11,1,null,null,null,null,3,3,1,1,3,5
+Maharashtra Health Science & Technical Common Entrance Test,MHT CET,11,1,null,null,null,null,3,3,1,1,3,5
+Masters in Medical Sciences Technology,MMST,11,1,null,null,null,null,3,3,1,1,3,5
+Post Graduate Institute of Medical Education & Research Chandigarh,PGIMER,11,1,null,null,null,null,3,3,1,1,3,1
+Post Graduate Medical Admission Test Bihar,PGMAT,11,1,null,null,null,null,3,3,1,1,3,1
+Post Graduate Medical Entrance Test Jammu & Kashmir,PGMET J&K,11,1,null,null,null,null,3,3,1,1,3,1
+Pravara Institute of Medical Sciences,PIMS,11,1,null,null,null,null,3,3,1,1,3,5
+Punjab Medical Entrance Test Punjab,PMET Punjab,11,1,null,null,null,null,3,3,2,1,3,5
+Pre Medical Test Haryana,PMT Haryana,11,1,null,null,null,null,3,3,2,1,3,5
+Pre Medical Test Madhaya Pradesh,PMT Madhaya Pradesh,11,1,null,null,null,null,3,3,2,1,3,5
+Pre Medical Test Rajasthan,PMT Rajasthan,11,1,null,null,null,null,3,3,2,1,3,5
+Sri Ramachandra Medical College,SRMC,11,1,null,null,null,null,3,3,1,1,3,5
+Under Graduate Admission Written Test,UG AWT,11,1,null,null,null,null,3,3,1,1,2,5
+Uttar Pradesh Common Admission Test Dental,UPCAT Dental,11,1,null,null,null,null,3,3,1,1,3,5
+Uttar Pradesh Combined Pre Medical Test,UPCPMT,11,1,null,null,null,null,3,3,1,1,3,5
+Uttaranchal Pre Medical Test,UPMT,11,1,null,null,null,null,3,3,2,1,3,5
+UP Post Graduate Medical Entrance Examination,UPPGMEE,11,1,null,null,null,null,3,3,2,1,3,1
+Veterinary Council of India,VCI,11,1,null,null,null,null,3,3,1,1,3,5
+Assam Agricultural University Veterinary Entrance Test ,AAU VET,10,1,null,null,null,null,3,3,2,1,3,5
+Kalinga Institute of Industrial Technology Entrance Examination,KIITEE,10,1,null,null,null,null,3,3,1,1,3,5
+Rajasthan Pre Veterinary Test ,RPVT,10,1,null,null,null,null,3,3,2,1,3,5
+National Aptitude Test In Architecture ,NATA,10,1,null,null,null,null,3,3,1,1,3,5
+Aligarh Muslim University Bachelor of Architecture ,AMU B.Arch,10,1,null,null,null,null,3,3,2,1,3,5
+National Aptitude Test In Architecture,NATA,10,1,null,null,null,null,3,3,1,1,3,5
+Joint Entrance Exam – Main ,AAT,10,1,null,null,null,null,3,3,1,1,3,5
+Hindustan Institute Of Technology And Science Engineering Entrance Exam,HITSE CET,10,1,null,null,null,null,3,3,1,1,3,5
+Common Entrance Examination for Design (post graduation in design),CETD,10,1,null,null,null,null,3,3,1,1,3,1
+Gitam Admission Test,GITAM,10,1,null,null,null,null,3,3,1,1,3,5
+Aligarh Muslim University Bachelor of Architecture,AMUBA,10,1,null,null,null,null,3,3,2,1,3,5
+Joint Entrance Examination ,AAT Advanced,10,1,null,null,null,null,3,3,1,1,3,5
+Jawaharlal Nehru Technological University Planning And Architecture Common Entrance Test,JNTUPA CET,10,1,null,null,null,null,3,3,1,1,3,5
+Uttar Pradesh State Entrance Examination,UPSET,10,1,null,null,null,null,3,3,1,1,3,5
+Karnataka Common Entrance Test,KCET,10,1,null,null,null,null,3,3,2,1,3,5
+West Bengal Joint Entrance Examination,WBJEE,10,1,null,null,null,null,3,3,2,1,3,5
+Guru Gobind Singh Indraprastha University Common Entrance Test,GGSIPU CET,10,1,null,null,null,null,3,3,1,1,3,5
+Tamil Nadu Common Entrance Test,TNCET,10,1,null,null,null,null,3,3,2,1,3,5
+Maharashtra MAH M. Arch CET ,MAH CET ,10,1,null,null,null,null,3,3,2,1,3,5
+Odisha Joint Entrance Examination (M.Arch),OJEE,10,1,null,null,null,null,3,3,2,1,3,5
+KEAM Engineering Agriculture Medical Exam ,KEAM,10,1,null,null,null,null,3,3,1,1,3,5
+Symbiosis Entrance Test ,SET,12,1,null,null,null,null,3,3,1,1,3,5
+Indian Institute of Art and Design ,IIAD,12,1,null,null,null,null,3,3,1,1,3,5
+Sharda University Admission Test,SUAT,12,1,null,null,null,null,3,3,1,1,3,5
+National Institute of Fashion Technology Entrance Exam,NIFT Entrance Exam,12,1,null,null,null,null,3,3,1,1,3,5
+All India Entrance Examination for Design ,AIEED,12,1,null,null,null,null,3,3,1,1,3,5
+Army Institute of Fashion and Design Written Admission Test ,AIFD WAT,12,1,null,null,null,null,3,3,1,1,2,5
+Pearl Academy Entrance Exam,PACET,12,1,null,null,null,null,3,3,1,1,3,5
+Srishti Entrance and Aptitude Test ,SEAT,12,1,null,null,null,null,3,3,1,1,3,5
+Lovely Professional University National Entrance and Scholarship Test ,LPU NEST,12,1,null,null,null,null,3,3,1,1,3,5
+Footwear Design & Development Institute All India Selection Test ,FDDI AIST,12,1,null,null,null,null,3,3,1,1,3,5
+Uttar Pradesh State Entrance Examination ,UPSEE,12,1,null,null,null,null,3,3,2,1,3,5
+Indian Institute of Crafts and Design Entrance Test ,IICD Entrance Test,12,1,null,null,null,null,3,3,1,1,3,5
+UPES Design Aptitude Test ,UPESDAT,12,1,null,null,null,null,3,3,1,1,3,5
+All India Entrance Examination for Design ,AIEED,12,1,null,null,null,null,3,3,1,1,3,5
+NID Design Aptitude Test ,NID DAT,12,1,null,null,null,null,3,3,1,1,3,5
+National Institute of Fashion Technology Entrance Examination ,NIFT Entrance Exam,12,1,null,null,null,null,3,3,1,1,3,5
+Common Entrance Examination for Design ,CEED,12,1,null,null,null,null,3,3,1,1,3,5
+IMS Design & Innovation Academy Design Entrance Exam ,IMS DIA DEE,12,1,null,null,null,null,3,3,1,1,3,5
+Indian Council of Agricultural Research All India Entrance Examination ,ICAR AIEEA,13,1,null,null,null,null,3,3,1,1,3,5
+Orissa University of Agriculture and Technology ,OUAT,13,1,null,null,null,null,3,3,2,1,3,5
+"Telangana State Engineering, Agriculture & Medical Entrance Test ",TS EAMCET,13,1,null,null,null,null,3,3,2,1,3,5
+Lovely Professional University National Entrance and Scholarship Test ,LPUNEST,13,1,null,null,null,null,3,3,1,1,3,5
+Kerala Engineering Agricultural Medical Entrance Examination ,KEAM,13,1,null,null,null,null,3,3,2,1,3,5
+"AP Engineering, Agriculture and Medical Common Entrance Test ", EAMCET,13,1,null,null,null,null,3,3,2,1,3,5
+CG Pre Agriculture Test ,PAT,13,1,null,null,null,null,3,3,1,1,3,5
+Indira Gandhi Agricultural University ,IGKV CET,13,1,null,null,null,null,3,3,1,1,3,5
+Jharkhand Combined Entrance Competitive Examination ,JCECE,13,1,null,null,null,null,3,3,2,1,3,5
+MCAER Common Entrance Test ,CET,13,1,null,null,null,null,3,3,1,1,3,5
+MP Pre Agriculture Test ,PAT,13,1,null,null,null,null,3,3,2,1,3,5
+Orissa University of Agriculture and Technology ,OUAT,13,1,null,null,null,null,3,3,2,1,3,5
+Punjab Agricultural University ,PAU Entrance Exam,13,1,null,null,null,null,3,3,2,1,3,5
+Rajasthan Joint Entrance Test ,JET,13,1,null,null,null,null,3,3,2,1,3,5
+Rajasthan PhD Admission ,RPA,13,1,null,null,null,null,3,3,2,1,3,5
+"TS Engineering, Agriculture and Medical Common Entrance Test ",EAMCET,13,1,null,null,null,null,3,3,1,1,3,5
+Karnataka Common Entrance Test ,KCET,13,1,null,null,null,null,3,3,2,1,3,5
+Uttar Pradesh State Entrance Exam ,UPSEE,13,1,null,null,null,null,3,3,2,1,3,5
+GB Pant University Admissions ,GBPUAT,13,1,null,null,null,null,3,3,1,1,3,5
+All India Entrance Examination Postgraduate exam,AIEE,13,1,null,null,null,null,3,3,1,1,3,1
+Indira Gandhi Krishi Vishwavidyalaya Common Entrance,IGKV CET,13,1,null,null,null,null,3,3,1,1,3,5
+Hotel Management and Catering Technology Joint Entrance Examination ,NCHMCT JEE,14,1,null,null,null,null,3,3,1,1,3,5
+Jamia Millia Islamia Entrance Exam ,JMI CET,14,1,null,null,null,null,3,3,1,1,3,5
+All India Management Association ,AIMA UGAT,14,1,null,null,null,null,3,3,1,1,3,5
+Army Institute of Hotel Management & Catering Technology,AIHMCT WAT,14,1,null,null,null,null,3,3,1,1,3,5
+DTE Hotel Management & Catering Technology Entrance Exam ,DTE HMCT,14,1,null,null,null,null,3,3,1,1,3,5
+Peoples Education Society Scholastic Aptitude Test ,PESSAT,14,1,null,null,null,null,3,3,1,1,3,5
+National-Level Entrance Exam ,NCHM JEE,14,1,null,null,null,null,3,3,1,1,3,5
+All India Management Association Under Graduate Aptitude Test ,UGAT,14,1,null,null,null,null,3,3,1,1,3,5
+Uttar Pradesh State Entrance Examination for Bachelor of Hotel Management and Catering Technology ,UPSEE BHMCT,14,1,null,null,null,null,3,3,2,1,3,5
+Maharashtra Hotel Management Common Entrance Test ,MAH HM CET ,14,1,null,null,null,null,3,3,2,1,3,5
+West Bengal Joint Entrance Examination Board ,WBJEE,14,1,null,null,null,null,3,3,2,1,3,5
+Panjab University Tourism and Hospitality Aptitude Test ,PUTHAT,14,1,null,null,null,null,3,3,2,1,3,5
+The Christ University Entrance Test ,CUET ,14,1,null,null,null,null,3,3,1,1,3,5
+Oberoi Sytematic Training and Education Programme ,STEP,14,1,null,null,null,null,3,3,1,1,3,5
+SKIMS University B.Sc Nursing Entrance Exam,SKIMSU NET,15,1,null,null,null,null,3,3,1,1,3,5
+M.Sc Nursing Entrance Exam,MSC NET,15,1,null,null,null,null,3,3,1,1,3,5
+TMC Mumbai M.Sc Nursing Entrance Test,TMC NET,15,1,null,null,null,null,3,3,1,1,3,5
+Bachelor of Pharmacy (Ayurveda) Entrance Test,B.Pharma (Ayurveda) Entrance Exam,15,1,null,null,null,null,3,3,1,1,3,5
+Bachelor of Science (Nursing) Entrance Test,B.Sc. Nursing Entrance Exam,15,1,null,null,null,null,3,3,1,1,3,5
+Bachelor of Physiotherapy Entrance Test,BPT Entrance Exam,15,1,null,null,null,null,3,3,1,1,3,5
+Bachelor of Occupational Therapy Entrance Test,BOT Entrance Exam,15,1,null,null,null,null,3,3,1,1,3,5
+PG Nursing (M.Sc) Entrance Exam,PG NCET ,15,1,null,null,null,null,3,3,1,1,3,5
+National Institute of Pharmaceutical Education and Research Joint Entrance Exam,NIPER JEE,15,1,null,null,null,null,3,3,1,1,3,5
+All India Institute of Medical Sciences M.Sc. Nursing,AIIMS MSC Nursing,15,1,null,null,null,null,3,3,1,1,3,5
+Indian Army BSc Nursing,IA BSC NET,15,1,null,null,null,null,3,3,1,1,3,5
+"Combined Paramedical, Pharmacy and Nursing Entrance Test",CPP NET,15,1,null,null,null,null,3,3,1,1,3,5
+Indraprastha University Common Entrance Test,IPU CET,15,1,null,null,null,null,3,3,1,1,3,5
+ National Institute for Locomotor Disabilities Common Entrance,NILD CET,15,1,null,null,null,null,3,3,1,1,3,5
+"AP Engineering Agricultural and Medical Common Entrance Test, commonly called as EAMCET",EAMCET,15,1,null,null,null,null,3,3,2,1,3,5
+Tripura Joint Entrance Examination ,TJEE,15,1,null,null,null,null,3,3,2,1,3,5
+Jharkhand Combined Entrance Competitive Examination,JCECE,15,1,null,null,null,null,3,3,2,1,3,5
+Goa Common Entrance Test,GCET,15,1,null,null,null,null,3,3,2,1,3,5
+UP Veterinary Entrance Exam,UPV CET,16,1,null,null,null,null,3,3,2,1,3,5
+Maharashtra Common Entrance Test,MHT CET,16,1,null,null,null,null,3,3,2,1,3,5
+CSKHPKV Palampur Entrance Exam,CSKHPKVP CET,16,1,null,null,null,null,3,3,1,1,3,5
+Assam Agricultural University Veterinary Entrance Test,AAU VET,16,1,null,null,null,null,3,3,2,1,3,5
+Karnataka Common Entrance Test,KCET,16,1,null,null,null,null,3,3,2,1,3,5
+Indian Institute of Mass Communication Entrance Examination ,IIMC Entrance Exam,17,1,null,null,null,null,3,3,1,1,3,5
+Asian College of Journalism Entrance Exam ,ACJ Entrance Exam,17,1,null,null,null,null,3,3,1,1,3,5
+Symbiosis Entrance Test ,SET,17,1,null,null,null,null,3,3,1,1,3,5
+Indraprastha University Common Entrance Test ,IPU CET,17,1,null,null,null,null,3,3,1,1,3,5
+Delhi University Mass Media and Mass Communication Entrance ,BMMMC,17,1,null,null,null,null,3,3,1,1,3,5
+Xavier Institute of Communication Online Entrance Test ,XIC,17,1,null,null,null,null,3,3,1,1,1,5
+Asian College of Journalism Entrance Examination,ACJ Entrance Exam,17,1,null,null,null,null,3,3,1,1,3,5
+Jamia Milia Islamia Entrance Exam,JMIEE,17,1,null,null,null,null,3,3,1,1,3,5
+Andhra University Common Entrance Test,AUCET,17,1,null,null,null,null,3,3,2,1,3,5
+Symbiosis Entrance Test,SET,17,1,null,null,null,null,3,3,1,1,3,5
+Manorama School of Communication Entrance Exam,MSCEE,17,1,null,null,null,null,3,3,1,1,3,5
+Aligarh Muslim University Entrance Exam,AMUEE,17,1,null,null,null,null,3,3,1,1,3,5
+ Manipal University Online Entrance Test,MU OET,17,1,null,null,null,null,3,3,1,1,1,5
+Graduate  Management  Admission Test  ,GMAT,20,1,null,null,null,null,3,3,1,1,3,5
+International  English  Language Testing  System ,IELTS,20,1,null,null,null,null,3,3,1,1,3,5
+Pearson Test of English ,PET,20,1,null,null,null,null,3,3,1,1,3,5
+Scholastic Aptitude Test  ,SAT,20,1,null,null,null,null,3,3,1,1,3,5
+Graduate Record Examination ,GRE,20,1,null,null,null,null,3,3,1,1,3,5
+The Test of English as a Foreign Language,TOEFL,20,1,null,null,null,null,3,3,1,1,3,5
+American College Testing ,ACT,20,1,null,null,null,null,3,3,1,1,3,5
+The Graduate Record Examination ,GRE,20,1,null,null,null,null,3,3,1,1,3,5
+The Medical College Admission Test ,MCAT,20,1,null,null,null,null,3,3,1,1,3,5
+Uttar Pradesh State Entrance Examination,UPSEE,19,1,null,null,null,null,3,3,1,1,3,5
+Indraprastha University Common Entrance Test,IPU CET,19,1,null,null,null,null,3,3,1,1,3,5
+Cochin University of Science and Technology Common Admission Test,CUSAT CAT,19,1,null,null,null,null,3,3,1,1,3,5
+Banaras Hindu University Undergraduate Entrance Test,BHU UCET,19,1,null,null,null,null,3,3,1,1,3,5
+All India Entrance Examination for Design,AIEED,19,1,null,null,null,null,3,3,1,1,3,5
+Central Universities Common Entrance Test,CU CAT,19,1,null,null,null,null,3,3,1,1,3,5
+Indian Institute of Crafts and Design Entrance Test,IICD CET,19,1,null,null,null,null,3,3,1,1,3,5
+Pravara Institute of Medical Sciences,PIMS,18,1,null,null,null,null,3,3,1,1,3,5
+Mahatma Gandhi Dental College and Hospital - Joint Entrance Test,MGDCH JET,18,1,null,null,null,null,3,3,1,1,3,5
+Delhi University Medical/Dental Entrance Test ,DUMET,18,1,null,null,null,null,3,3,1,1,3,5
+ All India Pre-Medical / Pre-Dental Entrance Examination,AIPMT,18,1,null,null,null,null,3,3,1,1,3,5
+Uttar Pradesh Common Admission Test,UPCAT,18,1,null,null,null,null,3,3,2,1,3,5
+National Eligibility cum Entrance Test,NEET,18,1,null,null,null,null,3,3,1,1,3,5
+Jawaharlal Institute of Postgraduate Medical Education and Research PG – MD/ MS Entrance Exam,JIPMER CET,18,1,null,null,null,null,3,3,1,1,3,1
+Goa Common Entrance Test,GCET,18,1,null,null,null,null,3,3,2,1,3,5
+National Eligibility cum Entrance Test,NEET,18,1,null,null,null,null,3,3,1,1,3,5
+"Postgraduate Institute of Medical Education & Research MD/ MS, DM/ M.Ch Entrance Exam",PIMER CET,18,1,null,null,null,null,3,3,1,1,3,1
+"Andhra Pradesh Engineering, Agriculture & Medical Common Entrance Test",AP EAMCET,18,1,null,null,null,null,3,3,2,1,3,5
+Gujarat Common Entrance Test,GUJCET,18,1,null,null,null,null,3,3,2,1,3,5
+All India Post Graduate of Medical Entrance Exam,AIPGMEE,18,1,null,null,null,null,3,3,1,1,3,1
+All India Pre Medical Test,AIPMT,18,1,null,null,null,null,3,3,1,1,3,5
+CETPPMC Entrance Exam,CETPPMC,18,1,null,null,null,null,3,3,1,1,3,5
+National Eligibility cum Entrance Test Under Graduate,NEET UG,18,1,null,null,null,null,3,3,1,1,3,5
+Kerala Engineering Architecture Medical Entrance Examination,KEAM,18,1,null,null,null,null,3,3,2,1,3,5

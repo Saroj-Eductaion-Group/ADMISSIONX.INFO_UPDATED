@@ -1,0 +1,112 @@
+
+@media (min-width:320px) and (max-width:767px) {
+.choosefutureTop h2, .WeofferTop h2, .CoursesExamLeftTopContent h2,
+.CoursesExamLeftTopContent h2, .whatstudentsTop h2, .TopCollegesTop h2{ font-size:25px; }
+.navigationTopContent{ float:left;}
+.footerabout h2, .footerabout ul, .footercourses h2, .footernewsletterTop h2{ font-size:19px;
+ padding:0px !important; }
+.footercourses, .footernewsletterTop{ padding-top:15px;}
+.CoursesExamLeft{ padding:20px 0px 20px !important; }
+.WeofferMain{ padding:20px 0px 0px !important;}
+.choosefutureMain, .CoursesExamRight{  padding:20px 0px 15px !important;}
+.whatstudentsMain{ padding:30px 30px !important; }
+.ViewtestimonialMain{ margin-bottom:15px; }
+.TopCollegesBotTab li a{ font-size:17px;padding:10px 5px !important; }
+.TopCollegesBotContentResponse{ margin:20px 0 !important;}
+.CoursesExamMain{ background:unset !important; }
+.CoursesExamLeftBotContent{ padding-top:25px;}
+.EnterDetailInput{ width:100% !important; margin-bottom:15px;}
+.EnterDetailsButton{ width:100% !important; }
+.WeofferBotleftContentTop figure{ float:none;  }
+.WeofferBotleftSub{ text-align:center; }
+.WeofferBotleftContentTop h2{ padding-top:0px; }
+.WeofferBotleftContentBot{ padding-top:0px; }
+.WeofferBotleftContentBot p{ float:none; text-align:center; line-height:25px; padding:0 20%; }
+.WeofferBotleftContentBot p span{ display:unset; }
+.bannerslidercontent{ padding-top:20px !important; }
+.bannerslidercontent p{ font-size:7px;}
+.bannerslidercontent h3{ font-size:20px;}
+.choosefutureManageResponse{ margin-bottom:0px !important;}
+.choosefutureManage{ margin-bottom:20px; }
+.tabsetting{ width: 245px; margin: 0 auto !important; text-align: center; border-bottom: unset !important;}
+.CoursesExamLeftBotResponse{ padding:0px !important; margin-right:0px !important; margin-left:0px !important; }
+.bannersliderMain{ height:unset !important; }
+.WeofferBotleftJobFair p{ padding-top:0px; }
+.TopCollegesMain{ padding:20px 0px 30px !important;  }
+.formMain{ padding-top:30px !important;  }
+.WeofferBotleftExam p{ padding-top:0px;}
+.navigationTopContent{ border-color:unset !important; padding-top:unset !important; border:unset; }
+.bannerContentBotInput{ width: 100% !important; height: 100px; }
+.collegeInstinp{ width:100% !important; float: unset !important; border-right:unset !important; }
+.collegeInstSelect{ width:100% !important; }
+.select2-container .select2-search--inline .select2-search__field{ margin:0px !important; }
+.select2-container{ margin:0 1% !important; }
+.viewMore a{ width: 41%; }
+.searchindiatitle a{ font-size:14px;}
+.selectmyCheckbox{ font-size:13px; }
+.searchCollegeImg{ width:100%; }
+.searchindiaTop h2{ font-size: 23px; }
+.examsentranceBoT h2{ font-size:24px; }
+.entranceDateInput{ width: 75% !important; }
+.exploreCategoryTop h2{ font-size: 30px; }
+.exploreCategoryTop p{ font-size:16px; }
+.exploreCategorybot{  margin: 0 5%; }
+.exploreCategorybotleft{ padding:40px 0px 0px !important;  min-height:unset; border-right:unset;  }
+.exploreCategorybotRightBot ul li a, .exploreCategorybotRightDesign ul li a{ width:auto !important; }
+.exploreCategorybot{ padding-bottom:20px; margin-right:18px !important; margin-left:18px !important;}
+.exploreCategory{ padding-bottom:20px !important; }
+.exploreCategorybotResp{ margin-top:30px !important; }
+.detailApplyNow a{ width:auto; margin-top:10px; }
+.govtexamDetailNav{ margin-top:20px !important; }
+.govtexamDetailNav li a{ margin-bottom:15px; }
+.chooseStreamTop{ margin:3px;}
+.chooseWhatNext p{ line-height:26px;}
+.mechBusiness{ padding-top:10px; padding-left:0px !important; }
+.yourSelectionRight{ padding: 30px 9%; }
+.chooseStreamTop{ margin:40px 0px;}
+.choosestreamScience h2{ font-size: 15px; margin: 0px;}
+.bExamresultRight{ margin:20px 0px; }
+
+.dropdownNavTab li { width: 276px;}
+.navigationTopNav ul li .dropdownmenu .container{ width: 95% !important;  position: relative;}
+.dropdownNavTab li a{ font-size:14px !important; }
+.dropdownNavTab { width: 100%; height: auto;}
+.dropdownNavTabContentBot ul li a{ width:100px; }
+.navigationTopNav ul li .dropdownmenu { width: 100%; position: relative;}
+.navigationTopContent{ overflow: scroll !important;  height: 500px;}
+.navigationTopNav ul li a>i{ float:right;}
+.navigationTopContent{ width:100%; padding-left:0px; }
+.navigationTopNav ul li:hover .dropdownmenu{ display: none; }
+.navigationTopNav ul li.dropdownhover .dropdownmenu{ display:none; }
+.navigationTopNav ul li.dropdownhover .dropdownmenu.active{ display:block; }
+.examsentranceInput{ width:auto; }
+.page-header{ margin:unset !important;}
+.page-header h1{ margin:0px !important; }
+.exploreCategory{ padding-top:unset !important; }
+.exploreCategoryTop{ padding-top:15px; }
+.explorecat-main{ margin-top:unset !important; }
+.exploreCategorybotRight{ height: 550px; }
+}
+
+
+@media (min-width:992px) and (max-width:1200px) {
+.bannerslidercontent{ padding:150px !important; }
+.StayDateButton{ font-size:14px !important; }
+.collegeInstSelect{ width:27% !important;}
+.admissionContent{ padding-left:11%;}
+.search-collegeApply ul li a{ width: 92%; }
+.exploreCategorybotleft{ min-height:420px; }
+.detailApplyNow a{ font-size:12px; }
+.navigationTopContent ul li a{ font-size:12px; padding:10px 6px !important; }
+
+}
+
+
+
+
+
+
+
+
+
+

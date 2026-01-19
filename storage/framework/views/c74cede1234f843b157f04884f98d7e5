@@ -1,0 +1,35 @@
+<?php if(sizeof($getCountryObj) > 0): ?>
+<div class="stream-type fillter-type <?php if(sizeof($getCountryObj) > 5): ?> sy <?php endif; ?> single-item">
+    <div class="ft-title">Country</div>
+    <div class="ft-content content">
+        <div style="margin-top:10px;">
+        <?php foreach( $getCountryObj as $item ): ?>
+            <?php /**/ $countryFlag = 0 /**/ ?>
+            <?php if( !empty(Request::get('country')) ): ?>
+                <?php foreach(Request::get('country') as $data): ?>
+                    <?php if( $data == $item->id ): ?>
+                        <span class="input-main-select">
+                            <label for="country_<?php echo e($item->id); ?>" class="input-top-select">
+                                <input type="checkbox" id="country_<?php echo e($item->id); ?>" name="country[]" class="ft-checkbox searchParam" checked="" value="<?php echo e($item->id); ?>">
+                                <?php echo e($item->name); ?>
+
+                            </label>    
+                        </span>
+                        <?php /**/ $countryFlag = 1 /**/ ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            <?php if( $countryFlag == '0' ): ?>
+                <span class="input-main-select">
+                    <label for="country_<?php echo e($item->id); ?>" class="input-top-select">
+                        <input type="checkbox" id="country_<?php echo e($item->id); ?>" name="country[]" class="ft-checkbox searchParam" value="<?php echo e($item->id); ?>">
+                        <?php echo e($item->name); ?>
+
+                    </label>    
+                </span>
+            <?php endif; ?>
+        <?php endforeach; ?>  
+        </div> 
+    </div>
+</div>
+<?php endif; ?>

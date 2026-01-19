@@ -1,0 +1,166 @@
+/* Add here all your css styles (customizations) */
+
+/* HELPER CLASSED */
+/**MARGIN CLASSES**/
+.nomargin-nopadding{margin: 0px !important; padding: 0px !important;}
+
+.margin0{margin: 0px;}
+.margin5{ margin: 5px;}
+.margin10{ margin: 10px;}
+.margin15{ margin: 15px;}
+.margin20{ margin: 20px;}
+
+.margin-top0{ margin-top: 0px;}
+.margin-top5{ margin-top: 5px;}
+.margin-top10{ margin-top: 10px;}
+.margin-top15{ margin-top: 15px;}
+.margin-top20{ margin-top: 20px;}
+.margin-top30{ margin-top: 30px;}
+.margin-top40{ margin-top: 40px;}
+.margin-top50{ margin-top: 50px;}
+
+.margin-left5{ margin-left: 5px;}
+.margin-left10{ margin-left: 10px;}
+.margin-left15{ margin-left: 15px;}
+.margin-left20{ margin-left: 20px;}
+
+.margin-right5{ margin-right: 5px;}
+.margin-right10{ margin-right: 10px;}
+.margin-right15{ margin-right: 15px;}
+.margin-right20{ margin-right: 20px;}
+
+.margin-bottom5{ margin-bottom: 5px;}
+.margin-bottom10{ margin-bottom: 10px;}
+.margin-bottom15{ margin-bottom: 15px;}
+.margin-bottom20{ margin-bottom: 20px;}
+.margin-bottom30{ margin-bottom: 30px;}
+.margin-bottom40{ margin-bottom: 40px;}
+.margin-bottom50{ margin-bottom: 50px;}
+
+/**PADDING CLASSES**/
+.padding-top0{padding-top: 0px !important;}
+.padding-left0{padding-left: 0px !important;}
+.padding-right0{padding-right: 0px !important;}
+.padding-bottom0{padding-bottom: 0px !important;}
+
+.padding5{ padding: 5px;}
+.padding10{ padding: 10px;}
+.padding15{ padding: 15px;}
+.padding20{ padding: 20px;}
+.padding30{ padding: 30px;}
+.padding40{ padding: 40px;}
+
+.padding-top5{ padding-top: 5px;}
+.padding-top10{ padding-top: 10px;}
+.padding-top15{ padding-top: 15px;}
+.padding-top20{ padding-top: 20px;}
+
+.padding-left5{ padding-left: 5px;}
+.padding-left10{ padding-left: 10px;}
+.padding-left15{ padding-left: 15px;}
+.padding-left20{ padding-left: 20px;}
+
+.padding-right5{ padding-right: 5px;}
+.padding-right10{ padding-right: 10px;}
+.padding-right15{ padding-right: 15px;}
+.padding-right20{ padding-right: 20px;}
+
+.padding-bottom5{ padding-bottom: 5px;}
+.padding-bottom10{ padding-bottom: 10px;}
+.padding-bottom15{ padding-bottom: 15px;}
+.padding-bottom20{ padding-bottom: 20px;}
+.color-white{color: #ffffff;}
+.text-lightblue{color: #18BA98 !important;}
+.text-white:hover{color: #FFFFFF !important;}
+.form-block img{margin-bottom: 30px !important;}
+.parsley-errors-list{list-style: none !important; text-align: left !important; float: left !important; padding-left: 0px !important;}
+.parsley-custom-error-message{color: #A52222 !important; font-size: 14px;}
+.parsley-filemimetypes{color: #A52222 !important; font-size: 14px;}
+.thumbnail-border{box-shadow: 0 0 8px #ddd;transition: box-shadow 0.2s ease-in-out;}
+.boldText{font-weight: bold !important;}
+.fontSize50{font-size: 50px !important;}
+.badgesSize{    font-size: 18px !important;}
+#viewMorePopup{cursor: pointer;}
+#updateMorePopup{cursor: pointer;}
+/****************************************************************/
+
+/**ERROR MESSAGE PLACEMENT*****************************************/
+#sky-form2 > em{margin: -10px 0 15px 0;}
+/****************************************************************/
+.text-sub-info{font-size: 21px !important; line-height: 20px !important;  border-top: none !important; border-left: none !important; border-right: none !important;  ;border-bottom: solid 4px #fff !important;}
+.coming-soon h1 {line-height: 90px !important;margin-top: 50px !important;}
+.coming-soon-h2-head{font-size: 41px !important;}
+.coming-soon h3{margin-bottom: 20px !important;}
+#thank-you-message{font-size: 16px;color: #ffffff;font-family: "Open Sans", Arial, sans-serif;}
+/****************************************************************/
+.left-backgrounf-form{background: url(1.jpg) 50% fixed; position: relative;background-size: cover;}
+.background-form{background: url(1.jpg) 50% fixed; padding: 60px 0; position: relative;background-size: cover;}
+.detail-page-signup{color: #555;padding: 30px;background: #fefefe;border: solid 1px #eee;box-shadow: 0 0 3px #eee;}
+/****************************************************************/
+@media screen and (max-width: 768px) {
+	.media-text-center > div{text-align: center;}
+	.media-text-center > div > h3{font-size: 98% !important;}
+	.media-text-center > div > form > div > .col-md-7{margin-bottom: 15px;}
+}
+/****************************************************************/
+/**MODEL STYLE IN FORGET YOUR PASSWORD**************************************************************/
+.modal-header-design{ background: #18BA98;}
+.modal-header-design > h4{color: #ffffff;}
+/**FILE UPLOADER**************************************************************/
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+	background-color: #BDBDBD;
+	height: 200px;
+	width: 200px;
+	text-align: center;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 8px #ddd;
+    transition: box-shadow 0.2s ease-in-out;
+}
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	height: 100%;
+	text-align: center;
+}
+.custom-span{ font-family: Arial; font-weight: bold;font-size: 100px; color: #FE57A1}
+#uploadFile{border: none;margin-left: 10px; width: 200px;}
+.custom-para{font-family: arial;font-weight: bold;font-size: 24px; color:#585858;}
+/**COLLEGE PROFILE DASH**************************************************************/
+.padding0{padding: 0 !important;}
+.blockStyleProfile{display: block;width: 250px; height: 180px;}
+.blockStyleProfileOverFlow{overflow: hidden;}
+.blockBGStyle{width: 100%; background-size: contain;  background-position: center; background-repeat: no-repeat;}
+/*.photosWidth li{max-width: 160px;}*/
+.no-word-wrap{word-wrap: break-word !important;}
+.delete-now{color: #18BA98; font-size: 18px; }
+.max-width-on-blocks{max-width: 170px;}
+/****************************************************************/
+/**COLLEGE PROFILE PAGE*****************************************************************/
+.college-name-style-black{ color: #000 !important;}
+.college-name-style-black:hover{  text-decoration: none !important;}
+/*******************************************************************/
+.removeTabAction{position: absolute; right: 20px; color: #CE0404;}
+/**************************************************************************/
+.deleteBtnLogoStyle{position: absolute; bottom: 50px; right: 15px; width: 60px;background: #18BA98; height: 25px;color: #ffffff; text-align: center; font-size: 20px; padding-top: 5px; padding-bottom: 25px;}
+/**PAYMENT PAGE************************************************************************/
+.coming-soon h2{font-size: 25px !important;font-weight: 300 !important;line-height: 40px !important;}
+
+.resultForCommonSearchList {width: 63.5%; max-height: 223px;background: #ffffff;z-index: 10 !important;border: 1px solid #c6c6c6;position: absolute;overflow: auto;}
+.resultForCommonSearchList > ul{text-align: left;}
+.resultForCommonSearchList > ul > li{padding: 10px 10px 10px 20px;border-bottom: 1px solid #afafaf;}
+.resultForCommonSearchList > ul > li:last-child{border-bottom: none;}
+.resultForCommonSearchList > ul > li > a {color: #172e51;font-size: 14px;font-weight: 700;}
+.resultForCommonSearchList > p{color: #7f7f80;font-size: 12px;font-weight: 600;margin-top: 10px;}
+@media screen and (max-width: 1279px){
+    .resultForCommonSearchList {width: auto;}
+}

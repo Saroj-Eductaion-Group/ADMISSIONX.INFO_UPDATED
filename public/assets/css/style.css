@@ -1,0 +1,197 @@
+/*
+ * Template Name: Unify - Responsive Bootstrap Template
+ * Description: Business, Corporate, Portfolio, E-commerce, Blog and One Page Template.
+ * Version: 1.9
+ * Author: @htmlstream
+ * Website: http://htmlstream.com
+*/
+
+/*Import Global Compulsory CSS Files*/
+
+@import url(app.css);
+
+* {
+	border-radius: 0;
+}
+
+body {
+ color: #333;
+ font-size: 13px;
+ line-height: 1.6;
+}
+
+body.header-fixed-space {
+  padding-top: 94px;
+}
+body.header-fixed-space-v2 {
+	padding-top: 135px;
+}
+
+@media (max-width: 991px) {
+	body.header-fixed-space,
+	body.header-fixed-space-v2 {
+		padding-top: 0;
+	}
+}
+
+p,
+li,
+li a,
+label {
+ color: #000;
+}
+
+a {
+ color: #da7272;
+ text-decoration: none;
+}
+
+a,
+a:focus,
+a:hover,
+a:active,
+button,
+button:hover {
+	outline: 0 !important;
+}
+
+a:focus {
+text-decoration: none;
+}
+a:hover {
+ color: #da7272;
+ text-decoration: underline;
+}
+
+/*Boxed Layout
+------------------------------------*/
+.wrapper {
+	background: #fff;
+}
+
+.boxed-layout {
+  padding: 0;
+  box-shadow: 0 0 5px #ccc;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  background: url(../img/patterns/15.png) repeat;
+}
+.nomargin-nopadding{margin: 0px !important; padding: 0px !important;}
+.nomargin{margin: 0px !important;}
+.nopadding{padding: 0px !important;}
+.margin5{ margin: 5px;}
+.margin10{ margin: 10px;}
+.margin15{ margin: 15px;}
+.margin20{ margin: 20px;}
+
+.margin-top0{ margin-top:0px  !important;}
+.margin-top5{ margin-top:5px  !important;}
+.margin-top10{ margin-top:10px !important;}
+.margin-top15{ margin-top:15px !important;} 
+.margin-top20{ margin-top:20px !important;} 
+.margin-top30{ margin-top:30px !important ;}
+.margin-top40{ margin-top:40px !important ;}
+.margin-top50{ margin-top:50px !important ;}
+.margin-top60{ margin-top:60px !important ;}
+.margin-top70{ margin-top:70px !important ;}
+.margin-top80{ margin-top:80px !important ;}
+.margin-top90{ margin-top:90px !important ;}
+.margin-top100{ margin-top:100px !important; }
+.margin-top110{ margin-top:110px !important;}
+.margin-top120{ margin-top:120px !important; }
+.margin-top130{ margin-top:130px !important; }
+.margin-top140{ margin-top:140px !important; }
+
+.margin-left5{ margin-left: 5px !important;}
+.margin-left10{ margin-left: 10px !important;}
+.margin-left15{ margin-left: 15px !important;}
+.margin-left20{ margin-left: 20px !important;}
+.margin-left25{ margin-left: 25px !important;}
+.margin-left30{ margin-left: 30px !important;}
+.margin-left35{ margin-left: 35px !important;}
+.margin-left40{ margin-left: 40px !important;}
+
+.margin-right5{ margin-right: 5px !important;}
+.margin-right10{ margin-right: 10px !important;}
+.margin-right15{ margin-right: 15px !important;}
+.margin-right20{ margin-right: 20px !important;}
+.margin-right25{ margin-right: 25px !important;}
+
+.margin-bottom0{ margin-bottom: 0px !important;}
+.margin-bottom5{ margin-bottom: 5px !important;}
+.margin-bottom10{ margin-bottom: 10px !important;}
+.margin-bottom15{ margin-bottom: 15px !important;}
+.margin-bottom20{ margin-bottom: 20px !important;}
+.margin-bottom30{ margin-bottom: 30px !important;}
+.margin-bottom40{ margin-bottom: 40px !important;}
+.margin-bottom50{ margin-bottom: 50px !important;}
+.margin-bottom60{ margin-bottom: 60px !important;}
+.margin-bottom70{ margin-bottom: 70px !important;}
+
+/**PADDING CLASSES**/
+.padding-top0{padding-top: 0px !important;}
+.padding-left0{padding-left: 0px !important;}
+.padding-right0{padding-right: 0px !important;}
+.padding-bottom0{padding-bottom: 0px !important;}
+.padding0{ padding: 0px !important;}
+.padding5{ padding: 5px !important;}
+.padding10{ padding: 10px !important;}
+.padding15{ padding: 15px !important;}
+.padding20{ padding: 20px !important;}
+.padding30{ padding: 30px !important;}
+.padding40{ padding: 40px !important;}
+
+.padding-top5{ padding-top: 5px !important;}
+.padding-top10{ padding-top: 10px !important;}
+.padding-top15{ padding-top: 15px !important;}
+.padding-top20{ padding-top: 20px !important;}
+.padding-top25{ padding-top: 25px !important;}
+.padding-top30{ padding-top: 30px !important;}
+.padding-top35{ padding-top: 35px !important;}
+.padding-top40{ padding-top: 40px !important;}
+.padding-top50{ padding-top: 50px !important;}
+.padding-top60{ padding-top: 60px !important;}
+.padding-top70{ padding-top: 70px !important;}
+.padding-top80{ padding-top: 80px !important;}
+.padding-top90{ padding-top: 90px !important;}
+
+.padding-top100{ padding-top: 100px !important;}
+.padding-top110{ padding-top: 110px !important;}
+.padding-top120{ padding-top: 120px !important;}
+.padding-top130{ padding-top: 130px !important;}
+.padding-top140{ padding-top: 140px !important;}
+.padding-top150{ padding-top: 150px !important;}
+.padding-top160{ padding-top: 160px !important;}
+.padding-top170{ padding-top: 170px !important;}
+.padding-top180{ padding-top: 180px !important;}
+
+.padding-left0{ padding-left: 0px !important;}
+.padding-left5{ padding-left: 5px !important;}
+.padding-left10{ padding-left: 10px !important;}
+.padding-left15{ padding-left: 15px !important;}
+.padding-left20{ padding-left: 20px !important;}
+.padding-left25{ padding-left: 25px !important;}
+
+.padding-left30{ padding-left: 30px !important;}
+.padding-left40{ padding-left: 40px !important;}
+.padding-left50{ padding-left: 50px !important;}
+.padding-left60{ padding-left: 60px !important;}
+.padding-left70{ padding-left: 70px !important;}
+.padding-left80{ padding-left: 80px !important;}
+
+.padding-right5{ padding-right: 5px !important;}
+.padding-right10{ padding-right: 10px !important;}
+.padding-right15{ padding-right: 15px !important;}
+.padding-right20{ padding-right: 20px !important;}
+.padding-right30{ padding-right: 30px !important;}
+.padding-right40{ padding-right: 40px !important;}
+
+.padding-bottom5{ padding-bottom: 5px !important;}
+.padding-bottom10{ padding-bottom: 10px !important;}
+.padding-bottom15{ padding-bottom: 15px !important;}
+.padding-bottom20{ padding-bottom: 20px !important;}
+.padding-bottom30{ padding-bottom: 30px !important;}
+.padding-bottom40{ padding-bottom: 40px !important;}
+.padding-bottom50{ padding-bottom: 50px !important;}
+.padding-bottom60{ padding-bottom: 60px !important;}
+.padding-bottom80{ padding-bottom: 80px !important;}

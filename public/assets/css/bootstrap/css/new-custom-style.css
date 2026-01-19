@@ -1,0 +1,471 @@
+/*
+::-webkit-scrollbar {
+  width:6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+
+ul{ margin:0px !important; padding:0px !important;}
+ul li{ list-style:none !important;}
+ul li a{ text-decoration:none !important; }
+.nav>li>a {padding: 10px 10px;}
+
+.bg-black{ background:#000; }
+.bg-grey{ background:#f5f6f9; }
+.text-white{ color: #ffffff !important;}
+.text-transform{ text-transform:uppercase;}
+/*header css start*/
+.WeofferTop h2, .choosefutureTop h2, .whatstudentsMain h2, .TopCollegesTop h2{ font-family:open sans, serif; font-size:30px; color:#000; font-weight:700; }
+.headerTopMain{ background:#f5f6f9; border-bottom:#efefef solid 1px; }
+.headerTopLeft ul li, .headerTopRight ul li, .exploreCategorybotRightBot ul li, .exploreCategorybotRightDesign ul li{ display:inline;}
+.headerTopLeft ul li a{ display:inline-block;  font-size:15px; padding-right:3%; color:#000000; font-weight:500; }
+.headerTopRight ul li a{ display:inline-block; font-size:15px; color:#000000; font-weight:500; }
+.stickyHeader{ position: fixed; top: 0; width: 100%; background:#efefef !important;
+ z-index:999 !important; padding: 0px !important;  }
+.navigationTopContent{ float: right; padding-right:0px;}
+.navigationTopContent ul li a{ background-color:unset !important;
+ font-family: open sans, serif; color:#000 !important;
+ text-transform:capitalize; font-size:14px; font-weight:600;}
+.navigationTop .navigationTopContent1>.active>a{ background-color:unset !important; color:#f00 !important; }
+.navigationTop{ 
+  margin-bottom:unset !important; 
+  background-color:unset !important;
+   border:unset !important; border-bottom:unset !important; }
+.bannerMain{ background:url(/assets/images/homepage/banner-img1.png);
+ background-size:cover; height:500px; padding-top:170px; }
+.collegenavtabTop{ border-bottom:unset;}
+
+.collegenavtabTop li a{ color:#000 !important;  padding: 10px 30px !important; margin-right:8px !important; 
+ font-size: 15px;  background:#fff !important; border:unset !important; }
+.collegenavtabTop>li.active>a{ background:#000 !important; color:#fff !important; border:unset !important;}
+.collegenavtabTop>li.active>a:hover, .collegenavtabTop>li.active>a:focus{ color:#fff !important; }
+.collegenavtabTop li a:hover{ border-color:unset !important; border:unset !important; }
+
+
+
+
+.bannerContentBotInput{  font-family: open sans, serif;  border:unset !important; width: 78% !important;
+ color: #000000 !important;  float: left !important; font-size: 15px !important; font-weight: 600 !important; margin-right: 2%; background:#fff;}
+.collegeInstinp{ border-right: 1px solid #9a9898 !important; border:unset; float:left; 
+ width: 71% !important; height: 30px !important; margin:10px 0px; }
+.collegeInstinp:focus{ box-shadow:unset; }
+.collegeInstSelect{ font-family: open sans, serif; color:#000; font-size:15px; padding:0 5%;
+border-right: 1px solid #9a9898 !important; border: unset; width: 28% !important;  height: 30px !important;
+ margin: 18px 0px;}
+.select2-container--default .select2-selection--multiple { background-color: white; border:unset !important;
+  border-radius: 4px; color:#000 !important; cursor: text; margin: 6px 0 0 4%;}
+.owl-pagination { text-align: center !important; padding-top: 20px;}
+.formMain{ background:#fff; box-shadow:#ededed 0 0 15px; padding:0 4%; }
+.formTop{ margin:0px !important;}
+.EnterDetailInput{ font-family:open sans, serif; border:#e2e2e2 solid 1px !important;  
+color:#000000 !important; float: left !important; font-size: 15px !important; font-weight:600 !important; width:28% !important;   height: 45px !important; margin-right:2%; }
+.EnterDetailInput::-webkit-input-placeholder, 
+.collegeInstinp::-webkit-input-placeholder{ color:#6d6d6d !important;}
+.EnterDetailInput:focus{ box-shadow:unset !important; }
+.formTopContent{ padding:0px !important;}
+.EnterDetailsButton{font-family: 'Open Sans', sans-serif; color: #fff; font-size:16px;  font-weight: 600;
+ background: #d40d12;  width: 10%; height:45px; border:unset;  border-radius:unset;  bottom: 0px;}
+.WeofferBotleftContentBot p{ color: #9d9d9d; font-size: 17px; padding-top: 13px; line-height: 23px; }
+.WeofferBotleftContentBot p span{ display:block;}
+.WeofferMid figure img{ width:100%;}
+.WeofferBotleftContentTop figure{ padding-right: 4%; display: inline-block; float: left;}
+.WeofferBotleftContentBot{ padding-top:14px;}
+.WeofferBotleftSub{ padding-bottom: 25px; min-height:220px; overflow: hidden;}
+.WeofferBotleftContentTop h2{ font-family: open sans, serif; font-size: 22px; color: #000; padding-top:30px; }
+.WeofferBotleftExam p{ color: #9d9d9d; font-size: 17px; padding-top:15px; line-height:23px; }
+.WeofferBotleftJobFair p{ color: #9d9d9d; font-size: 17px; padding-top:15px; line-height:23px; }
+.content-quality{float:left;width:193px;}
+.content-quality p{margin-left:10px; font-family:'Open Sans', sans-serif; font-size:14px;font-weight:600;line-height:17px;}
+.content-quality p span{display:block;}
+.tabtop li a{ font-family:'Lato', sans-serif;font-weight:700;color:#1b2834; border-radius:0px;
+ border:1px solid #ebebeb !important;}
+.tabsetting{ width:260px; margin: 0 auto !important; text-align: center; border-bottom:unset !important; }
+.tabtop li a:hover{color:#e31837 !important;text-decoration:none;}
+.tabtop .active a:hover{color:#fff !important;}
+.tabtop .active a{background-color:#000 !important;color:#FFF !important;}
+.margin-tops{margin-top:30px;}
+.tabtop li a:last-child{ background:#fff; padding: 15px 30px; }
+.thbada{padding:10px 28px !important;}
+.tabsetting>li>a:focus, .tabsetting>li>a:hover{  text-decoration: none; background-color:#000;}
+.services{background-color:#d4d4d4;min-height:710px;padding:65px 0 27px 0;}
+.services a:hover{color:#000;}
+.services h1{margin-top:0px !important;}
+.heading-container p{ font-family:'Open Sans', sans-serif; text-align:center; font-size:16px !important; 
+text-transform:uppercase;}
+.choosefutureManage{ box-shadow: #efefef 0 0 6px; transition:all 1s ease; min-height:100px; overflow:hidden;
+ border:#e2e2e2 solid 1px; text-align:center; padding:30px 0;}
+.choosefutureManage h2{ font-family:'Open Sans', sans-serif; font-size:18px; text-transform:uppercase;
+ color:#000; padding-top:10px; font-weight: 600; }
+.choosefutureManage p{ font-family:'Open Sans', sans-serif; font-size:18px; color:#c7c6c6; line-height:0px; }
+.choosefutureManage:hover{ cursor:pointer; transform:scale(1.1,1.1); box-shadow:#fff 0 0 6px;}
+.CoursesExamMain{ background:url(/assets/images/homepage/exams-courses-bg.png) left top no-repeat;background-size:cover;}
+.CoursesExamTop{ margin:0px !important; padding:0px !important; }
+.viewMore a{ display:block; text-align:center; line-height:45px; background:#000;
+ font-size:16px; color:#fff; height: 45px; width:19%; margin:0 auto; border-radius:4px; text-decoration:none; }
+.CoursesExamLeft{  background:rgba(251, 99, 61, 0.9); }
+.CoursesExamRight{  background:rgba(61, 71, 84, 0.9); }
+.CoursesExamLeftTopContent h2{ font-family:open sans, serif; font-size:30px; color:#fff; font-weight:700; }
+.CoursesExamLeftBotContent h2{ font-family:open sans, serif; color:#fff; font-size:20px; } 
+.CoursesExamLeftBotContent h3{ font-family:open sans, serif; color:#fff; font-size:18px; } 
+.CoursesExamLeftBotContent p{ font-family:open sans, serif; color:#fff; font-size:16px; } 
+.ViewtestimonialMain{ min-height:300px; border:#ebebeb solid 1px; border-radius:5px; padding:30px 7% 50px; }
+.ViewtestimonialMain h5{ font-family:open sans, serif; color:#000; font-size:16px; line-height:24px; }
+.testireview{ margin-left: 20%; padding-top: 1px;}
+.testireview h2{ color:#000; font-size:16px; margin-top:10px;}
+.testireview p{ color:#d6d6d6; font-size:14px; line-height:0px; }
+.TopCollegesBot{ width: 100%; text-align: center; margin: 0 auto; }
+.TopCollegesBotTab{ border-bottom:unset !important;  }
+.TopCollegesBotTab li{ float:unset !important; display:inline !important;}
+.TopCollegesBotTab li a{ font-family:open sans, serif; font-size:22px; background:unset !important; border:unset !important;
+ display:inline-block !important; color:#000; font-weight:600; }
+.TopCollegesBotContent{ overflow: hidden;    position: relative; border:#e2e2e2 solid 1px;}
+.TopCollegesBotContent figure img{ width:100%; -webkit-transition: transform 0.5s ease;
+    -o-transition: transform 0.5s ease;
+    transition: transform 0.5s ease; }
+.TopCollegesBotContent figure:hover img{ 
+    -moz-transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1); }
+
+.TopCollegesBotContent p{ color: #9d9d9d; font-size: 15px; padding: 20px 5%;  text-align: left !important;
+ line-height: 28px;}
+.TopCollegesBotTab>li.active>a, .TopCollegesBotTab>li.active>a:focus, .TopCollegesBotTab>li.active>a:hover {
+    color: #f00 !important; cursor: default;  background-color: #fff;  border: 1px solid #ddd; border-bottom-color: transparent;}
+.footerabout ul li, .admissionContentTop ul li, .admissionContentBot ul li, .search-collegeApply ul li{ display:inline; }
+.footerabout p, .footernewsletterTop p{ font-family:open sans, serif; font-size:15px; color:#c3c3c3; }
+.footerabout ul li a{ display:inline-block; color:#c3c3c3;  font-size:20px; margin-right:7%;}
+.footerabout h2, .footercourses h2, .footernewsletterTop h2{ font-family:open sans, serif; font-size:20px; color:#c3c3c3; font-weight:600;  }
+.footercourses ul li a{ font-family:open sans, serif; font-size:16px; color:#c3c3c3; line-height:35px;  }
+.footernewsletterBot{ background: #fff; border-radius: 5px; padding: 0px; width: 99%; }
+.StayDateInput {padding-top: 5px;  font-size: 14px; color: #333333; margin-top: 5px; width: 75% !important;  float: left; border: unset !important;  box-shadow: unset !important; border-radius: 5px !important; height: 40px; border-right: unset;}
+.StayDateInput:focus{ border-color:unset !important; box-shadow:unset !important;}
+.StayDateButton { width: 25% !important; background: #d40d12 !important; border: unset !important; box-shadow: unset !important; font-size: 14px; height: 45px;}
+/*end header css*/
+
+/*search college in india start*/
+.searchindiaMain{ background:url(/assets/images/search-college/bg-college-in-india.png);
+ background-size:cover; padding:120px 0px; }
+.searchindiaTop h2{ font-family: open sans, serif; font-size: 33px; text-align: center; color: #fff; text-transform: uppercase; font-weight: 600; }archindiaBotRight{  box-shadow: #f6f6f6 0 0 15px;  padding: 18px 2%; }
+.admissionContentTop h2{ font-family:open sans, serif; font-size:17px;  margin: 0px; color:#7d7d7d;font-weight:600; }
+.admissionContentTop ul, .admissionContentBot ul, .search-collegeApply ul, .exploreCategorybotRightBot ul, .exploreCategorybotRightDesign
+{ list-style:none; padding:0px; margin:0px; }
+.admissionContentTop ul li a i{ color:#f37921; font-size:18px; }
+.admissionContentTop ul li a i.active{ color:#d5d5d5; }
+.admissionContentTop h3{ font-family:open sans, serif; font-size:17px;  margin: 0px; color:#7d7d7d;
+ padding-top:2px;}
+.admissionContentBot ul li a{ color:#7d7d7d; font-size:16px; }
+.admissionContentBot p{ font-family: open sans, serif; font-size: 15px; color: #7d7d7d; font-weight: 800;}
+.search-collegeApply ul li a{ display: inline-block; text-decoration: none; background: #f37921;
+    font-size: 19px; color: #fff;  width: 47%; height: 35px;  text-align: center; line-height: 35px;  margin-right: 2%;}
+.hrbrdr{ border-bottom:#eeeeee solid 1px !important; margin:20px 0px !important; border-top:unset !important; }
+.behclick-panel  .list-group {margin-bottom: 0px;	}
+.behclick-panel .list-group-item:first-child {	border-top-left-radius:0px;	border-top-right-radius:0px;}
+.behclick-panel .list-group-item {border-right:0px;border-left:0px;}
+.behclick-panel .list-group-item:last-child{ border-bottom-right-radius:0px; border-bottom-left-radius:0px;	}
+.behclick-panel .list-group-item {	padding: 5px;}
+.behclick-panel .panel-heading { border-top-right-radius: 0px;	border-top-left-radius: 0px;border-bottom:unset;}
+.behclick-panel .panel-heading:last-child{	/* border-bottom: 0px; */	}
+.behclick-panel {border-radius: 0px;	border-right: 0px;	border-left: 0px;border-bottom: 0px;box-shadow: 0 0px 0px rgba(0, 0, 0, 0);	}
+.behclick-panel .radio, .checkbox {	margin: 0px;	padding-left: 10px;	}
+.behclick-panel .panel-title > a, .panel-title > small, .panel-title > .small, .panel-title > small > a, .panel-title > .small > a {
+			outline: none;	}
+.behclick-panel .panel-body > .panel-heading{padding:10px 10px;}
+.behclick-panel .panel-body {padding: 0px;}
+.behclick-panel a:link {  text-decoration:none;}
+.behclick-panel a:visited { text-decoration:none;}
+.behclick-panel a:hover{ text-decoration:none;}
+.behclick-panel a:active {text-decoration:none;}
+.searchindiaselect{  border:#eeeeee solid 1px !important; margin-bottom:10px;}
+.searchindiatitle a{ display:block; color:#000; font-size:16px; }
+.searchindiatitle a i{ float:right; padding-top:5px;}
+.selectlistGroup{ border:unset !important; }
+.selectlistCheckbox{ padding-left:0px; padding-top:10px;}
+.span_pseudo, .chiller_cb span:before, .chiller_cb span:after { content: "";  display: inline-block; background: #fff; width: 0; height: 0.2rem; position: absolute; transform-origin: 0% 0%;}
+.chiller_cb {  position: relative; height: 3rem; display: flex; align-items: center;}
+.chiller_cb input { display: none;}
+.chiller_cb input:checked ~ span { background: #fd2727; border-color: #fd2727;}
+.chiller_cb input:checked ~ span:before { width: 1rem; height: 0.15rem; transition: width 0.1s; transition-delay: 0.3s;}
+.chiller_cb input:checked ~ span:after { width: 0.4rem; height: 0.15rem; transition: width 0.1s; transition-delay: 0.2s;}
+.chiller_cb input:disabled ~ span { background: #ececec; border-color: #dcdcdc;}
+.chiller_cb input:disabled ~ label { color: #dcdcdc;}
+.chiller_cb input:disabled ~ label:hover { cursor: default;}
+.chiller_cb label { padding-left: 2rem; position: relative; z-index: 2;
+ cursor: pointer; margin-bottom:0; line-height: 17px; margin-top: 2px; height:18px;}
+.chiller_cb span { display: inline-block; width: 1.2rem; height: 1.2rem; border: 1px solid #ccc; position: absolute;
+  left: 0; transition: all 0.2s; z-index: 1;  box-sizing: content-box;}
+.chiller_cb span:before { transform: rotate(-55deg);  top: 1rem; left: 0.37rem;}
+.chiller_cb span:after {  transform: rotate(35deg); bottom: 0.35rem; left: 0.2rem;}
+.selectmyCheckbox{  display: block;  width: 100%; font-family:'Open Sans', sans-serif; font-size:13px; color:#7b7b7b !important; font-weight:500; }
+.searchindiaAccd{ border:unset !important; }
+.search-collegeApply{ padding-top:90px; }
+.selectCollapse{ padding-bottom:10px; }
+/*end search college in india*/
+
+/*govt exams start*/
+.examsentranceTop{ background:url(/assets/images/govt-exams/govt-entrance-bg.png); background-size:cover; }
+.examsentranceInput{ font-family:'Open Sans', sans-serif; width:65%; height:70px; background:#fff; margin:0 auto; }
+.examsentrancesearchIcon{ font-size:35px; color:#b2b2b2; padding-top:15px; -webkit-text-stroke: 1px white; }
+.examsentranceBoT h2{ font-family:'Open Sans', sans-serif; font-size:32px; color:#000000;
+text-transform:uppercase; }
+.entranceDateInput{ font-family:'Open Sans', sans-serif; padding-top: 5px; font-size: 14px; color: #333333;  margin-top: 5px;  width: 90% !important;  float: left;  border: unset !important;
+ box-shadow: unset !important;  border-radius: 5px !important; height: 62px !important; border-right: unset; }
+.exploreCategoryTop h2{ font-family:'Open Sans', sans-serif; font-size:35px; color:#000000;
+text-transform:uppercase; font-weight:700;}
+.exploreCategoryTop p{ font-family:'Open Sans', sans-serif; font-size:18px; font-weight:600; color:#000000;
+text-transform:uppercase;}
+.exploreCategorybot{ box-shadow: #e2e2e2 0 0 3px; border:transparent solid 1px;  z-index: 999; overflow: hidden; min-height:350px; }
+.exploreCategorybotleft{ overflow:hidden; min-height:510px; border-right:#f6f6f6 solid 2px; text-align:center; }
+.exploreCategorybotleft h3{ font-family: 'Open Sans', sans-serif;
+    font-size: 14px;  font-weight: 600; color: #38404f;  line-height: 23px;}
+.exploreCategorybotRight p{ font-family:'Open Sans', sans-serif; font-size:16px;color:#b9b9b9; line-height:30px; }
+.exploreCategorybotRightBot ul li a{ display: inline-block; color: #fff; background: #ea881c; font-size: 18px;
+  text-align: center; height: 42px;  margin-right: 1%; border-radius: unset;}
+.exploreCategorybotRightDesign ul li a{ display: inline-block; color: #fff; background: #ea881c; font-size: 18px;
+ text-align: center; height: 42px;  margin-right: 1%; border-radius: unset; }
+.popupContent{ background:url(/assets/images/homepage/loginpopup-bg1.png); }
+.modalLoginRegister{ width: 480px !important; margin: 30px auto !important;}
+@media screen and (max-width: 600px) {
+  .modalLoginRegister{ width: auto !important; margin: 30px auto !important;}
+}
+.close { color: white;  float: right;  font-size: 28px; font-weight: bold;}
+.popupheader{ border-bottom:unset !important; }
+.popupheaderBtn{ color:#000 !important; padding:10px !important;}
+.popupNavtab{ border-bottom:unset !important; }
+.login_btn_click{ background: #d40d12;  padding: 6px 25px; color: #FFF; font-size: 15px; border: unset;}
+.loginer_btGroups{ margin-left:0px !important; margin-right:0px !important;}    
+.popupModelbdy{ padding:unset !important;}
+.popupheaderRight{ padding:10px !important; }
+.forgot_pass{ font-family:'Open Sans', sans-serif; font-size:16px; color:#000; 
+text-decoration:none;}
+.popupNavtab li a{ text-transform:uppercase; font-weight:600; font-size:18px; padding:10px 30px 0 0;}
+.popupNavtab li.active>a, .popupNavtab li.active>a:focus, .popupNavtab li.active>a:hover{ 
+  background-color: unset !important;  border: unset !important;  color:#d40d12 !important; font-family:'Open Sans', sans-serif; font-weight: 700 !important;
+    font-size: 18px; }
+.popupNavtab li a:hover{ background-color:unset; border:unset; border-color: unset !important; }
+.govtexamDetailTop{ background:url(/assets/images/govt-exams/govt-detail-bg.png); background-size:cover; }
+.govtexamDetailNav{ border-bottom:unset; }
+.govtexamDetailNav li.active>a, .govtexamDetailNav li.active>a:focus,
+.govtexamDetailNav li.active>a:hover{  background-color:#d40d12 !important; color:#fff;
+ border-bottom-color:unset; }
+
+.govtexamDetailNav>li>a:focus, .govtexamDetailNav>li>a:hover{ text-decoration: none;
+ background-color:#eee;}
+
+.govtexamDetailNav li a{ display: block; background-color:#eee !important; color:#000;
+ font-size:14px; font-weight:500; text-transform:uppercase;  height: 40px; line-height: 40px; text-align: center;}
+.govtexamDetailNav li a:hover{ border-bottom:unset !important; }
+.overviewLeft p{ font-family:'Open Sans', sans-serif; font-size:15px; font-weight:500; color:#828080; }
+.overviewRight a{  display: block; background-color: #ff7900; text-align: center;  color: #fff;
+font-family: 'Open Sans', sans-serif; font-size: 16px; text-decoration: none; height: 45px; 
+line-height: 45px; font-weight: 500;  text-transform: uppercase; }
+.govtexamListTop{ background:url(/assets/images/govt-exams/govt-list-bg.png);
+ background-size:cover; padding:80px 0px;}
+.searchindiaBotNotifi{ box-shadow: #e2e2e2 0 0 5px; min-height: 400px;}
+.notificationTop{ background-color:#ff7900; padding-left:15px; padding-top:4px; line-height:40px; height:40px; }
+.notificationTop h2{ font-family:'Open Sans', sans-serif; font-size:15px;
+ font-weight:500; color:#fff; text-transform:uppercase; margin:0px;}
+.notificationBot h2{ padding-left:15px; font-family:'Open Sans', sans-serif; 
+font-size:15px; font-weight:500; color:#000; margin-top: 24px;  margin-bottom: 0px;}
+.notificationBot p{ padding-left:15px;  font-family:'Open Sans', sans-serif; font-size:15px; font-weight:500; color:#9d9d9d; margin:0px; }
+.detailCoursemain{ box-shadow:#e2e2e2 0 0 5px;  }
+.detailCoursetop{ background-color: #ff7900;}
+.detailCoursetop h2{ padding-left:13px; font-family:'Open Sans', sans-serif; font-size:15px;
+ font-weight:500; color:#fff; margin:0px; }
+.detailCoursebot{ padding:15px 13px;}
+.detailApplyNow a{ display: block; text-transform: uppercase; font-family: 'Open Sans', sans-serif; 
+font-size: 14px; font-weight: 600; color: #000; border-radius:50px; border:#ff7900 solid 1px; 
+height: 33px;
+line-height: 31px; text-align: center; text-decoration: none; }
+.detailApplyNow a:hover{ background:#ff7900; color:#fff;}
+.detailCoursebotIcon a i{ font-size:35px; }
+.detailCoursebotIcon a:focus, .detailCoursebotIcon a:hover{ color:unset !important;}
+.detailCoursebotContent a{ text-decoration:none !important; }
+.detailCoursebotContent a> h2{ font-family:'Open Sans', sans-serif; font-size:20px;
+ font-weight:500; color:#000; margin:0px; }
+.detailCoursebotContent a> p{ font-family:'Open Sans', sans-serif;  font-size:15px;
+ font-weight:500; color:#c1c1c1; margin:0px;}
+.detailCoursemainTop{ box-shadow:#e2e2e2 0 0 5px; padding: 20px 2%; }
+.applicationCome a{ display: block; width: 100%;height: 36px; line-height: 36px; text-align: center;
+    color: #fff; background: #ff7900;  text-decoration: none; font-size: 13px;}
+.appFormExam h2{ font-family:'Open Sans', sans-serif; font-size:15px;
+ font-weight:500; color:#000; margin:0px; }
+.appFormExam p{ font-family:'Open Sans', sans-serif; font-size:14px;
+  color:#ff7900; font-weight:600; }
+.appProcess ul li{ display:inline; padding-right:3%; }
+.appProcess ul li a{ display:inline-block; font-family: 'Open Sans', sans-serif; 
+font-size: 14px; font-weight: 600; color: #000; }
+.appProcess ul li a.active{  font-weight: 600; border-radius: 88.9px;  border: 1px solid #d6d6d6;
+    padding: 3px 10px;  margin-bottom: 5px;  text-decoration: none; background-color: #ff7900;  color: #fff;}
+/*end govt exams*/
+.border-radius15{border-radius: 15px !important;}
+.word-break-text{word-break: break-word;}
+/*end search college in india*/
+
+/*choose stream start*/
+.chooseStreamMain{ background:#f1f1f1; }
+.chooseStreamTop{  box-shadow: #e2e2e2 0 0 15px;  padding: 20px 4%;  margin: 41px;  background: #fff; }
+.choosestreamScience h2{ font-family: 'Open Sans', sans-serif;
+ font-size: 22px; font-weight: 500; color: #000;}
+.choosestreamScience h2 span{ color:#d40d12;     font-size: 21px; } 
+.choosestreamScience h2 a{ text-decoration:none; font-family:'Open Sans', sans-serif;
+ font-size:16px; font-weight:500; color:#000; }
+.chooseWhatNext h2{ font-family:'Open Sans', sans-serif; font-size:23px;
+ font-weight:700; color:#000; margin: 0px 0 15px; }
+.chooseWhatNext p{ font-family:'Open Sans', sans-serif; font-size:17px;
+ font-weight:600; color:#555; line-height:10px; }
+ .mechBusiness h2{ font-family: 'Open Sans', sans-serif; font-size: 19px; color: #000; font-weight: 700; margin: 0px; line-height: 21px; }
+ .mechBusiness p{ font-family:'Open Sans', sans-serif; font-size:15px;
+ color:#555; font-weight:normal; margin:0px; }
+.selectmyCheckboxOne{ font-family:'Open Sans', sans-serif; font-size:20px;
+ font-weight:500; color:#000; }
+.yourSelectionRight{ border:#eee solid 1px; box-shadow:#eee 0 0 5px;     border: #eee solid 1px;
+ box-shadow: #eee 0 0 5px; padding: 30px 10%; }
+.yourSelectionTop h2{ font-family:'Open Sans', sans-serif; font-size:20px;
+ font-weight:600; color:#d40d12; }
+.yourSelectionChoice h3{ font-family:'Open Sans', sans-serif; font-size:16px;
+ font-weight:500; color:#000; }
+.yourSelectionbox{width: 240px; height: 150px; padding: 2px; border: 2px dashed #cdcdc4; position: relative; margin-bottom: 2px; }
+.yourSelectioncontinue a{ display: block; text-decoration:none; background: #f37921; font-family: 'Open Sans', sans-serif; font-size: 16px; font-weight: 500; color: #fff; height: 40px; line-height: 40px;text-align: center; width: 50%; margin: 0 auto;}
+.mechBusiness ul li a{ font-family:'Open Sans', sans-serif; font-size:16px;
+ font-weight:normal; color:#000;  line-height: 27px;}
+.mechBusiness ul li a span{ font-family:'Open Sans', sans-serif; font-size:16px;
+ font-weight:600; color:#d40e13; }
+.selectMoreAbout{ margin-top:20px; }
+.selectMoreAbout a{ background: #f37921; font-family: 'Open Sans', sans-serif;
+ font-size: 16px; font-weight: normal; color: #fff; border-radius:unset; }
+.liketweet ul li{ display:inline; }
+.liketweet ul li a{ display: inline;color: #fff; font-size: 15px; background: #0077f5;  padding: 4px 2%;  margin-right: 5px;}
+.liketweet p{ font-family:'Open Sans', sans-serif; font-size:14px;
+ color:#000; margin-top:15px;}
+.jobProfileTop h2{ font-family: 'Open Sans', sans-serif; font-size: 23px;  color: #000; font-weight: 600;} 
+.jobProfileRight h2{ font-family: 'Open Sans', sans-serif; font-size: 20px; color: #000; line-height:27px;  font-weight: 600;} 
+.jobProfileRight ul li a{ font-family: 'Open Sans', sans-serif; font-size:17px; color:#000;   }
+
+.jobSkillReq{ background:rgba(255, 248, 190, 0.5); padding:15px;}
+.jobProfileRight p{ font-family: 'Open Sans', sans-serif; font-size:14px; color:#000; padding-top:15px;  }
+.jobSkillReq ul li a{ font-family: 'Open Sans', sans-serif; font-size:16px; color:#000;  line-height: 40px;  }
+.jobSkillReq ul li a i{ font-size:16px; color:#0e9709;  }
+.jobTopCollege h2{ font-family: 'Open Sans', sans-serif; font-size:18px; color:#000; font-weight:600; margin:0px;}
+.jobTopCollege p{ font-family: 'Open Sans', sans-serif; font-size:16px; color:#000; }
+
+table tr td { color: #000; text-align: left;
+    background-color: #fff; border: 1px solid #003d5c; font-size:15px;  padding: 2px 8px 6px;line-height: 15px;}
+.jobTopCollege ul li a{ font-family: 'Open Sans', sans-serif; font-size:16px; color:#000; }
+.bExamresultRight{  border: 1px solid #e6e6e6; padding-bottom:20px; }
+.bExamresultRight h2{ text-align:center; border-bottom:1px solid #a5a5a5; font-family: 'Open Sans', sans-serif;
+ font-size:16px; color:#000; }
+.bExamresultRight ul li a{  font-family: 'Open Sans', sans-serif;
+font-size: 14px; color: #000; margin: 0px 8%; display: block; line-height: 40px; border-bottom: 1px solid #e6e6e6; }
+.bExamresultRight ul li a i{ color:#f5ab0d; padding-top: 15px; }
+.bExamresultRight ul li a:last-child{ border-bottom:none;}
+/*end choose stream*/
+
+.search_text{padding:9px 10px 0;}
+.pagination>li>a, .pagination>li>span{min-width:35px; width:auto;height:34px;padding:5px 10px;border:1px solid #c8c8c8;background:none;font-size:14px !important:;}
+.pagination li a:hover{background:#d40d12;border-color:unset;color:#fff;}
+.pagination > .active > a{background:#fff;color:#000;border-color:unset; padding-top: 8px; }
+.pagination > .active > a:hover{border-color:#fff;background-color: #d40d12;}
+.input_right_text{font-family:'Nunito', sans-serif;margin:20px 0 40px;}
+.input_right_text ul{list-style:none;padding:0px;margin:0px;}
+.input_right_text ul li{float:left;color:#1e1e1e;font-size:12px;font-weight:700;}
+.fa-caret-left, .fa-caret-right {padding:5px 5px !important; font-size: 14px !important;}
+
+.exploreCategorybotRight{ height:500px;  overflow: hidden;  position: relative; }
+.exploreCategorybotRightDesign{ position:absolute; bottom:0px; }
+.detailexamUpcoming{ min-height: 280px; box-shadow: #e2e2e2 0 0 5px; min-height: 400px;}
+
+.navigationTopNav ul li{ position:relative;  padding:0 0px; /*transition: all 2s ease;*/}
+.navigationTopNav ul li a{ display:block !important; text-decoration:none; color:#000; text-transform:capitalize; 
+ }
+.navigationTopNav ul li .dropdownmenu{  width:91%; z-index:998;
+ position:fixed; left:0px; display:none;}
+.navigationTopNav ul li .dropdownmenu .container{ position:absolute;
+right: 0px; width: 66%; line-height:50px; background:#eee;  }
+.navigationTopNav ul li:hover .dropdownmenu{ display:block;}
+.navigationTopNav ul li a>i{  transition: all 1s ease; }
+.navigationTopNav ul li:hover i{ transform: rotate(180deg);  }
+.navigationTopNav ul li .dropdown-toggle:after{ transition:all 1s ease;}
+.navigationTopNav ul li:hover .dropdown-toggle:after{ transform:rotate(180deg);}
+.dropdownNavTabMain{ padding:0px;}
+
+/*Dropdown start*/
+.dropdownNavTabMain{  display: flex;  flex-wrap: wrap; }
+.dropdownNavTab{ position: relative; background: #fff;  width:245px; float: left; }
+.dropdownNavTabContent{ width: calc(100% - 245px);
+   float: left; padding:8px 0 0px 18px; background-color: unset;  border: unset;}
+.dropdownNavTab li{ width: 245px; display:inline; padding:0px 0 0 15px !important; /*transition:all 2s ease;*/ }
+.dropdownNavTab li a{ display:block !important; font-family: 'Open Sans', sans-serif; color:#000 !important; font-size:12px !important;
+ display:inline-block !important;  line-height: 30px;
+ border:unset !important; font-weight: 600 !important;
+ box-shadow:unset !important; padding:0px !important; background:#f0f !important; }
+.dropdownNavTab li:hover, .dropdownNavTab li.active{ border-left:#f00 solid 2px;  
+ background:#eee !important; color:#f00 !important; margin-bottom:5px; }
+.dropdownNavTab li i{ width:100%; font-size:14px !important; position: absolute; right: 0px; top: 19px;  }
+.dropdownNavTabContentBot ul li a{ display:block; line-height:30px; font-size:12px !important; color:#666; font-weight: normal; }
+.dropdownNavTabContentBot ul li a:hover{ color:#000; }
+.submenutext{  font-family: 'Open Sans', sans-serif; display:block;  line-height:30px !important;
+ font-size:13px !important; color:#666; font-weight: normal !important; }
+
+ .exploreCategorybotRightDesign a{ margin:0px 2% 5px;}
+ .exploreCategorybot:hover{ box-shadow:#e2e2e2 0 0 15px; border:#d40d12 solid 1px;}
+
+
+
+ @media screen and (max-width: 991px)
+
+ {
+  #top-bar ul.navbar-main li{ font-size:10px !important; }
+ }
+
+  
+  .input-main-select{ padding-top: 1px; float: left; padding-right:2%; margin-bottom:0px; cursor: pointer;}
+  .input-top-select{ font-weight:inherit; margin-bottom:0px; cursor: pointer;}
+  .ft-content span{ margin-bottom:0px; }
+  .ft-checkbox
+
+
+.fontSize10{font-size:10px !important;}
+.fontSize11{font-size:11px !important;}
+.fontSize12{font-size:12px !important;}
+.fontSize13{font-size:13px !important;}
+.fontSize14{font-size:14px !important;}
+.fontSize15{font-size:15px !important;}
+.fontSize16{font-size:16px !important;}
+.fontSize17{font-size:17px !important;}
+.fontSize18{font-size:18px !important;}
+.fontSize19{font-size:19px !important;}
+.fontSize20{font-size:20px !important;}
+.fontSize21{font-size:21px !important;}
+.fontSize22{font-size:22px !important;}
+.fontSize23{font-size:23px !important;}
+.fontSize24{font-size:24px !important;}
+.fontSize25{font-size:25px !important;}
+.fontSize30{font-size:30px !important;}
+.fontSize35{font-size:35px !important;}
+.fontSize40{font-size:40px !important;}
+.fontSize45{font-size:45px !important;}
+.fontWeight500{font-weight:500 !important;}
+.fontWeight600{font-weight:600 !important;}
+.fontWeight700{font-weight:700 !important;}
+.fontWeight900{font-weight:900 !important;}
+.textColorBlack{color:#1e1e1e !important;}
+.textDecoration{text-decoration:none !important;}
+.textEduMela{color: #f13e58 !important;}

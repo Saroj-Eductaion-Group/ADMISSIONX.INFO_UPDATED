@@ -1,0 +1,55 @@
+<?php echo Html::style('assets/css/bootstrap/css/bootstrap.min.css'); ?>
+
+<?php echo Html::style('assets/css/style.css'); ?>
+
+<?php echo Html::style('assets/css/animate.css'); ?>
+
+<?php echo Html::style('assets/css/line-icons/line-icons.css'); ?>
+
+<?php echo Html::style('assets/css/font-awesome/css/font-awesome.min.css'); ?>
+
+<?php echo Html::style('assets/css/parallax-slider/css/parallax-slider.css'); ?>
+
+<?php echo Html::style('assets/css/owl-carousel/owl-carousel/owl.carousel.css'); ?>
+
+<?php echo Html::style('assets/css/app.css'); ?>
+
+<?php echo Html::style('assets/css/blocks.css'); ?>
+
+<?php echo Html::style('assets/css/bootstrap/css/new-custom-style.css'); ?>
+
+<?php echo Html::style('assets/css/bootstrap/css/responsive-custom-style.css'); ?>
+
+<?php echo Html::style('assets/css/bootstrap/css/owl.carousel.min.css'); ?>
+
+<?php echo Html::style('assets/css/bootstrap/css/owl.theme.default.min.css'); ?>
+
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.min.css">
+<?php echo Html::style('home-layout/assets/plugins/login-signup-modal-window/css/style.css'); ?>
+
+<?php echo Html::style('home-layout/assets/plugins/brand-buttons/css/brand-buttons.min.css'); ?>
+
+<?php echo Html::style('/home-layout/assets/css/homeLayoutCustom.css'); ?>
+
+<?php echo Html::style('assets/css/customstyle.css'); ?>
+
+<!-- magnific-popup -->
+<?php echo Html::style('assets/plugins/magnific-popup/magnific-popup.css'); ?>
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<?php echo Html::style('assets/plugins/sky-forms-pro/skyforms/css/sky-forms.css'); ?>
+
+<?php echo Html::style('assets/plugins/sky-forms-pro/skyforms/custom/custom-sky-forms.css'); ?>
+
+<?php echo Html::style('assets/css/chosen/chosen.css'); ?>
+
+<?php echo Html::style('assets/administrator/css/parsley.css'); ?>
+
+<!-- <?php echo Html::script('home-layout/assets/js/jquery-ui/jquery-ui.min.js'); ?> -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+ <?php echo Html::style('/new-assets/css/main.css'); ?>
+
+<?php echo $__env->yieldContent('styles'); ?>

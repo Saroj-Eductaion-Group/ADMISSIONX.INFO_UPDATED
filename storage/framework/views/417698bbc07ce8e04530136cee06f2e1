@@ -1,0 +1,197 @@
+<div class="header-section"></div>
+<div class="header-bg-section">
+    <?php if(sizeof($getCollegeDetailObj) > 0): ?>
+        <?php foreach( $getCollegeDetailObj as $item ): ?>
+            <?php if( $item->bannerimage != '' ): ?>
+                <img src="<?php echo e(asset('/gallery')); ?>/<?php echo e($slugUrl); ?>/<?php echo e($item->bannerimage); ?>" alt="<?php echo e($collegeFullName); ?> logo" style="max-width: 100%;">
+            <?php else: ?>
+                <img src="/new-assets/img/schools-in-dehradun-ecole.jpg" alt="<?php echo e($collegeFullName); ?> logo" style="max-width: 100%;">
+            <?php endif; ?>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</div>
+<div class="header-wrapper d-flex">
+    <div class="listing-logo">
+        <?php if(sizeof($getCollegeLogoObj) > 0): ?>
+            <?php foreach( $getCollegeLogoObj as $logoObj ): ?>
+                <?php if(file_exists(public_path().'/gallery/'.$slugUrl.'/'.$logoObj->galleryName)): ?>
+                    <?php if( $logoObj->galleryName != '' ): ?>
+                        <img src="<?php echo e(asset('/gallery')); ?>/<?php echo e($slugUrl); ?>/<?php echo e($logoObj->galleryName); ?>" alt="<?php echo e($collegeFullName); ?> logo">
+                    <?php else: ?>
+                        <img src="/new-assets/img/school.png" alt="<?php echo e($collegeFullName); ?> logo">
+                    <?php endif; ?>
+                <?php else: ?>
+                    <img src="/new-assets/img/school.png" alt="<?php echo e($collegeFullName); ?> logo">
+                <?php endif; ?>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <img src="/new-assets/img/school.png" alt="<?php echo e($collegeFullName); ?> logo">
+        <?php endif; ?>
+    </div>
+
+    <div class="listing-content">
+        <a href="#">
+            <h3><?php echo e($collegeFullName); ?></h3>
+        </a>
+        <div class="review-star">
+            <ul class="list-unstyled list-inline">
+                <li class="nomargin-nopadding "><p class="tooltips" data-toggle="tooltip" data-placement="right" title="Rating <?php echo e($ratingStar); ?>/5 This College"><?php echo e($ratingStar); ?>/5 </p></li>
+                <li class="nomargin-nopadding"><i id="showRateCounter"></i></li>
+                <?php if($totlaUserRating > 0): ?>
+                <li class="nomargin-nopadding tooltips" data-toggle="tooltip" data-placement="right" title="Based On <?php echo e($totlaUserRating); ?> Student Ratings Claim This College">Based On (<?php echo e($totlaUserRating); ?>) Student</li>
+                <?php endif; ?>  
+            </ul>
+        </div>
+        <?php if(sizeof($fetchCollegeSocialMediaLinks) > 0): ?>
+        <div class="school-social-link">
+            <?php foreach( $fetchCollegeSocialMediaLinks as $key => $item): ?>
+                <?php if(!empty($item->url) && $item->isActive == 1): ?> 
+                    <?php if($item->other == 'Facebook'): ?>
+                        <a title="Facebook" href="<?php echo e($item->url); ?>" target="_blank"  alt="<?php echo e($item->other); ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    <?php endif; ?>
+                    <?php if($item->other == 'Twitter'): ?>
+                        <a title="Twitter" href="<?php echo e($item->url); ?>" target="_blank" alt="<?php echo e($item->other); ?>"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <?php endif; ?>
+                    <?php if($item->other == 'Instagram'): ?>
+                        <a title="Instagram" href="<?php echo e($item->url); ?>" target="_blank" alt="<?php echo e($item->other); ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <?php endif; ?>
+                    <?php if($item->other == 'Pinterest'): ?>
+                      <a title="Pinterest" href="<?php echo e($item->url); ?>" target="_blank" alt="<?php echo e($item->other); ?>"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                    <?php endif; ?>
+                    <?php if($item->other == 'Linkedin'): ?>
+                        <a title="Linkedin" href="<?php echo e($item->url); ?>" target="_blank" alt="<?php echo e($item->other); ?>"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <?php endif; ?>
+                    <?php if($item->other == 'Youtube'): ?>
+                        <a title="Youtube" href="<?php echo e($item->url); ?>" target="_blank" alt="<?php echo e($item->other); ?>"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+                    <?php endif; ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
+            <div class="pull-right">
+                <div class="fb-share-button" data-href="<?php echo e(env('APP_URL')); ?>/college/<?php echo e($slugUrl); ?>" data-layout="button" data-size="large" data-mobile-iframe="true">
+                    <a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F<?php echo e($slugUrl); ?>&amp;src=sdkpreparse"><img src="/home-layout/assets/img/icons/other/share-on-facebook.png"></a>
+                </div>
+            </div>
+        </div>
+        <?php endif; ?>
+
+        <?php if(Auth::check()): ?>
+            <?php /**/  
+                $getTheRoleStatus = DB::table('users')->where('id', '=', Auth::id())->select('userrole_id', 'userstatus_id')->take(1)->get();
+            /**/ ?>
+            
+            <?php if( $getTheRoleStatus[0]->userrole_id == '3' ): ?>
+                <?php if( $getTheRoleStatus[0]->userstatus_id == '1' ): ?>
+                    <div class="applynow"> 
+                        <a class="btn-ApplyNow collegeProfileApplyNowBtn padding-right10" href="#courses">Apply Now</a>
+
+                        <a class="btn-ApplyNow" data-toggle="modal" data-target="#queryStutoColModel" data-whatever="" href="javascript:void(0);"><i class="fa fa-envelope"></i> Quick Inquiry</a>
+                    </div>
+                <?php endif; ?>
+            <?php endif; ?>
+        <?php else: ?>
+            <div class="applynow"> 
+                <a class="btn-ApplyNow collegeProfileApplyNowBtn padding-right10" href="#courses">Apply Now</a>
+                <a href="<?php echo e(URL::to('/query-search-login', $slugUrl)); ?>"  class="btn-ApplyNow"><i class="fa fa-envelope"></i> Quick Inquiry</a>
+            </div>
+        <?php endif; ?>
+        
+        <ul class="list-inline <?php if($agent->isMobile()): ?> <?php else: ?> text-center pull-right <?php endif; ?>">
+            <?php if( $getCollegeDetailObj ): ?>
+                <?php foreach( $getCollegeDetailObj as $getCollegeName ): ?>
+                    <?php if( $getCollegeName->review == '1' ): ?>
+                        <li><a href="javascript:void(0);" class="badgesSize" title="This profile is successfully reviewed">
+                            <img src="/home-layout/assets/img/icons/other/like.png" alt="like icon" width="32">
+                        </a></li>
+                    <?php else: ?>
+                        <li><a href="javascript:void(0);" class="badgesSize" title="This profile is under review">
+                            <img src="/home-layout/assets/img/icons/other/dislike.png" alt="dislike icon" width="32">
+                        </a></li>
+                    <?php endif; ?>
+
+                    <?php if( $getCollegeName->verified == '0' ): ?>
+                        <li><a href="javascript:void(0);" class="badgesSize" title="This profile is not verified">
+                            <img src="/home-layout/assets/img/icons/other/envelope.png" alt="verified icon" width="32">
+                        </a></li>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            <li>
+            <?php if(isset($getBookMarkedCollegeStaus)): ?>
+                <?php if( $getBookMarkedCollegeStaus ): ?>
+                    <a href="javascript:void(0);" class="bookmarkedHeartIcon">
+                        <input type="hidden" name="bookmarkTableID" value="<?php echo e($getBookMarkedCollegeStaus[0]->id); ?>">
+                        <input type="hidden" class="collegeName" name="collegeName" value="<?php echo e($slugUrl); ?>">
+                        <input type="hidden" name="collegeURL" value="<?php echo e(URL::to('college', $slugUrl)); ?>">
+                        <span title="The Featured showcase features some of the most popular colleges in each city across budgets and courses" class="white-bg">
+                            <i class="bookmarkHeart rounded-x icon-heart fa-2x"></i>
+                        </span>
+                    </a>
+                <?php else: ?>
+                    <a href="javascript:void(0);" class="collegeBookMarkButton">
+                        <input type="hidden" class="collegeName" name="collegeName" value="<?php echo e($slugUrl); ?>">
+                        <input type="hidden" name="collegeURL" value="<?php echo e(URL::to('college', $slugUrl)); ?>">
+                        <span title="The Featured showcase features some of the most popular colleges in each city across budgets and courses" class="white-bg">
+                            <i class="bookmarkHeart rounded-x icon-heart fa-2x"></i>
+                        </span>
+                    </a>
+                <?php endif; ?>                          
+            <?php elseif(isset($getCourseBookmarkedStatus)): ?>
+                <?php if( $getCourseBookmarkedStatus ): ?>
+                    <a href="javascript:void(0);" class="bookmarkedHeartIcon">
+                        <input type="hidden" name="bookmarkTableID" value="<?php echo e($getCourseBookmarkedStatus[0]->id); ?>">
+                        <input type="hidden" class="courseName" name="courseName" value="<?php echo e($collegemasterId); ?>">
+                        <input type="hidden" name="collegeURL" value="<?php echo e(URL::to('college/detail-course', [$collegemasterId,$slugUrl])); ?>">
+                        <span title="The Featured showcase features some of the most popular colleges in each city across budgets and courses" class="white-bg">
+                            <i class="bookmarkHeart rounded-x icon-heart"></i>
+                        </span>
+                    </a>
+                <?php else: ?>
+                    <a href="javascript:void(0);" class="courseBookMarkButton">
+                        <input type="hidden" class="courseName" name="courseName" value="<?php echo e($collegemasterId); ?>">
+                        <input type="hidden" name="collegeURL" value="<?php echo e(URL::to('college/detail-course', [$collegemasterId,$slugUrl])); ?>">
+                        <span title="The Featured showcase features some of the most popular colleges in each city across budgets and courses" class="white-bg">
+                            <i class="bookmarkHeart rounded-x icon-heart"></i>
+                        </span>
+                    </a>
+                <?php endif; ?>
+            <?php endif; ?>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="modal fade" id="queryStutoColModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <?php echo Form::open(['url' => '/student-for-college', 'method' =>'POST','class' => 'sky-form' ,'role'=>'form','id'=>'sky-form4', 'data-parsley-validate' => '','enctype' => 'multipart/form-data']); ?>
+
+                <div class="modal-header modal-header-design" style="background: #d3070c;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="exampleModalLabel" style="color: #fff;">Write a Query to "<?php echo e($collegeFullName); ?>"</h4>
+                    <input type="hidden" name="slugUrl" value="<?php echo e($slugUrl); ?>">
+                </div>
+                <div class="modal-body">
+                    <div class="margin-bottom-20">
+                        <label>Recipient</label>
+                        <input class="form-control rounded-right" type="text" value="<?php echo e($collegeFullName); ?>" disabled="">
+                    </div>
+
+                    <div class="margin-bottom-20">
+                        <label>Subject</label>
+                        <input class="form-control rounded-right" type="text" name="subject" maxlength="100" placeholder="Enter the subject" required="" data-parsley-trigger="change" data-parsley-error-message="Please enter valid subject" >
+                    </div>
+                    <div class="margin-bottom-20">
+                        <label>Message</label>
+                        <textarea class="form-control" rows="3" placeholder="Enter the message" name="message" required="" maxlength="250"></textarea>
+                        <p class="text-danger margin-top-20">(Place your query in 250 characters. Thanks Team Admission X)</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                            <button type="submit" class="btn-u btn-block rounded">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            <?php echo Form::close(); ?>
+
+        </div>
+    </div>
+</div>
