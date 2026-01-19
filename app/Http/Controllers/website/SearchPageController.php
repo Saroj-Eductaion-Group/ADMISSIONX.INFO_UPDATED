@@ -1038,8 +1038,12 @@ class SearchPageController extends Controller
         $isShowOnTop = "if(university.isShowOnTop = 1 , 1,2) as isShowOnTop";
 
         $query = DB::table('university'); 
+        // Remove the status filter since the column doesn't exist in local database
+        // $query->where('university.status', '=', 1);
         $query->select('university.id','name','employee_id','pagetitle','pagedescription','pageslug','logoimage','bannerimage','isShowOnTop','isShowOnHome', DB::Raw($isShowOnTop), DB::raw('(SELECT COUNT(collegeprofile.id) FROM collegeprofile WHERE collegeprofile.university_id = university.id) AS totalCollegeCount'));
         $query->groupBy('university.id');
+        // Remove ranking order since column doesn't exist in local database
+        // $query->orderBy('ranking', 'ASC');
         $query->orderBy('isShowOnTop', 'ASC');
 
         $getUniversityInfoObj = $query->paginate(20);
@@ -1608,6 +1612,8 @@ class SearchPageController extends Controller
             $query->groupBy('collegeprofile.id');
         }
 
+        // Remove ranking order since column doesn't exist in local database
+        // $query->orderBy('collegeprofile.ranking', 'ASC');
         $query->orderBy('isShowOnTop', 'ASC');
 
         if($request->has('filterBy')){

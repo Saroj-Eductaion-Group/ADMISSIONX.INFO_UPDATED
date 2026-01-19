@@ -64,7 +64,7 @@
                         <div class="inner">
                             <div class="portfolio-img">
                                 <?php if( $item->logoimage != '' ): ?>
-                                    <img src="<?php echo e(asset('common-logo')); ?>/<?php echo e($item->logoimage); ?>" alt="<?php echo e($item->name); ?>" style="object-fit: contain; background: #fff; height: 153px; display: block; margin-left: auto; margin-right: auto; width: 100%;">
+                                    <img src="<?php echo e(asset('common-logo')); ?>/<?php echo e($item->pageslug); ?>/<?php echo e($item->logoimage); ?>" alt="<?php echo e($item->name); ?>" style="object-fit: contain; background: #fff; height: 153px; display: block; margin-left: auto; margin-right: auto; width: 100%;">
                                 <?php else: ?>
                                     <img src="new-assets/img/university.png" alt="<?php echo e($item->name); ?>" style="object-fit: contain; background: #fff; height: 153px; display: block; margin-left: auto; margin-right: auto; width: 100%;">
                                 <?php endif; ?>

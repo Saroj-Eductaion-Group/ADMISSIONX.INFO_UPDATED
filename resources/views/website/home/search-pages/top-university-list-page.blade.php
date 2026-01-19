@@ -64,7 +64,7 @@
                         <div class="inner">
                             <div class="portfolio-img">
                                 @if( $item->logoimage != '' )
-                                    <img src="{{ asset('common-logo') }}/{{ $item->logoimage }}" alt="{{ $item->name}}" style="object-fit: contain; background: #fff; height: 153px; display: block; margin-left: auto; margin-right: auto; width: 100%;">
+                                    <img src="{{ asset('common-logo') }}/{{ $item->pageslug }}/{{ $item->logoimage }}" alt="{{ $item->name}}" style="object-fit: contain; background: #fff; height: 153px; display: block; margin-left: auto; margin-right: auto; width: 100%;">
                                 @else
                                     <img src="new-assets/img/university.png" alt="{{ $item->name}}" style="object-fit: contain; background: #fff; height: 153px; display: block; margin-left: auto; margin-right: auto; width: 100%;">
                                 @endif
