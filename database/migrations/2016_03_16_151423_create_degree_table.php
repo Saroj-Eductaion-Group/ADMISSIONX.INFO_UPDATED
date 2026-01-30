@@ -33,7 +33,7 @@ class CreateDegreeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('degree');
+        Schema::dropIfExists('degree');
     }
 
 }

@@ -17,8 +17,8 @@ class CreateExamAnalysisRecordsTable extends Migration
             $table->integer('degreeId')->nullable();
             $table->string('degreeName')->nullable();
             $table->longText('description')->nullable();
-            $table->exam_analysis_records('papername')->nullable();
-            $table->exam_analysis_records('files')->nullable();
+            $table->string('papername')->nullable();
+            $table->string('files')->nullable();
             $table->integer('typeOfExaminations_id')->nullable();
             $table->integer('employee_id')->nullable();
             $table->timestamps();

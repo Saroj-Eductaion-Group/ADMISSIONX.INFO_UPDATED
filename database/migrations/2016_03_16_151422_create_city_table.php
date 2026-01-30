@@ -34,7 +34,7 @@ class CreateCityTable extends Migration
      */
     public function down()
     {
-        Schema::drop('city');
+        Schema::dropIfExists('city');
     }
 
 }

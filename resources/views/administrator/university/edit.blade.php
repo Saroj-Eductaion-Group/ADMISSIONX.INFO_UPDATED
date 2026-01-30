@@ -34,6 +34,34 @@
                         </div>
                     </div>
                     <div class="hr-line-dashed"></div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">University Logo : </label>
+                        <div class="col-sm-10">
+                            {!! Form::file('logoimage', ['class' => 'form-control', 'accept' => 'image/*']) !!}
+                            @if($university->logoimage)
+                                <div class="margin-top10">
+                                    <img src="{{ asset('common-logo/' . $university->pageslug . '/' . $university->logoimage) }}" alt="Current Logo" style="max-width: 200px; max-height: 100px;">
+                                    <p><small>Current Logo</small></p>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Banner Image : </label>
+                        <div class="col-sm-10">
+                            {!! Form::file('bannerimage', ['class' => 'form-control', 'accept' => 'image/*']) !!}
+                            @if($university->bannerimage)
+                                <div class="margin-top10">
+                                    <img src="{{ asset('common-logo/' . $university->pageslug . '/' . $university->bannerimage) }}" alt="Current Banner" style="max-width: 300px; max-height: 150px;">
+                                    <p><small>Current Banner</small></p>
+                                </div>
+                            @endif
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
                     @include('common-partials.common-fileds-update-partial')
                     <hr>
                     <div class="row">

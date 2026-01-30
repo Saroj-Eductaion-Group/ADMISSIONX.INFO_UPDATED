@@ -3,7 +3,7 @@
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-12">
-        <h2>Update Blogs <!-- <a href="{{ URL::to('administrator/blogs') }}" class="btn btn-warning pull-right btn-sm"><i class="fa fa-arrow-left"></i> Back</a> --></h2>
+        <h2>Update Blogs</h2>
     </div>
 </div>
 
@@ -34,11 +34,11 @@
                     <select class="form-control chosen-select" name="isactive" data-parsley-error-message=" Please select blogs status" data-parsley-trigger="change" required="">
                         <option value="" selected disabled >Select blog status</option>
                         @if( $blog->isactive == '1' )
-                            <option value="{{ $blog->isactive }}" selected="">Published</option>
+                            <option value="1" selected="">Published</option>
                             <option value="0">Not Published</option>
                         @else
                             <option value="1">Published</option>
-                            <option value="{{ $blog->isactive }}" selected="">Not Published</option>
+                            <option value="0" selected="">Not Published</option>
                         @endif
                     </select>
                 </div>
@@ -59,19 +59,26 @@
                 </div>
             </div>
             <div class="form-group">
-                <label  class="col-sm-2 control-label">Featured Image</label>
+                <label class="col-sm-2 control-label">Featured Image</label>
                 <div class="col-sm-5">
-                    <span class="pull-right text-danger"><a href="javascript:void(0);" id="refresh2" class="hide"><i class="fa fa-remove"></i></a> </span>
-                     <input type="file" class="form-control" name="uploadFeatureImage" class="input input-file featuredImage"  data-parsley-trigger="change" data-parsley-error-message="Please upload only png , jpg or jpeg.">
-                    <p class="text-danger hide" id="logoDoc">(please upload .png, .jpg and .jpeg file only)</p>
+                    <!-- Fixed: Removed duplicate class attribute -->
+                    <input type="file" class="form-control" name="uploadFeatureImage" id="uploadFeatureImage" 
+                           data-parsley-trigger="change" 
+                           data-parsley-error-message="Please upload only png, jpg or jpeg.">
+                    <p class="text-muted">Current image will be replaced. Allowed: JPG, JPEG, PNG</p>
+                    @if ($errors->has('uploadFeatureImage'))
+                        <span class="text-danger">{{ $errors->first('uploadFeatureImage') }}</span>
+                    @endif
+                    @if (Session::has('error_message'))
+                        <span class="text-danger">{{ Session::get('error_message') }}</span>
+                    @endif
                 </div>
                 <div class="col-sm-5">
                     @if( $blog->featimage )
-                    {{--*/ $slugUrl = preg_replace('/[^A-Za-z0-9-]+/', '-', $blog->firstname.' '.$blog->users_id); /*--}}
-                    {{--*/ $slugUrl = strtolower($slugUrl); /*--}}
-                    <img class="img-responsive thumbnail" src="/blogs/{{ $blog->featimage }}" width="180" alt="{{ $blog->featimage }}">
+                        <img class="img-responsive thumbnail" src="/blogs/{{ $blog->featimage }}" width="180" alt="{{ $blog->featimage }}">
+                        <p class="text-muted mt-2">Current Image</p>
                     @else
-                        <span class="label label-warning">Not Updated Yet</span>
+                        <span class="label label-warning">No image uploaded yet</span>
                     @endif 
                 </div>
             </div>
@@ -81,7 +88,7 @@
                <div class="col-md-12">
                    <div class="headline"><h2>SEO Content</h2></div>
                     <input type="hidden" name="seopagename" value="blogpage">
-                    @if(isset($seocontent) && (sizeof($seocontent) > 0))
+                    @if(isset($seocontent) && count($seocontent) > 0)
                         @if(!empty($seocontent[0]->seoContentId))
                             <input type="hidden" name="seoContentId" value="{{ $seocontent[0]->seoContentId }}">
                         @endif
@@ -102,7 +109,6 @@
         </div>
     </div>
 </div>
-
 
     @if ($errors->any())
         <ul class="alert alert-danger">
@@ -128,40 +134,23 @@
 
 <script type="text/javascript">
     $(document).ready(function(){ 
-        
-        $('.featuredImage').on('change',function(){
-            $('#refresh1').removeClass('hide');
-        });
-        $('#refresh1').on('click',function(e){
-            $('.featuredImage').val('').trigger('chosen:updated');
-            $('#refresh1').addClass('hide');
-        });
-
-
-        $('input[name=featuredImage]').change(function (e)
-        {  
-            var ext = $('input[name=featuredImage]').val().split('.').pop().toLowerCase();
-            if( ext == 'png' || ext == 'jpg' || ext == 'jpeg' ){
-                $('#logoDoc').addClass('hide');
-            }else{
-                $('input[name=featuredImage]').val('');
-                $('#logoDoc').removeClass('hide');
+        // File validation
+        $('#uploadFeatureImage').change(function (e) {   
+            var ext = $(this).val().split('.').pop().toLowerCase();
+            var allowed = ['jpg', 'jpeg', 'png'];
+            
+            if ($.inArray(ext, allowed) == -1) {
+                alert('Please upload only jpg, jpeg or png files.');
+                $(this).val('');
                 return false;
             }
-            //Disable input file
-        });  
-
-        $('input[name=uploadFeatureImage]').change(function (e)
-        {   
-            var ext = $('input[name=uploadFeatureImage]').val().split('.').pop().toLowerCase();
-            if( ext == 'png' || ext == 'jpg' || ext == 'jpeg' ){
-                $("input[name=uploadFeatureImage]").parsley().reset();
-            }else{
-                $('input[name=uploadFeatureImage]').val('');
-                $("input[name=uploadFeatureImage]").parsley().reset();
+            
+            // Check file size (5MB limit)
+            if (this.files[0].size > 5 * 1024 * 1024) {
+                alert('File size must be less than 5MB.');
+                $(this).val('');
                 return false;
             }
-            //Disable input file
         });     
     });
 </script>

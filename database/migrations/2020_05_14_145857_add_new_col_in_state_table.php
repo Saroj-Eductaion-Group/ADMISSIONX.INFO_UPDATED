@@ -25,4 +25,23 @@ class AddNewColInStateTable extends Migration
 
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('state', function (Blueprint $table) {
+            $table->dropColumn('pagetitle');
+            $table->dropColumn('pagedescription');
+            $table->dropColumn('pageslug');
+            $table->dropColumn('bannerimage');
+            $table->dropColumn('isShowOnTop');
+            $table->dropColumn('isShowOnHome');
+            $table->dropColumn('totalCollegeRegAddress');
+            $table->dropColumn('totalCollegeByCampusAddress');
+        });
+    }
 }

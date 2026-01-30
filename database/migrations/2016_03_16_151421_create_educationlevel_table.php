@@ -30,7 +30,7 @@ class CreateEducationlevelTable extends Migration
      */
     public function down()
     {
-        Schema::drop('educationlevel');
+        Schema::dropIfExists('educationlevel');
     }
 
 }

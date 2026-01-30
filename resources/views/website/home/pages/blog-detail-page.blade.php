@@ -14,7 +14,7 @@
 		@if($item->fullimage != '')
 			{{--*/ $blogImg = $baseWeb."/blogs/$item->fullimage" /*--}}
 		@else
-			{{--*/ $blogImg = $baseWeb."/blogs/default.jpg" /*--}}
+			{{--*/ $blogImg = $baseWeb."/blogs/Blue-White-Simple-Financial-Tips-Blog-Banner.jpg" /*--}}
 		@endif
 	@endforeach
 @endif
@@ -55,7 +55,7 @@
 							@if($item->fullimage != '')
 								<img class="img-responsive full-width" src="/blogs/{{ $item->fullimage }}" alt="{{ $item->topic }}">
 							@else
-								<img class="img-responsive full-width" src="{{asset('/blogs/default.jpg')}}" alt="{{ $item->topic }}">
+								<img class="img-responsive full-width" src="{{asset('/blogs/Blue-White-Simple-Financial-Tips-Blog-Banner.jpg')}}" alt="{{ $item->topic }}">
 							@endif
 							<div class="news-v3-in">
 								<ul class="list-inline posted-info">

@@ -56,7 +56,7 @@ class CreateCollegeprofileTable extends Migration
      */
     public function down()
     {
-        Schema::drop('collegeprofile');
+        Schema::dropIfExists('collegeprofile');
     }
 
 }

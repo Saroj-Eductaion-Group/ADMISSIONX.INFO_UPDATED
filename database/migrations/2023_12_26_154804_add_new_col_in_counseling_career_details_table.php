@@ -24,4 +24,23 @@ class AddNewColInCounselingCareerDetailsTable extends Migration
             $table->longText('other_details')->nullable();
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('counseling_career_details', function (Blueprint $table) {
+            $table->dropColumn('purpose_desc');
+            $table->dropColumn('eligibility');
+            $table->dropColumn('qualification');
+            $table->dropColumn('syllabus');
+            $table->dropColumn('exam_pattern');
+            $table->dropColumn('selection_criteria');
+            $table->dropColumn('frequency');
+            $table->dropColumn('other_details');
+        });
+    }
 }

@@ -33,6 +33,25 @@
                             {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter university name here', 'data-parsley-error-message' => 'Please enter university name here', 'data-parsley-trigger'=>'change','required' => '']) !!}
                         </div>
                     </div>
+                    <div class="hr-line-dashed"></div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">University Logo : </label>
+                        <div class="col-sm-10">
+                            {!! Form::file('logoimage', ['class' => 'form-control', 'accept' => 'image/*']) !!}
+                            <small class="text-muted">Upload university logo (JPG, PNG)</small>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
+                    
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Banner Image : </label>
+                        <div class="col-sm-10">
+                            {!! Form::file('bannerimage', ['class' => 'form-control', 'accept' => 'image/*']) !!}
+                            <small class="text-muted">Upload banner image (JPG, PNG)</small>
+                        </div>
+                    </div>
+                    <div class="hr-line-dashed"></div>
                     @include('common-partials.common-fileds-update-partial')
                     <hr>
                     <div class="row">

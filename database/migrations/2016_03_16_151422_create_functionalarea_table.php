@@ -30,7 +30,7 @@ class CreateFunctionalareaTable extends Migration
      */
     public function down()
     {
-        Schema::drop('functionalarea');
+        Schema::dropIfExists('functionalarea');
     }
 
 }

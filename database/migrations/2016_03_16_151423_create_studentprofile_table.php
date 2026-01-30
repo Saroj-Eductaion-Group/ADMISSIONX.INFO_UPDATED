@@ -42,7 +42,7 @@ class CreateStudentprofileTable extends Migration
      */
     public function down()
     {
-        Schema::drop('studentprofile');
+        Schema::dropIfExists('studentprofile');
     }
 
 }

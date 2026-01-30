@@ -23,4 +23,22 @@ class AddNewColInCourseTable extends Migration
             $table->boolean('isShowOnHome')->default(1)->comment="0-Disable,1-Enabled";
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('course', function (Blueprint $table) {
+            $table->dropColumn('pagetitle');
+            $table->dropColumn('pagedescription');
+            $table->dropColumn('pageslug');
+            $table->dropColumn('logoimage');
+            $table->dropColumn('bannerimage');
+            $table->dropColumn('isShowOnTop');
+            $table->dropColumn('isShowOnHome');
+        });
+    }
 }

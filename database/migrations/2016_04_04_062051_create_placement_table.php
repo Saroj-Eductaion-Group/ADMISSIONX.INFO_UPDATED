@@ -38,7 +38,7 @@ class CreatePlacementTable extends Migration
      */
     public function down()
     {
-        Schema::drop('placement');
+        Schema::dropIfExists('placement');
     }
 
 }

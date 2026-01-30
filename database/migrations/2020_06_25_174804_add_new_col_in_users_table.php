@@ -25,4 +25,23 @@ class AddNewColInUsersTable extends Migration
             $table->integer('is_emailSent')->default(1)->comment="0-No, 1-Yes";;
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('google_provider_id');
+            $table->dropColumn('google_token');
+            $table->dropColumn('google_refresh_token');
+            $table->dropColumn('fb_provider_id');
+            $table->dropColumn('fb_token');
+            $table->dropColumn('fb_refresh_token');
+            $table->dropColumn('type_of_user');
+            $table->dropColumn('is_emailSent');
+        });
+    }
 }

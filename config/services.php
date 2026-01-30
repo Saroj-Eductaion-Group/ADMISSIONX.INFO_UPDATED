@@ -61,4 +61,11 @@ return [
         'client_secret' => $facebook_client_secret,
         'redirect'      => $facebook_url,
     ],
+
+    'easebuzz' => [
+        'merchant_key' => env('EASEBUZZ_MERCHANT_KEY'),
+        'salt' => env('EASEBUZZ_SALT'),
+        'env' => env('EASEBUZZ_ENV', 'prod'),
+        'base_url' => env('EASEBUZZ_BASE_URL', 'https://pay.easebuzz.in/'),
+    ],
 ];

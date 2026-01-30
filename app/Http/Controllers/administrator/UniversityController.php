@@ -147,6 +147,40 @@ class UniversityController extends Controller
                             $university->name = Input::get('name');
                             $university->employee_id = Auth::id();
                             $university->save();
+                            
+                            // Generate slug for folder structure
+                            $slug = str_slug($university->name);
+                            $university->pageslug = $slug;
+                            
+                            // Handle logo upload
+                            if ($request->hasFile('logoimage')) {
+                                $logoFile = $request->file('logoimage');
+                                $logoName = $slug . '-logo.' . $logoFile->getClientOriginalExtension();
+                                $logoPath = public_path('common-logo/' . $slug);
+                                
+                                if (!file_exists($logoPath)) {
+                                    mkdir($logoPath, 0755, true);
+                                }
+                                
+                                $logoFile->move($logoPath, $logoName);
+                                $university->logoimage = $logoName;
+                            }
+                            
+                            // Handle banner upload
+                            if ($request->hasFile('bannerimage')) {
+                                $bannerFile = $request->file('bannerimage');
+                                $bannerName = $slug . '-banner.' . $bannerFile->getClientOriginalExtension();
+                                $bannerPath = public_path('common-logo/' . $slug);
+                                
+                                if (!file_exists($bannerPath)) {
+                                    mkdir($bannerPath, 0755, true);
+                                }
+                                
+                                $bannerFile->move($bannerPath, $bannerName);
+                                $university->bannerimage = $bannerName;
+                            }
+                            
+                            $university->save();
 
                             $updateNewFields = $this->fetchDataServiceController->updateNewFields('University','university',$university->id, $request->all(), 'university');
 
@@ -283,6 +317,35 @@ class UniversityController extends Controller
                             $university = University::findOrFail($id);
                             $university->name = Input::get('name');
                             $university->employee_id = Auth::id();
+                            
+                            // Handle logo upload
+                            if ($request->hasFile('logoimage')) {
+                                $logoFile = $request->file('logoimage');
+                                $logoName = $university->pageslug . '-logo.' . $logoFile->getClientOriginalExtension();
+                                $logoPath = public_path('common-logo/' . $university->pageslug);
+                                
+                                if (!file_exists($logoPath)) {
+                                    mkdir($logoPath, 0755, true);
+                                }
+                                
+                                $logoFile->move($logoPath, $logoName);
+                                $university->logoimage = $logoName;
+                            }
+                            
+                            // Handle banner upload
+                            if ($request->hasFile('bannerimage')) {
+                                $bannerFile = $request->file('bannerimage');
+                                $bannerName = $university->pageslug . '-banner.' . $bannerFile->getClientOriginalExtension();
+                                $bannerPath = public_path('common-logo/' . $university->pageslug);
+                                
+                                if (!file_exists($bannerPath)) {
+                                    mkdir($bannerPath, 0755, true);
+                                }
+                                
+                                $bannerFile->move($bannerPath, $bannerName);
+                                $university->bannerimage = $bannerName;
+                            }
+                            
                             $university->save();
 
                             $updateNewFields = $this->fetchDataServiceController->updateNewFields('University','university',$university->id, $request->all(), 'university');

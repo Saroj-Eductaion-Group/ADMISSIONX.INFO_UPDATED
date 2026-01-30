@@ -16,4 +16,16 @@ class AddNewImageColumnsInFacultyTable extends Migration
             $table->string('image_original')->nullable();
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('faculty', function(Blueprint $table) {
+            $table->dropColumn('image_original');
+        });
+    }
 }

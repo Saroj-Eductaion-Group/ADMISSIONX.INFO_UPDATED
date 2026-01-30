@@ -2,26 +2,25 @@
 
 namespace App\Http\Controllers\administrator;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-
-use App\Models\Blog;
-use Illuminate\Http\Request;
-use Carbon\Carbon;
-use Session;
-use Hash;
 use DB;
-use View;
-use Validator;
-use Response;
-use Input;
-use Redirect;
 use Auth;
+use Hash;
 use Mail;
+use View;
+use Input;
+use Session;
+use Redirect;
+use Response;
+use Validator;
+use Carbon\Carbon;
+use App\Models\Blog;
 use App\User as User;
-use App\Models\UserRole as UserRole;
-use App\Models\UserStatus;
+use App\Http\Requests;
 use App\Models\SeoContent;
+use App\Models\UserStatus;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\UserRole as UserRole;
 use App\Http\Controllers\Helper\FetchDataServiceController;
 
 class BlogsController extends Controller
@@ -33,6 +32,7 @@ class BlogsController extends Controller
     {
         $this->fetchDataServiceController = $fetchDataServiceController;
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -41,33 +41,30 @@ class BlogsController extends Controller
     public function index()
     {
         //Get the auth validity
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $userId = Auth::id();
             $roleGrant = User::where('id', '=', $userId)->first();
 
-        if( $roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1' ){
-            $blogs = Blog::orderBy('blogs.id', 'DESC')
-                        ->join('users', 'blogs.users_id', '=', 'users.id')
-                        ->join('userrole', 'users.userrole_id', '=', 'userrole.id')
-                        ->leftJoin('users as eID','blogs.employee_id', '=','eID.id')
-                        ->paginate(20, array('blogs.id', 'users.id as userID','users.firstname', 'users.lastname', 'userrole.name as userRoleName','blogs.topic', 'blogs.description', 'blogs.isactive','blogs.featimage','eID.id as eUserId','eID.firstname as employeeFirstname', 'eID.middlename as employeeMiddlename', 'eID.lastname as employeeLastname','blogs.updated_at'))
-                        ;
+            if ($roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1') {
+                $blogs = Blog::orderBy('blogs.id', 'DESC')
+                    ->join('users', 'blogs.users_id', '=', 'users.id')
+                    ->join('userrole', 'users.userrole_id', '=', 'userrole.id')
+                    ->leftJoin('users as eID', 'blogs.employee_id', '=', 'eID.id')
+                    ->paginate(20, array('blogs.id', 'users.id as userID', 'users.firstname', 'users.lastname', 'userrole.name as userRoleName', 'blogs.topic', 'blogs.description', 'blogs.isactive', 'blogs.featimage', 'eID.id as eUserId', 'eID.firstname as employeeFirstname', 'eID.middlename as employeeMiddlename', 'eID.lastname as employeeLastname', 'blogs.updated_at'));
 
-            $usersObj = DB::table('users')
-                        ->join('userrole', 'users.userrole_id','=','userrole.id')
-                        ->select('users.id', 'users.firstname', 'users.middlename', 'users.lastname', 'userrole.name as userRoleName','users.middlename','users.lastname')
-                        ->orderBy('users.id','ASC')
-                        ->get()
-                        ;
+                $usersObj = DB::table('users')
+                    ->join('userrole', 'users.userrole_id', '=', 'userrole.id')
+                    ->select('users.id', 'users.firstname', 'users.middlename', 'users.lastname', 'userrole.name as userRoleName', 'users.middlename', 'users.lastname')
+                    ->orderBy('users.id', 'ASC')
+                    ->get();
 
-            return view('administrator/blogs.index', compact('blogs'))
-            ->with('usersObj',$usersObj);
-        }else{
+                return view('administrator/blogs.index', compact('blogs'))
+                    ->with('usersObj', $usersObj);
+            } else {
                 Auth::logout(); // logout user
                 return Redirect::to('login'); //redirect back to login
             }
-        }else{
+        } else {
             Auth::logout(); // logout user
             return Redirect::to('login'); //redirect back to login
         }
@@ -81,25 +78,23 @@ class BlogsController extends Controller
     public function create()
     {
         //Get the auth validity
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $userId = Auth::id();
             $roleGrant = User::where('id', '=', $userId)->first();
-            
-        if( $roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1' ){
-            $usersObj = DB::table('users')
-                        ->join('userrole', 'users.userrole_id','=','userrole.id')
-                        ->select('users.id', 'users.firstname', 'users.middlename', 'users.lastname', 'userrole.name as userRoleName')
-                        ->orderBy('users.id','ASC')
-                        ->get()
-                        ;
-            return view('administrator/blogs.create')
-             ->with('usersObj', $usersObj);
-        }else{
+
+            if ($roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1') {
+                $usersObj = DB::table('users')
+                    ->join('userrole', 'users.userrole_id', '=', 'userrole.id')
+                    ->select('users.id', 'users.firstname', 'users.middlename', 'users.lastname', 'userrole.name as userRoleName')
+                    ->orderBy('users.id', 'ASC')
+                    ->get();
+                return view('administrator/blogs.create')
+                    ->with('usersObj', $usersObj);
+            } else {
                 Auth::logout(); // logout user
                 return Redirect::to('login'); //redirect back to login
             }
-        }else{
+        } else {
             Auth::logout(); // logout user
             return Redirect::to('login'); //redirect back to login
         }
@@ -113,149 +108,199 @@ class BlogsController extends Controller
     public function store(Request $request)
     {
         //Get the auth validity
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $userId = Auth::id();
             $roleGrant = User::where('id', '=', $userId)->first();
-            
-        if( $roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1' ){
-        
-            if($request->file('uploadFeatureImage'))
-            {   
-                $blogsObj = New Blog;
-                $blogsObj->topic = Input::get('topic');
-                $blogsObj->description = Input::get('description');
-                $blogsObj->isactive = Input::get('isactive');
-                $blogsObj->users_id = Input::get('users_id');
-                
-                //GET THE LAST CREATED ID
-                $getLastID = DB::table('blogs')->select('id')->orderBy('id', 'DESC')->get();
-                if( empty($getLastID)  ){
-                    $totalIDNumber = '1';
-                }else{
-                    $totalIDNumber = $getLastID[0]->id + 1;
-                }
-                $slugUrl = str_slug(Input::get('topic').' '.$totalIDNumber, "-");
-                $blogsObj->slug = str_slug($slugUrl, "-");
-                
 
-                $extensionOfFile = '';
-                $path = $_FILES['uploadFeatureImage']['name'];
-                $ext = pathinfo($path, PATHINFO_EXTENSION);
+            if ($roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1') {
 
-                $tempPath = $_FILES[ 'uploadFeatureImage' ][ 'tmp_name' ];
-                $currentMyTime = strtotime('now');
-                $imageNameWithTime = $slugUrl.'-'.$currentMyTime;
-                $fileWithExtension = $imageNameWithTime.'.'.$ext;
-                $fileWithExtension1 = $imageNameWithTime.'_original'.'.'.$ext;
-             
-                //Set the image folder path
-                if(env('APP_ENV') == 'local'){
-                   $dirPath = public_path().'/blogs/';
-                }else{
-                    $dirPath = public_path().'/blogs/';
-                }
-                
+                if ($request->hasFile('uploadFeatureImage')) {
+                    $blogsObj = new Blog;
+                    $blogsObj->topic = $request->input('topic');
+                    $blogsObj->description = $request->input('description');
+                    $blogsObj->isactive = $request->input('isactive');
+                    $blogsObj->users_id = $request->input('users_id');
 
-                //Store the image with 300PX width
-                $uploadPath = $dirPath.$fileWithExtension;
-                //Store the image with original width as original
-                $uploadPath1 = $dirPath.$fileWithExtension1;
-                if (move_uploaded_file($tempPath, $uploadPath)) {
-                 copy($uploadPath, $uploadPath1);
-                }
-                
-                //IMAGE SAVED IN FOLDER NOW RESIZE IT
-                if (file_exists($dirPath.$fileWithExtension)) {
+                    //GET THE LAST CREATED ID
+                    $getLastID = DB::table('blogs')->select('id')->orderBy('id', 'DESC')->get();
+                    if (empty($getLastID)) {
+                        $totalIDNumber = '1';
+                    } else {
+                        $totalIDNumber = $getLastID[0]->id + 1;
+                    }
+                    $slugUrl = str_slug($request->input('topic') . ' ' . $totalIDNumber, "-");
+                    $blogsObj->slug = str_slug($slugUrl, "-");
 
-                    $uploadimage = $dirPath.$fileWithExtension;//$dirPath.$_FILES['file']['name'];
-                    $newname = $fileWithExtension;//$_FILES['file']['name'];
+                    // Get the uploaded file
+                    $file = $request->file('uploadFeatureImage');
+                    $ext = strtolower($file->getClientOriginalExtension());
 
-                    // Set the resize_image name
-                    $resize_image = $dirPath.$newname; 
-                    $actual_image = $dirPath.$newname;
-                    // It gets the size of the image
-                    list( $width,$height ) = getimagesize( $uploadimage );
-                    // It makes the new image width of 350
-                    if( $width > '600' ){
-                        $newwidth = 300;
-                        // It makes the new image height of 350
-                        //$newheight = 350;
-                        if( $ext != 'png' ){
-                            $image = imagecreatefromjpeg($dirPath.$fileWithExtension);
-                        }else{
-                            $image = imagecreatefrompng($dirPath.$fileWithExtension);
+                    // Validate file type
+                    $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'bmp', 'tiff', 'svg'];
+                    if (!in_array($ext, $allowedExtensions)) {
+                        Session::flash('error_message', 'Please upload only image files (jpg, jpeg, png, webp, gif, bmp, tiff, svg).');
+                        return redirect()->back()->withInput();
+                    }
+
+                    $currentMyTime = time();
+                    $imageNameWithTime = $slugUrl . '-' . $currentMyTime;
+                    $fileWithExtension = $imageNameWithTime . '.' . $ext;
+                    $fileWithExtension1 = $imageNameWithTime . '_original.' . $ext;
+
+                    //Set the image folder path
+                    $dirPath = public_path() . '/blogs/';
+
+                    // Ensure directory exists
+                    if (!file_exists($dirPath)) {
+                        mkdir($dirPath, 0777, true);
+                    }
+
+                    // Save original image
+                    $file->move($dirPath, $fileWithExtension1);
+
+                    // Check if GD functions exist before using them
+                    $newwidth = 0;
+                    $newheight = 0;
+
+                    //IMAGE SAVED IN FOLDER NOW RESIZE IT
+                    if (file_exists($dirPath . $fileWithExtension1)) {
+                        // Copy original to resized version
+                        copy($dirPath . $fileWithExtension1, $dirPath . $fileWithExtension);
+
+                        // Get image size
+                        list($width, $height) = getimagesize($dirPath . $fileWithExtension);
+
+                        if ($width > 5000) {
+                            $newwidth = 1500;
+
+                            // Check if GD functions are available
+                            if (function_exists('imagecreatefromjpeg') && function_exists('imagecreatefrompng')) {
+
+                                // Create image resource based on extension
+                                $image = null;
+                                switch ($ext) {
+                                    case 'jpg':
+                                    case 'jpeg':
+                                        $image = @imagecreatefromjpeg($dirPath . $fileWithExtension);
+                                        break;
+                                    case 'png':
+                                        $image = @imagecreatefrompng($dirPath . $fileWithExtension);
+                                        break;
+                                    case 'gif':
+                                        $image = @imagecreatefromgif($dirPath . $fileWithExtension);
+                                        break;
+                                    case 'webp':
+                                        if (function_exists('imagecreatefromwebp')) {
+                                            $image = @imagecreatefromwebp($dirPath . $fileWithExtension);
+                                        }
+                                        break;
+                                    case 'bmp':
+                                        if (function_exists('imagecreatefrombmp')) {
+                                            $image = @imagecreatefrombmp($dirPath . $fileWithExtension);
+                                        }
+                                        break;
+                                }
+
+                                if ($image) {
+                                    $orig_width = imagesx($image);
+                                    $orig_height = imagesy($image);
+
+                                    // Calc the new height
+                                    $newheight = (($orig_height * $newwidth) / $orig_width);
+
+                                    // Create thumbnail
+                                    $thumb = imagecreatetruecolor($newwidth, $newheight);
+
+                                    // Preserve transparency for supported formats
+                                    if ($ext == 'png' || $ext == 'gif') {
+                                        imagealphablending($thumb, false);
+                                        imagesavealpha($thumb, true);
+                                        $transparent = imagecolorallocatealpha($thumb, 255, 255, 255, 127);
+                                        imagefilledrectangle($thumb, 0, 0, $newwidth, $newheight, $transparent);
+                                    }
+
+                                    // Resize the $thumb image
+                                    imagecopyresized($thumb, $image, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+                                    // Save resized image based on format
+                                    switch ($ext) {
+                                        case 'jpg':
+                                        case 'jpeg':
+                                            imagejpeg($thumb, $dirPath . $fileWithExtension, 90);
+                                            break;
+                                        case 'png':
+                                            imagepng($thumb, $dirPath . $fileWithExtension, 9);
+                                            break;
+                                        case 'gif':
+                                            imagegif($thumb, $dirPath . $fileWithExtension);
+                                            break;
+                                        case 'webp':
+                                            if (function_exists('imagewebp')) {
+                                                imagewebp($thumb, $dirPath . $fileWithExtension, 90);
+                                            }
+                                            break;
+                                        case 'bmp':
+                                            if (function_exists('imagebmp')) {
+                                                imagebmp($thumb, $dirPath . $fileWithExtension);
+                                            }
+                                            break;
+                                    }
+
+                                    // Clean up
+                                    imagedestroy($thumb);
+                                    imagedestroy($image);
+                                } else {
+                                    // GD failed to create image - keep original dimensions
+                                    $newwidth = $width;
+                                    $newheight = $height;
+                                }
+                            } else {
+                                // GD not available - keep original dimensions
+                                $newwidth = $width;
+                                $newheight = $height;
+                            }
+                        } else {
+                            $newwidth = $width;
+                            $newheight = $height;
                         }
-                        $orig_width = imagesx($image);
-                        $orig_height = imagesy($image);
+                    }
 
-                        // Calc the new height
-                        $newheight = (($orig_height * $newwidth) / $orig_width);
-                        // It loads the images we use jpeg function you can use any function like imagecreatefromjpeg
-                        $thumb = imagecreatetruecolor( $newwidth, $newheight );
-                        if( $ext != 'png' ){
-                            $source = imagecreatefromjpeg( $resize_image );
-                        }else{
-                            $source = imagecreatefrompng( $resize_image );
-                        }
-                        
-                        // Resize the $thumb image.
-                        imagecopyresized($thumb, $source, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
-                        // It then save the new image to the location specified by $resize_image variable
-                        if( $ext != 'png' ){
-                            imagejpeg( $thumb, $resize_image, 100 ); 
-                        }else{
-                            header('Content-Type: image/png');
-                            imagepng( $thumb, $resize_image); 
-                        }
-                        // 100 Represents the quality of an image you can set and ant number in place of 100.
-                        $out_image=addslashes(file_get_contents($resize_image));    
-                    }else{
-                        $newwidth = $width;
-                        $newheight = $height;
-                    }            
+                    $blogsObj->featimage = $fileWithExtension;
+                    $blogsObj->fullimage = $fileWithExtension1;
+                    $blogsObj->width = round($newwidth);
+                    $blogsObj->height = round($newheight);
+                    $blogsObj->employee_id = Auth::id();
+
+                    $blogsObj->save();
+                } else {
+                    $blogsObj = new Blog;
+                    $blogsObj->topic = $request->input('topic');
+                    $blogsObj->description = $request->input('description');
+                    $blogsObj->isactive = $request->input('isactive');
+                    $blogsObj->users_id = $request->input('users_id');
+
+                    //GET THE LAST CREATED ID
+                    $getLastID = DB::table('blogs')->select('id')->orderBy('id', 'DESC')->get();
+                    if (empty($getLastID)) {
+                        $totalIDNumber = '1';
+                    } else {
+                        $totalIDNumber = $getLastID[0]->id + 1;
+                    }
+                    $slugUrl = str_slug($request->input('topic') . ' ' . $totalIDNumber, "-");
+                    $blogsObj->slug = str_slug($slugUrl, "-");
+                    $blogsObj->employee_id = Auth::id();
+                    $blogsObj->save();
                 }
 
-                
-                $blogsObj->featimage = $fileWithExtension;
-                $blogsObj->fullimage = $fileWithExtension1;
-                $blogsObj->width = round($newwidth);
-                $blogsObj->height = round($newheight);
-                $blogsObj->employee_id = Auth::id();
+                $seocontent = $this->fetchDataServiceController->seoContentCreateUpdate($blogsObj->id, $request->all());
 
-                $blogsObj->save();
-                            
-            }else{
-                $blogsObj = New Blog;
-                $blogsObj->topic = Input::get('topic');
-                $blogsObj->description = Input::get('description');
-                $blogsObj->isactive = Input::get('isactive');
-                $blogsObj->users_id = Input::get('users_id');
-                                
-                //GET THE LAST CREATED ID
-                $getLastID = DB::table('blogs')->select('id')->orderBy('id', 'DESC')->get();
-                if( empty($getLastID)  ){
-                    $totalIDNumber = '1';
-                }else{
-                    $totalIDNumber = $getLastID[0]->id + 1;
-                }
-                $slugUrl = str_slug(Input::get('topic').' '.$totalIDNumber, "-");
-                $blogsObj->slug = str_slug($slugUrl, "-");
-                $blogsObj->employee_id = Auth::id();
-                $blogsObj->save();
-            }
-
-
-            $seocontent = $this->fetchDataServiceController->seoContentCreateUpdate($blogsObj->id, $request->all());
-                
-
-            Session::flash('flash_message', 'Blog added!');
-            return redirect('administrator/blogs');
-        }else{
+                Session::flash('flash_message', 'Blog added successfully!');
+                return redirect('administrator/blogs');
+            } else {
                 Auth::logout(); // logout user
                 return Redirect::to('login'); //redirect back to login
             }
-        }else{
+        } else {
             Auth::logout(); // logout user
             return Redirect::to('login'); //redirect back to login
         }
@@ -271,32 +316,30 @@ class BlogsController extends Controller
     public function show($id)
     {
         //Get the auth validity
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $userId = Auth::id();
             $roleGrant = User::where('id', '=', $userId)->first();
-            
-        if( $roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1' ){
-            $blog = Blog::orderBy('blogs.id', 'ASC')
+
+            if ($roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1') {
+                $blog = Blog::orderBy('blogs.id', 'ASC')
                     ->join('users', 'blogs.users_id', '=', 'users.id')
                     ->join('userrole', 'users.userrole_id', '=', 'userrole.id')
-                    ->leftJoin('users as eID','blogs.employee_id', '=','eID.id')
-                    ->select('blogs.id', 'users.id as userID','users.firstname', 'users.lastname', 'userrole.name as userRoleName', 'blogs.topic', 'blogs.description', 'blogs.isactive','blogs.featimage','eID.id as eUserId','eID.firstname as employeeFirstname', 'eID.middlename as employeeMiddlename', 'eID.lastname as employeeLastname','blogs.updated_at')
-                    ->findOrFail($id)
-                    ;
+                    ->leftJoin('users as eID', 'blogs.employee_id', '=', 'eID.id')
+                    ->select('blogs.id', 'users.id as userID', 'users.firstname', 'users.lastname', 'userrole.name as userRoleName', 'blogs.topic', 'blogs.description', 'blogs.isactive', 'blogs.featimage', 'eID.id as eUserId', 'eID.firstname as employeeFirstname', 'eID.middlename as employeeMiddlename', 'eID.lastname as employeeLastname', 'blogs.updated_at')
+                    ->findOrFail($id);
 
-            $seocontent = SeoContent::orderBy('seo_contents.id' ,'DESC')
-                        ->leftJoin('users as eID','seo_contents.employee_id', '=','eID.id')
-                        ->where('seo_contents.blogId','=', $id)
-                        ->select('seo_contents.id','pagetitle', 'seo_contents.description as SEODescription', 'seo_contents.keyword', 'seo_contents.misc', 'seo_contents.slugurl', 'seo_contents.h1title', 'seo_contents.canonical', 'seo_contents.h2title', 'seo_contents.h3title', 'seo_contents.image', 'seo_contents.imagealttext', 'seo_contents.content', 'seo_contents.pageId', 'seo_contents.userId', 'seo_contents.collegeId', 'seo_contents.examId', 'seo_contents.boardId', 'seo_contents.careerReleventId', 'seo_contents.popularCareerId','seo_contents.courseId','seo_contents.blogId','seo_contents.examSectionId','seo_contents.employee_id','eID.id as eUserId','eID.firstname as employeeFirstname', 'eID.middlename as employeeMiddlename', 'eID.lastname as employeeLastname','seo_contents.updated_at')
-                        ->first();
+                $seocontent = SeoContent::orderBy('seo_contents.id', 'DESC')
+                    ->leftJoin('users as eID', 'seo_contents.employee_id', '=', 'eID.id')
+                    ->where('seo_contents.blogId', '=', $id)
+                    ->select('seo_contents.id', 'pagetitle', 'seo_contents.description as SEODescription', 'seo_contents.keyword', 'seo_contents.misc', 'seo_contents.slugurl', 'seo_contents.h1title', 'seo_contents.canonical', 'seo_contents.h2title', 'seo_contents.h3title', 'seo_contents.image', 'seo_contents.imagealttext', 'seo_contents.content', 'seo_contents.pageId', 'seo_contents.userId', 'seo_contents.collegeId', 'seo_contents.examId', 'seo_contents.boardId', 'seo_contents.careerReleventId', 'seo_contents.popularCareerId', 'seo_contents.courseId', 'seo_contents.blogId', 'seo_contents.examSectionId', 'seo_contents.employee_id', 'eID.id as eUserId', 'eID.firstname as employeeFirstname', 'eID.middlename as employeeMiddlename', 'eID.lastname as employeeLastname', 'seo_contents.updated_at')
+                    ->first();
 
-            return view('administrator/blogs.show', compact('blog','seocontent'));
-        }else{
+                return view('administrator/blogs.show', compact('blog', 'seocontent'));
+            } else {
                 Auth::logout(); // logout user
                 return Redirect::to('login'); //redirect back to login
             }
-        }else{
+        } else {
             Auth::logout(); // logout user
             return Redirect::to('login'); //redirect back to login
         }
@@ -312,31 +355,29 @@ class BlogsController extends Controller
     public function edit($id)
     {
         //Get the auth validity
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $userId = Auth::id();
             $roleGrant = User::where('id', '=', $userId)->first();
-            
-        if( $roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1' ){
-            $blog = Blog::findOrFail($id);
-            $usersObj = DB::table('users')
-                        ->join('userrole', 'users.userrole_id','=','userrole.id')
-                        ->select('users.id', 'users.firstname', 'users.middlename', 'users.lastname', 'userrole.name as userRoleName')
-                        ->orderBy('users.id','ASC')
-                        ->get()
-                        ;
 
-            $seocontent = SeoContent::orderBy('seo_contents.id' ,'DESC')
-                ->where('seo_contents.blogId','=', $id)
-                ->select('seo_contents.id as seoContentId','pagetitle', 'seo_contents.description as SEODescription','keyword', 'misc', 'slugurl', 'h1title', 'canonical', 'h2title', 'h3title', 'image', 'imagealttext', 'content', 'pageId', 'userId', 'collegeId', 'examId', 'boardId', 'careerReleventId', 'popularCareerId','courseId','blogId','examSectionId')
-                ->get();
-            return view('administrator/blogs.edit', compact('blog','seocontent')) 
-            ->with('usersObj', $usersObj);
-        }else{
+            if ($roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1') {
+                $blog = Blog::findOrFail($id);
+                $usersObj = DB::table('users')
+                    ->join('userrole', 'users.userrole_id', '=', 'userrole.id')
+                    ->select('users.id', 'users.firstname', 'users.middlename', 'users.lastname', 'userrole.name as userRoleName')
+                    ->orderBy('users.id', 'ASC')
+                    ->get();
+
+                $seocontent = SeoContent::where('seo_contents.blogId', '=', $id)
+                    ->select('seo_contents.id as seoContentId', 'pagetitle', 'seo_contents.description as SEODescription', 'keyword', 'misc', 'slugurl', 'h1title', 'canonical', 'h2title', 'h3title', 'image', 'imagealttext', 'content', 'pageId', 'userId', 'collegeId', 'examId', 'boardId', 'careerReleventId', 'popularCareerId', 'courseId', 'blogId', 'examSectionId')
+                    ->get();
+
+                return view('administrator/blogs.edit', compact('blog', 'seocontent'))
+                    ->with('usersObj', $usersObj);
+            } else {
                 Auth::logout(); // logout user
                 return Redirect::to('login'); //redirect back to login
             }
-        }else{
+        } else {
             Auth::logout(); // logout user
             return Redirect::to('login'); //redirect back to login
         }
@@ -352,127 +393,189 @@ class BlogsController extends Controller
     public function update($id, Request $request)
     {
         //Get the auth validity
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $userId = Auth::id();
             $roleGrant = User::where('id', '=', $userId)->first();
-            
-        if( $roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1' ){    
-            /*$blog = Blog::findOrFail($id);
-            $blog->update($request->all());*/
 
-                $blogsObj = Blog::findOrFail($id);
-                $blogsObj->topic = Input::get('topic');
-                $blogsObj->description = Input::get('description');
-                $blogsObj->isactive = Input::get('isactive');
-                $blogsObj->users_id = Input::get('users_id');
-                $blogsObj->employee_id = Auth::id();
-                                
-                //GET THE LAST CREATED ID
-                $getLastID = DB::table('blogs')
-                            ->select('slug')
-                            ->where('blogs.id','=', $id)
-                            ->orderBy('id', 'DESC')
-                            ->get();
+            if ($roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1') {
 
-                $slugUrl = $getLastID[0]->slug;
+                // Find the blog
+                $blog = Blog::findOrFail($id);
 
-                if($request->file('uploadFeatureImage'))
-                {                
-                    $extensionOfFile = '';
-                    $path = $_FILES['uploadFeatureImage']['name'];
-                    $ext = pathinfo($path, PATHINFO_EXTENSION);
+                // Update basic fields
+                $blog->topic = $request->input('topic');
+                $blog->description = $request->input('description');
+                $blog->isactive = $request->input('isactive');
+                $blog->users_id = $request->input('users_id');
+                $blog->employee_id = Auth::id();
 
-                    $tempPath = $_FILES[ 'uploadFeatureImage' ][ 'tmp_name' ];
-                    $currentMyTime = strtotime('now');
-                    $imageNameWithTime = $slugUrl.'-'.$currentMyTime;
-                    $fileWithExtension = $imageNameWithTime.'.'.$ext;
-                    $fileWithExtension1 = $imageNameWithTime.'_original'.'.'.$ext;
-                 
-                    //Set the image folder path
-                    if(env('APP_ENV') == 'local'){
-                       $dirPath = public_path().'/blogs/';
-                    }else{
-                        $dirPath = public_path().'/blogs/';
+                // Get existing slug
+                $slugUrl = $blog->slug;
+
+                // Set the image folder path
+                $dirPath = public_path() . '/blogs/';
+
+                // Ensure directory exists
+                if (!file_exists($dirPath)) {
+                    mkdir($dirPath, 0777, true);
+                }
+
+                // Check if file is uploaded
+                if ($request->hasFile('uploadFeatureImage')) {
+
+                    // Get the uploaded file
+                    $file = $request->file('uploadFeatureImage');
+
+                    // Get file extension
+                    $ext = strtolower($file->getClientOriginalExtension());
+
+                    // Validate file type - support all common image formats
+                    $allowedExtensions = ['jpg', 'jpeg', 'png', 'webp', 'gif', 'bmp', 'tiff', 'svg'];
+                    if (!in_array($ext, $allowedExtensions)) {
+                        Session::flash('error_message', 'Please upload only image files (jpg, jpeg, png, webp, gif, bmp, tiff, svg).');
+                        return redirect()->back()->withInput();
                     }
-                    
 
-                    //Store the image with 300PX width
-                    $uploadPath = $dirPath.$fileWithExtension;
-                    //Store the image with original width as original
-                    $uploadPath1 = $dirPath.$fileWithExtension1;
-                    if (move_uploaded_file($tempPath, $uploadPath)) {
-                     copy($uploadPath, $uploadPath1);
-                    }
-                    
-                    //IMAGE SAVED IN FOLDER NOW RESIZE IT
-                    if (file_exists($dirPath.$fileWithExtension)) {
+                    // Generate unique filename
+                    $currentMyTime = time();
+                    $imageNameWithTime = $slugUrl . '-' . $currentMyTime;
+                    $fileWithExtension = $imageNameWithTime . '.' . $ext;
+                    $fileWithExtension1 = $imageNameWithTime . '_original.' . $ext;
 
-                        $uploadimage = $dirPath.$fileWithExtension;//$dirPath.$_FILES['file']['name'];
-                        $newname = $fileWithExtension;//$_FILES['file']['name'];
+                    try {
+                        // Save original image
+                        $file->move($dirPath, $fileWithExtension1);
 
-                        // Set the resize_image name
-                        $resize_image = $dirPath.$newname; 
-                        $actual_image = $dirPath.$newname;
-                        // It gets the size of the image
-                        list( $width,$height ) = getimagesize( $uploadimage );
-                        // It makes the new image width of 350
-                        if( $width > '600' ){
-                            $newwidth = 300;
-                            // It makes the new image height of 350
-                            //$newheight = 350;
-                            if( $ext != 'png' ){
-                                $image = imagecreatefromjpeg($dirPath.$fileWithExtension);
-                            }else{
-                                $image = imagecreatefrompng($dirPath.$fileWithExtension);
-                            }
-                            $orig_width = imagesx($image);
-                            $orig_height = imagesy($image);
+                        // Check if file was saved successfully
+                        if (!file_exists($dirPath . $fileWithExtension1)) {
+                            throw new \Exception('Failed to save uploaded file');
+                        }
 
-                            // Calc the new height
-                            $newheight = (($orig_height * $newwidth) / $orig_width);
-                            // It loads the images we use jpeg function you can use any function like imagecreatefromjpeg
-                            $thumb = imagecreatetruecolor( $newwidth, $newheight );
-                            if( $ext != 'png' ){
-                                $source = imagecreatefromjpeg( $resize_image );
-                            }else{
-                                $source = imagecreatefrompng( $resize_image );
-                            }
-                            
-                            // Resize the $thumb image.
-                            imagecopyresized($thumb, $source, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
-                            // It then save the new image to the location specified by $resize_image variable
-                            if( $ext != 'png' ){
-                                imagejpeg( $thumb, $resize_image, 100 ); 
-                            }else{
-                                header('Content-Type: image/png');
-                                imagepng( $thumb, $resize_image); 
-                            }
-                            // 100 Represents the quality of an image you can set and ant number in place of 100.
-                            $out_image=addslashes(file_get_contents($resize_image));    
-                        }else{
+                        // For SVG files, we don't need to resize or process
+                        if ($ext == 'svg') {
+                            // Just copy the SVG file as-is
+                            copy($dirPath . $fileWithExtension1, $dirPath . $fileWithExtension);
+                            $newwidth = 0;
+                            $newheight = 0;
+                        } else {
+                            // Copy original to resized version
+                            copy($dirPath . $fileWithExtension1, $dirPath . $fileWithExtension);
+
+                            // Get image dimensions
+                            list($width, $height) = getimagesize($dirPath . $fileWithExtension);
+
+                            // Initialize dimensions
                             $newwidth = $width;
                             $newheight = $height;
-                        }            
+
+                            // Check if we need to resize (only for non-SVG images)
+                            if ($width > 5000) {
+                                $newwidth = 1500;
+                                $newheight = intval(($height * $newwidth) / $width);
+
+                                // Create image resource based on extension
+                                $source = null;
+                                switch ($ext) {
+                                    case 'jpg':
+                                    case 'jpeg':
+                                        $source = @imagecreatefromjpeg($dirPath . $fileWithExtension);
+                                        break;
+                                    case 'png':
+                                        $source = @imagecreatefrompng($dirPath . $fileWithExtension);
+                                        break;
+                                    case 'gif':
+                                        $source = @imagecreatefromgif($dirPath . $fileWithExtension);
+                                        break;
+                                    case 'webp':
+                                        if (function_exists('imagecreatefromwebp')) {
+                                            $source = @imagecreatefromwebp($dirPath . $fileWithExtension);
+                                        }
+                                        break;
+                                    case 'bmp':
+                                        if (function_exists('imagecreatefrombmp')) {
+                                            $source = @imagecreatefrombmp($dirPath . $fileWithExtension);
+                                        }
+                                        break;
+                                }
+
+                                if ($source) {
+                                    // Create thumbnail
+                                    $thumb = imagecreatetruecolor($newwidth, $newheight);
+
+                                    // Preserve transparency for supported formats
+                                    if ($ext == 'png' || $ext == 'gif') {
+                                        imagealphablending($thumb, false);
+                                        imagesavealpha($thumb, true);
+                                        $transparent = imagecolorallocatealpha($thumb, 255, 255, 255, 127);
+                                        imagefilledrectangle($thumb, 0, 0, $newwidth, $newheight, $transparent);
+                                    }
+
+                                    // Resize image
+                                    imagecopyresized($thumb, $source, 0, 0, 0, 0, $newwidth, $newheight, $width, $height);
+
+                                    // Save resized image based on format
+                                    switch ($ext) {
+                                        case 'jpg':
+                                        case 'jpeg':
+                                            imagejpeg($thumb, $dirPath . $fileWithExtension, 90);
+                                            break;
+                                        case 'png':
+                                            imagepng($thumb, $dirPath . $fileWithExtension, 9);
+                                            break;
+                                        case 'gif':
+                                            imagegif($thumb, $dirPath . $fileWithExtension);
+                                            break;
+                                        case 'webp':
+                                            if (function_exists('imagewebp')) {
+                                                imagewebp($thumb, $dirPath . $fileWithExtension, 90);
+                                            }
+                                            break;
+                                        case 'bmp':
+                                            if (function_exists('imagebmp')) {
+                                                imagebmp($thumb, $dirPath . $fileWithExtension);
+                                            }
+                                            break;
+                                    }
+
+                                    // Clean up
+                                    imagedestroy($thumb);
+                                    imagedestroy($source);
+                                }
+                            }
+                        }
+
+                        // Delete old images if they exist
+                        if ($blog->featimage && file_exists($dirPath . $blog->featimage)) {
+                            @unlink($dirPath . $blog->featimage);
+                        }
+                        if ($blog->fullimage && file_exists($dirPath . $blog->fullimage)) {
+                            @unlink($dirPath . $blog->fullimage);
+                        }
+
+                        // Update image fields
+                        $blog->featimage = $fileWithExtension;
+                        $blog->fullimage = $fileWithExtension1;
+                        $blog->width = round($newwidth);
+                        $blog->height = round($newheight);
+                    } catch (\Exception $e) {
+                        Session::flash('error_message', 'Error uploading image: ' . $e->getMessage());
+                        return redirect()->back()->withInput();
                     }
-
-                    $blogsObj->featimage = $fileWithExtension;
-                    $blogsObj->fullimage = $fileWithExtension1;
-                    $blogsObj->width = round($newwidth);
-                    $blogsObj->height = round($newheight);
                 }
-                
-            $blogsObj->save();
 
-            $seocontent = $this->fetchDataServiceController->seoContentCreateUpdate($id, $request->all());
-            
-            Session::flash('flash_message', 'Blog updated!');
-            return redirect('administrator/blogs');
-        }else{
+                // Save the blog
+                $blog->save();
+
+                // Update SEO content
+                $seocontent = $this->fetchDataServiceController->seoContentCreateUpdate($id, $request->all());
+
+                Session::flash('flash_message', 'Blog updated successfully!');
+                return redirect('administrator/blogs');
+            } else {
                 Auth::logout(); // logout user
                 return Redirect::to('login'); //redirect back to login
             }
-        }else{
+        } else {
             Auth::logout(); // logout user
             return Redirect::to('login'); //redirect back to login
         }
@@ -488,28 +591,26 @@ class BlogsController extends Controller
     public function destroy($id)
     {
         //Get the auth validity
-        if (Auth::check())
-        {
+        if (Auth::check()) {
             $userId = Auth::id();
             $roleGrant = User::where('id', '=', $userId)->first();
-            
-        if( $roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1' ){
-            DB::table('seo_contents')
-            ->where('seo_contents.blogId', '=', $id)
-            ->delete();
-            
-            Blog::destroy($id);
-            Session::flash('flash_message', 'Blog deleted!');
-            return redirect('administrator/blogs');
-        }else{
+
+            if ($roleGrant->userrole_id == '1' && $roleGrant->userstatus_id == '1') {
+                DB::table('seo_contents')
+                    ->where('seo_contents.blogId', '=', $id)
+                    ->delete();
+
+                Blog::destroy($id);
+                Session::flash('flash_message', 'Blog deleted!');
+                return redirect('administrator/blogs');
+            } else {
                 Auth::logout(); // logout user
                 return Redirect::to('login'); //redirect back to login
             }
-        }else{
+        } else {
             Auth::logout(); // logout user
             return Redirect::to('login'); //redirect back to login
         }
-
     }
 
     /**
@@ -521,50 +622,51 @@ class BlogsController extends Controller
     public function blogsSearch(Request $request)
     {
         $search0 = 'blogs.id';
-       
-        if( $request->collegeName != null ){
-            $search1 = "AND `users`.`firstname` LIKE  '%".$request->collegeName."%'" ;
-        }else{
+
+        if ($request->collegeName != null) {
+            $search1 = "AND `users`.`firstname` LIKE  '%" . $request->collegeName . "%'";
+        } else {
             $search1 =  '';
         }
 
-        if( $request->topic != null ){
-            $search2 = "AND `blogs`.`topic` LIKE  '%".$request->topic."%'";
-        }else{
+        if ($request->topic != null) {
+            $search2 = "AND `blogs`.`topic` LIKE  '%" . $request->topic . "%'";
+        } else {
             $search2 =  '';
         }
 
-        if( $request->isactive != '' ){
-            $search3 = " AND `blogs`.`isactive` LIKE  '%".$request->isactive."%'";           
-        }else{
+        if ($request->isactive != '') {
+            $search3 = " AND `blogs`.`isactive` LIKE  '%" . $request->isactive . "%'";
+        } else {
             $search3 = '';
         }
 
 
-        if( $request->startCounter != '' ){
+        if ($request->startCounter != '') {
             $startCounter = $request->startCounter;
-        }else{
+        } else {
             $startCounter = 0;
         }
 
-        if( $request->prevCounter != '' ){
+        if ($request->prevCounter != '') {
             $startCounter = $request->prevCounter;
-        }else{
+        } else {
             $startCounter = $request->startCounter;
         }
 
-        if( $startCounter == '' ){
+        if ($startCounter == '') {
             $startCounter = 0;
         }
-        
+
         $currentNode = $request->currentNode;
-        if(!empty($currentNode)){
-            $getValue = ($currentNode - 1)*20;  
-        }else{
+        if (!empty($currentNode)) {
+            $getValue = ($currentNode - 1) * 20;
+        } else {
             $getValue = 0;
         }
-                
-        $blogsSearchDataObj = DB::select( DB::raw("SELECT blogs.id as blogsId, users.id as userID,users.firstname, users.lastname, userrole.name as userRoleName,blogs.topic, blogs.description, blogs.isactive,eID.id as eUserId, eID.firstname as employeeFirstname, eID.middlename as employeeMiddlename, eID.lastname as employeeLastname,blogs.updated_at FROM  `blogs`
+
+        $blogsSearchDataObj = DB::select(DB::raw(
+            "SELECT blogs.id as blogsId, users.id as userID,users.firstname, users.lastname, userrole.name as userRoleName,blogs.topic, blogs.description, blogs.isactive,eID.id as eUserId, eID.firstname as employeeFirstname, eID.middlename as employeeMiddlename, eID.lastname as employeeLastname,blogs.updated_at FROM  `blogs`
                          LEFT JOIN `users` ON `blogs`.`users_id` = `users`.`id`
                         LEFT JOIN  `userrole` ON  `users`.`userrole_id` =  `userrole`.`id`
                         LEFT JOIN `users` as `eID` ON `blogs`.`employee_id` = `eID`.`id`
@@ -574,9 +676,10 @@ class BlogsController extends Controller
                         $search3
                         ORDER BY blogs.id ASC
                         LIMIT 20 OFFSET $getValue"
-                        ));
-         
-        $blogsSearchDataObj1 = DB::select( DB::raw("SELECT COUNT(blogs.id) as totalCount FROM  `blogs` 
+        ));
+
+        $blogsSearchDataObj1 = DB::select(DB::raw(
+            "SELECT COUNT(blogs.id) as totalCount FROM  `blogs` 
                         LEFT JOIN `users` ON `blogs`.`users_id` = `users`.`id`
                         LEFT JOIN  `userrole` ON  `users`.`userrole_id` =  `userrole`.`id`
                         LEFT JOIN `users` as `eID` ON `blogs`.`employee_id` = `eID`.`id`
@@ -586,52 +689,51 @@ class BlogsController extends Controller
                         $search3
                         ORDER BY blogs.id ASC
                         LIMIT 20"
-                    ));
-        
-        if(!empty($blogsSearchDataObj1)){
+        ));
+
+        if (!empty($blogsSearchDataObj1)) {
             $numRecords = $blogsSearchDataObj1[0]->totalCount;
-            $total_pages = ceil($numRecords/20);
+            $total_pages = ceil($numRecords / 20);
             $dataArray = array(
-                    'blogsSearchDataObj' => $blogsSearchDataObj,
-                    'blogsSearchDataObj1' => $total_pages,
-                    'currentNode' => $currentNode,
-                    'getTotalCount' => $blogsSearchDataObj1,
-                );
-        }else{
+                'blogsSearchDataObj' => $blogsSearchDataObj,
+                'blogsSearchDataObj1' => $total_pages,
+                'currentNode' => $currentNode,
+                'getTotalCount' => $blogsSearchDataObj1,
+            );
+        } else {
             $total_pages = 0;
             $dataArray = array(
-                    'blogsSearchDataObj' => $blogsSearchDataObj,
-                    'blogsSearchDataObj1' => $total_pages,
-                    'currentNode' => $currentNode,
-                    'getTotalCount' => $blogsSearchDataObj1,
-                );
+                'blogsSearchDataObj' => $blogsSearchDataObj,
+                'blogsSearchDataObj1' => $total_pages,
+                'currentNode' => $currentNode,
+                'getTotalCount' => $blogsSearchDataObj1,
+            );
         }
 
-        if( !empty($blogsSearchDataObj) )
-        {
+        if (!empty($blogsSearchDataObj)) {
             return json_encode($dataArray);
-        }else{
+        } else {
             return json_encode('no');
         }
     }
 
-    public function allBlogsSearch(Request $request){
+    public function allBlogsSearch(Request $request)
+    {
 
-         $blogs = Blog::orderBy('blogs.id', 'DESC')
-                        ->join('users', 'blogs.users_id', '=', 'users.id')
-                        ->join('userrole', 'users.userrole_id', '=', 'userrole.id')
-                        ->leftJoin('users as eID','blogs.employee_id', '=','eID.id')
-                        ->select('blogs.id as blogsId', 'users.id as userID','users.firstname', 'users.lastname', 'userrole.name as userRoleName','blogs.topic', 'blogs.description', 'blogs.isactive','eID.id as eUserId','eID.firstname as employeeFirstname', 'eID.middlename as employeeMiddlename', 'eID.lastname as employeeLastname','blogs.updated_at')
-                        ->take(20)
-                        ->get();
-  
+        $blogs = Blog::orderBy('blogs.id', 'DESC')
+            ->join('users', 'blogs.users_id', '=', 'users.id')
+            ->join('userrole', 'users.userrole_id', '=', 'userrole.id')
+            ->leftJoin('users as eID', 'blogs.employee_id', '=', 'eID.id')
+            ->select('blogs.id as blogsId', 'users.id as userID', 'users.firstname', 'users.lastname', 'userrole.name as userRoleName', 'blogs.topic', 'blogs.description', 'blogs.isactive', 'eID.id as eUserId', 'eID.firstname as employeeFirstname', 'eID.middlename as employeeMiddlename', 'eID.lastname as employeeLastname', 'blogs.updated_at')
+            ->take(20)
+            ->get();
+
         return json_encode($blogs);
     }
 
     public function deleteSearchBlog(Request $request, $id)
-    {   
+    {
         Blog::destroy($id);
         return Redirect::back();
     }
-
 }

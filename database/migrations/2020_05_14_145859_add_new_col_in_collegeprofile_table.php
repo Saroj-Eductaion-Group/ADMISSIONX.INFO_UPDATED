@@ -29,4 +29,28 @@ class AddNewColInCollegeprofileTable extends Migration
             $table->integer('campusAddressCountryId')->nullable();
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('collegeprofile', function (Blueprint $table) {
+            $table->dropColumn('bannerimage');
+            $table->dropColumn('isShowOnTop');
+            $table->dropColumn('isShowOnHome');
+            $table->dropColumn('registeredSortAddress');
+            $table->dropColumn('registeredFullAddress');
+            $table->dropColumn('registeredAddressCityId');
+            $table->dropColumn('registeredAddressStateId');
+            $table->dropColumn('registeredAddressCountryId');
+            $table->dropColumn('campusSortAddress');
+            $table->dropColumn('campusFullAddress');
+            $table->dropColumn('campusAddressCityId');
+            $table->dropColumn('campusAddressStateId');
+            $table->dropColumn('campusAddressCountryId');
+        });
+    }
 }

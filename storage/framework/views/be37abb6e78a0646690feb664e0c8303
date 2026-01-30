@@ -1,0 +1,44 @@
+<?php echo Html::style('assets/administrator/css/bootstrap.min.css'); ?>
+
+<?php echo Html::style('assets/administrator/css/bootstrap-datetimepicker.min.css'); ?>
+
+<?php echo Html::style('assets/administrator/css/font-awesome/css/font-awesome.css'); ?>
+
+<?php echo Html::style('assets/administrator/css/plugins/iCheck/custom.css'); ?>
+
+<?php echo Html::style('assets/administrator/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css'); ?>
+
+<?php echo Html::style('assets/administrator/css/plugins/chosen/chosen.css'); ?>
+
+
+<?php echo Html::style('assets/administrator/css/animate.css'); ?>
+
+<?php echo Html::style('assets/administrator/css/style.css'); ?>
+
+<?php echo Html::style('assets/administrator/css/adminstyle.css'); ?>
+
+<!-- JS VALIDATION -->
+<?php echo Html::style('assets/administrator/css/parsley.css'); ?>
+
+<?php echo Html::style('assets/css/ionRangeSlider/ion.rangeSlider.css'); ?>
+
+<?php echo Html::style('assets/css/ionRangeSlider/ion.rangeSlider.skinFlat.css'); ?>
+
+<?php echo Html::style('assets/css/nouslider/jquery.nouislider.css'); ?>
+
+<?php echo Html::style('assets/plugins/magnific-popup/magnific-popup.css'); ?>
+
+<?php echo Html::style('assets/administrator/css/plugins/fancybox/source/jquery.fancybox.css'); ?>
+
+<?php echo Html::style('assets/administrator/css/blog_masonry_3col.css'); ?>
+
+<!-- CSS FOR JQUERY DATEPICKER -->
+<?php echo HTML::style('assets/administrator/js/plugins/jquery-ui/jquery-ui.css'); ?>
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+
+<?php echo HTML::style('assets/css/morris/morris-0.4.3.min.css'); ?>
+
+
+<?php echo $__env->yieldContent('styles'); ?>

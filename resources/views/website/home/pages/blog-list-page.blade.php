@@ -29,9 +29,9 @@
 	<div class="row blog-page">
 		<div class="col-md-9 md-margin-bottom-40">
 			@if( $getBlogsObj )
-				@foreach( $getBlogsObj as $item )
-					{{--*/ $isChecked = '0'  /*--}}
-					{{--*/   
+			@foreach( $getBlogsObj as $item )
+			{{--*/ $isChecked = '0'  /*--}}
+			{{--*/
 						$orientation = 'max-height: 300px; width: auto;';
 						if(!empty($item->fullimage)){
   							$imagePath = "/blogs/".$item->fullimage;
@@ -54,77 +54,77 @@
 						}
 
                 	/*--}}
-					<div class="row blog blog-medium margin-bottom-40">
-						<div class="col-md-5">
-							@if($item->featimage != '')
-								<a href="{{ URL::to('blogs', $item->slug) }}" title="{{ $item->topic }}">
-									<img class="img-responsive" src="/blogs/{{ $item->featimage }}" alt="{{ $item->topic }}" style="{{$orientation}}">
-								</a>
-							@else
-								<a href="{{ URL::to('blogs', $item->slug) }}" title="{{ $item->topic }}">
-									<img class="img-responsive" src="{{asset('/blogs/default.jpg')}}" alt="{{ $item->topic }}">
-								</a>
+			<div class="row blog blog-medium margin-bottom-40">
+				<div class="col-md-5">
+					@if($item->featimage != '')
+					<a href="{{ URL::to('blogs', $item->slug) }}" title="{{ $item->topic }}">
+						<img class="img-responsive" src="/blogs/{{ $item->featimage }}" alt="{{ $item->topic }}" style="{{$orientation}}">
+					</a>
+					@else
+					<a href="{{ URL::to('blogs', $item->slug) }}" title="{{ $item->topic }}">
+						<img class="img-responsive" src="{{asset('/blogs/default.jpg')}}" alt="{{ $item->topic }}">
+					</a>
+					@endif
+				</div>
+				<div class="col-md-7">
+					<h2>
+						<span class="text-left">
+							<a href="{{ URL::to('blogs', $item->slug) }}">{{ ucfirst(strtolower($item->topic)) }}</a>
+						</span>
+						&nbsp;&nbsp;
+						<span class="text-right">
+							@if( $studentBookMarkInfoBlogs )
+							@foreach($studentBookMarkInfoBlogs as $bookmarked)
+							@if( $bookmarked->blog_id == $item->id )
+							<a href="javascript:void(0);" class="bookmarkedHeartIcon">
+								<input type="hidden" name="bookmarkTableID" value="{{ $bookmarked->id }}">
+								<input type="hidden" name="blogName" value="{{ $item->slug }}">
+								<input type="hidden" name="blogURL" value="{{ URL::to('blogs', $item->slug) }}">
+								<span title="The Featured showcase features some of the most popular blogs" class="white-bg">
+									<i class="bookmarkHeart blogName rounded-x icon-heart" name="blogName"></i>
+								</span>
+							</a>
+							{{--*/ $isChecked = '1'  /*--}}
+							{{--*/ break /*--}}
 							@endif
-						</div>
-						<div class="col-md-7">
-							<h2>
-								<span class="text-left">
-									<a href="{{ URL::to('blogs', $item->slug) }}">{{ ucfirst(strtolower($item->topic)) }}</a>
-								</span>
-								&nbsp;&nbsp;
-								<span class="text-right">
-									@if( $studentBookMarkInfoBlogs )
-								    	@foreach($studentBookMarkInfoBlogs as $bookmarked)
-								    		@if( $bookmarked->blog_id == $item->id )
-									    	<a href="javascript:void(0);" class="bookmarkedHeartIcon">
-									    		<input type="hidden" name="bookmarkTableID" value="{{ $bookmarked->id }}">
-		  										<input type="hidden" name="blogName" value="{{ $item->slug }}">
-		  										<input type="hidden" name="blogURL" value="{{ URL::to('blogs', $item->slug) }}">
-		  										<span title="The Featured showcase features some of the most popular blogs" class="white-bg">
-		  											<i class="bookmarkHeart blogName rounded-x icon-heart" name="blogName"></i>
-												</span>
-											</a>
-											{{--*/ $isChecked = '1'  /*--}}
-											{{--*/ break /*--}}
-											@endif
-										@endforeach
+							@endforeach
 
-										@if( $isChecked == '0' )
-											<a href="javascript:void(0);" class="blogBookMarkButton">
-		  										<input type="hidden" name="blogName" value="{{ $item->slug }}">
-		  										<input type="hidden" name="blogURL" value="{{ URL::to('blogs', $item->slug) }}">
-		  										<span title="The Featured showcase features some of the most popular blogs" class="white-bg">
-		  											<i class="bookmarkHeart blogName rounded-x icon-heart" name="blogName"></i>
-												</span>
-											</a>
-										@endif
-									@else
-										<a href="javascript:void(0);" class="blogBookMarkButton">
-	  										<input type="hidden" name="blogName" value="{{ $item->slug }}">
-	  										<input type="hidden" name="blogURL" value="{{ URL::to('blogs', $item->slug) }}">
-	  										<span title="The Featured showcase features some of the most popular blogs" class="white-bg">
-	  											<i class="bookmarkHeart blogName rounded-x icon-heart" name="blogName"></i>
-											</span>
-										</a>
-									@endif									
+							@if( $isChecked == '0' )
+							<a href="javascript:void(0);" class="blogBookMarkButton">
+								<input type="hidden" name="blogName" value="{{ $item->slug }}">
+								<input type="hidden" name="blogURL" value="{{ URL::to('blogs', $item->slug) }}">
+								<span title="The Featured showcase features some of the most popular blogs" class="white-bg">
+									<i class="bookmarkHeart blogName rounded-x icon-heart" name="blogName"></i>
 								</span>
-							</h2>
-							<ul class="list-unstyled list-inline blog-info">
-								<li><i class="fa fa-calendar"></i> {!! date('M d, Y', strtotime($item->createdDate)) !!}</li>
-								<li><i class="fa fa-user"></i> {{ $item->firstname }}</li>								
-							</ul>
-							<p style="font-size: 18px;">{{ str_limit(strip_tags($item->description), 250) }}</p>
-							<p><a class="btn-u btn-u-sm" href="{{ URL::to('blogs', $item->slug) }}">Read More <i class="fa fa-angle-double-right margin-left-5" ></i></a></p>
-						</div>
-					</div>
-					<hr class="margin-bottom-40">
-				@endforeach
-				<div class="text-center">
-					{!! $getBlogsObj->render() !!}	
-				</div>				
+							</a>
+							@endif
+							@else
+							<a href="javascript:void(0);" class="blogBookMarkButton">
+								<input type="hidden" name="blogName" value="{{ $item->slug }}">
+								<input type="hidden" name="blogURL" value="{{ URL::to('blogs', $item->slug) }}">
+								<span title="The Featured showcase features some of the most popular blogs" class="white-bg">
+									<i class="bookmarkHeart blogName rounded-x icon-heart" name="blogName"></i>
+								</span>
+							</a>
+							@endif
+						</span>
+					</h2>
+					<ul class="list-unstyled list-inline blog-info">
+						<li><i class="fa fa-calendar"></i> {!! date('M d, Y', strtotime($item->createdDate)) !!}</li>
+						<li><i class="fa fa-user"></i> {{ $item->firstname }}</li>
+					</ul>
+					<p style="font-size: 18px;">{{ str_limit(strip_tags($item->description), 250) }}</p>
+					<p><a class="btn-u btn-u-sm" href="{{ URL::to('blogs', $item->slug) }}">Read More <i class="fa fa-angle-double-right margin-left-5"></i></a></p>
+				</div>
+			</div>
+			<hr class="margin-bottom-40">
+			@endforeach
+			<div class="text-center">
+				{!! $getBlogsObj->render() !!}
+			</div>
 			@endif
 		</div>
-		
+
 		<div class="col-md-3">
 			<div class="magazine-sb-social margin-bottom-30">
 				<div class="headline headline-md">
@@ -151,31 +151,35 @@
 			</div>
 
 			<div class="posts margin-bottom-40">
-				<div class="headline headline-md"><h2>Recent Posts</h2></div>
+				<div class="headline headline-md">
+					<h2>Recent Posts</h2>
+				</div>
 				@if( $getBlogsObj1 )
-					@foreach( $getBlogsObj1 as $item )
-						<!-- <ul class="list-unstyled">
+				@foreach( $getBlogsObj1 as $item )
+				<!-- <ul class="list-unstyled">
 							<li>
 								<a href="{{ URL::to('blogs', $item->slug) }}">{{ $item->topic }}</a>
 							</li>
 						</ul> -->
-						<dl class="dl-horizontal">
-							@if($item->featimage)
-							<dt><a href="{{ URL::to('blogs', $item->slug) }}" title="{{ $item->topic }}"><img src="/blogs/{{ $item->featimage }}" alt="{{ $item->topic }}"></a></dt>
-							@else
-								<dt><a href="{{ URL::to('blogs', $item->slug) }}" title="{{ $item->topic }}"><img src="{{asset('/blogs/default.jpg')}}" alt="{{ $item->topic }}"></a></dt>
-							@endif
-							<dd>
-								<p>
-									<a href="{{ URL::to('blogs', $item->slug) }}">{{ ucfirst(strtolower($item->topic)) }}</a>
-								</p>
-							</dd>
-						</dl> 
-					@endforeach
+				<dl class="dl-horizontal">
+					@if($item->featimage)
+					<dt><a href="{{ URL::to('blogs', $item->slug) }}" title="{{ $item->topic }}"><img src="/blogs/{{ $item->featimage }}" alt="{{ $item->topic }}"></a></dt>
+					@else
+					<dt><a href="{{ URL::to('blogs', $item->slug) }}" title="{{ $item->topic }}"><img src="{{asset('/blogs/default.jpg')}}" alt="{{ $item->topic }}"></a></dt>
+					@endif
+					<dd>
+						<p>
+							<a href="{{ URL::to('blogs', $item->slug) }}">{{ ucfirst(strtolower($item->topic)) }}</a>
+						</p>
+					</dd>
+				</dl>
+				@endforeach
 				@endif
 			</div>
 
-			<div class="headline headline-md"><h2>Tabs Widget</h2></div>
+			<div class="headline headline-md">
+				<h2>Tabs Widget</h2>
+			</div>
 			<div class="tab-v2 margin-bottom-40">
 				<ul class="nav nav-tabs">
 					<li class="active"><a data-toggle="tab" href="#home-1" aria-expanded="false">About Us</a></li>

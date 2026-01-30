@@ -37,6 +37,6 @@ class CreateAdsTopCollegeListsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('ads_top_college_lists');
+        Schema::dropIfExists('ads_top_college_lists');
     }
 }

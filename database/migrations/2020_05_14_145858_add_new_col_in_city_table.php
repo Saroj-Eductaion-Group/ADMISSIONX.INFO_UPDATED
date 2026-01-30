@@ -24,4 +24,23 @@ class AddNewColInCityTable extends Migration
             $table->integer('totalCollegeByCampusAddress')->default(0);
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('city', function (Blueprint $table) {
+            $table->dropColumn('pagetitle');
+            $table->dropColumn('pagedescription');
+            $table->dropColumn('pageslug');
+            $table->dropColumn('bannerimage');
+            $table->dropColumn('isShowOnTop');
+            $table->dropColumn('isShowOnHome');
+            $table->dropColumn('totalCollegeRegAddress');
+            $table->dropColumn('totalCollegeByCampusAddress');
+        });
+    }
 }

@@ -37,6 +37,7 @@ use App\Models\Entranceexam as Entranceexam;
 use App\Models\SeoContent;
 use App\Models\CollegeMaster;
 use App\Http\Controllers\Helper\FetchDataServiceController;
+use Illuminate\Support\Facades\Http;
 
 class studentSignUpController extends Controller
 {
@@ -119,7 +120,7 @@ class studentSignUpController extends Controller
                 $userObj->lastName = $lastName;
                 $userObj->password = Hash::make($password);
                 $userObj->phone = $phone;
-                $userObj->userstatus_id = '2'; //Inasctive
+                $userObj->userstatus_id = '2'; //Inactive
                 $userObj->userrole_id = '3'; //ROLE_STUDENT 
 
                 $encrytEmail = md5($email);
@@ -158,14 +159,16 @@ class studentSignUpController extends Controller
                 //CREATE TWO FOLDERS IN GALLERY AND DOCUMENTS FOR PHOTOS
                 $directoryForDocument =  public_path().'/document/'.$slugUrl;
                 $directoryForGallery =  public_path().'/gallery/'.$slugUrl;
-                if (!mkdir($directoryForDocument, 0777, true)) {
-                    die('Failed to create folders...');
+                if (!is_dir($directoryForDocument)) {
+                    mkdir($directoryForDocument, 0777, true);
                 }
-                if (!mkdir($directoryForGallery, 0777, true)) {
-                    die('Failed to create folders...');
+                if (!is_dir($directoryForGallery)) {
+                    mkdir($directoryForGallery, 0777, true);
                 }
+                
                 //GET STUDENT PROFILE ID AS PER SLUG
                 $getStudentProId = StudentProfile::where('slug', '=', $slugUrl)->firstOrFail();
+                
                 //STORE INTO ADDRESS TABLE FOR CREATE RECORD
                 //For Permanent Address
                 $addressObj = New Address;
@@ -230,13 +233,14 @@ class studentSignUpController extends Controller
                 setcookie('lastName', $lastName, time() + (86400 * 30), "/");
                 setcookie('email', $email, time() + (86400 * 30), "/");
 
-                //Send Signup message for student
-               //$smsMessageData = 'Welcome to Admission X. We are happy to have you onboard ! Your registered email id is : '.$email;
-                $smsMessageData = Config::get('systemsetting.SIGNUPMSG').' '.$email.' '.Config::get('systemsetting.SMS_GROUP_NAME_5');
-                $userMobileNo = $phone;
-                // Define Function Call
-                //$resultSet = $this->sendSignupSms($userMobileNo, $smsMessageData);
-                $resultSet = $this->fetchDataServiceController->sendTextSmsOnMobile($userMobileNo, $smsMessageData, Config::get('systemsetting.TEMPLATE_SIGN_OTP'));
+                //Send Signup message for student using SmartPing
+                $smsMessageData = "Welcome to Admission X! Your account has been created successfully. Email: " . $email;
+                
+                // Send SMS using SmartPing
+                $smsResult = $this->sendSmartPingSMS($phone, $smsMessageData);
+                
+                // Log SMS result
+                \Log::info('SMS Sent to ' . $phone . ': ' . ($smsResult ? 'Success' : 'Failed'));
 
                 $postPublishDataFromSession = app('App\Http\Controllers\website\SocialConnectController')->postPublishDataFromSession($getEmailWiseUserId->id);
 
@@ -277,6 +281,58 @@ class studentSignUpController extends Controller
        
     }
 
+    // SmartPing SMS Function
+    private function sendSmartPingSMS($mobile, $message)
+    {
+        try {
+            $username = env('SMARTPING_USERNAME', 'saroj.trans');
+            $password = env('SMARTPING_PASSWORD', 'v4wxb');
+            $senderid = env('SMARTPING_SENDER', 'SARSIS');
+            
+            // Prepare mobile number (add 91 if not present)
+            if (strpos($mobile, '91') !== 0) {
+                $mobile = '91' . $mobile;
+            }
+            
+            $url = 'https://api.smartping.ai/send';
+            
+            $params = [
+                'username' => $username,
+                'password' => $password,
+                'senderid' => $senderid,
+                'mobile' => $mobile,
+                'message' => $message,
+                'unicode' => 'false'
+            ];
+            
+            $fullUrl = $url . '?' . http_build_query($params);
+            
+            \Log::info('SmartPing SMS URL: ' . $fullUrl);
+            
+            $client = new \GuzzleHttp\Client();
+            $response = $client->request('GET', $fullUrl, [
+                'verify' => false,
+                'timeout' => 30
+            ]);
+            
+            $responseBody = $response->getBody()->getContents();
+            \Log::info('SmartPing Response: ' . $responseBody);
+            
+            // Check if SMS was sent successfully
+            if (strpos($responseBody, 'SUCCESS') !== false || 
+                strpos($responseBody, 'OK') !== false || 
+                strpos($responseBody, 'MessageId') !== false) {
+                return true;
+            }
+            
+            return false;
+            
+        } catch (\Exception $e) {
+            \Log::error('SmartPing SMS Error: ' . $e->getMessage());
+            return false;
+        }
+    }
+
     public function smsCallback(Request $request)
     {
         // Handle SMS delivery status
@@ -291,38 +347,8 @@ class studentSignUpController extends Controller
 
     public function sendSignupSms($userMobileNo, $smsMessageData)
     {
-        $userId = 'saroj.trans';
-        $password = 'v4wxb';
-        $senderId = 'SARSIS';
-        $dltContentId = '1707175610376977716'; // Update this with your template ID
-        
-        $url = 'https://gui.smartping.ai/fe/api/v1/send';
-        
-        $data = array(
-            'username' => $userId,
-            'password' => $password,
-            'unicode' => 'false',
-            'from' => $senderId,
-            'to' => $userMobileNo,
-            'text' => $smsMessageData, // Message must match registered DLT template
-            'dltContentId' => $dltContentId
-        );
-        
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_POST, 1);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        
-        $response = curl_exec($ch);
-        $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-        
-        // Log the response for debugging
-        error_log('SMS Response: ' . $response);
-        
-        return $response;
+        // Use SmartPing instead
+        return $this->sendSmartPingSMS($userMobileNo, $smsMessageData);
     }
 
     public function sendStudentSignupMail($email, $ecyEmailUrl)
@@ -341,40 +367,71 @@ class studentSignUpController extends Controller
 
                 $mail->SMTPDebug = 0;
                 $mail->isSMTP();
-                $mail->Host = 'smtp.gmail.com';
+                $mail->Host = env('MAIL_HOST', 'smtp.gmail.com');
                 $mail->SMTPAuth = true;
                 $mail->Username = env('MAIL_USERNAME');
                 $mail->Password = env('MAIL_PASSWORD');
-                $mail->SMTPSecure = env('MAIL_ENCRYPTION');
-                $mail->Port = env('MAIL_PORT');
+                $mail->SMTPSecure = env('MAIL_ENCRYPTION', 'tls');
+                $mail->Port = env('MAIL_PORT', 587);
 
-                $mail->setFrom(env('MAIL_USERNAME'), 'Welcome to AdmissionX');
+                $mail->setFrom(env('MAIL_FROM_ADDRESS', 'noreply@admissionx.info'), env('MAIL_FROM_NAME', 'AdmissionX'));
                 $mail->addAddress($email, 'AdmissionX');
 
-                // Fix the template path
-                $templatePath = public_path('assets/studentSignupMail.html');
-                if (file_exists($templatePath)) {
-                    $message = file_get_contents($templatePath);
-                    $message = str_replace('%ecyEmailUrl%', $ecyEmailUrl, $message);
-                } else {
-                    // Fallback message if template doesn't exist
-                    $message = '<h2>Welcome to AdmissionX!</h2><p>Thank you for registering. Please verify your email by clicking <a href="'.$ecyEmailUrl.'">here</a></p>';
-                }
+                // Email template
+                $message = '<!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Welcome to AdmissionX</title>
+                    <style>
+                        body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4; }
+                        .container { max-width: 600px; margin: 0 auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+                        .header { text-align: center; padding-bottom: 20px; border-bottom: 2px solid #337ab7; }
+                        .header h2 { color: #337ab7; margin: 0; }
+                        .content { padding: 20px 0; }
+                        .button { display: inline-block; background-color: #337ab7; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+                        .footer { text-align: center; padding-top: 20px; border-top: 1px solid #ddd; color: #666; font-size: 14px; }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <div class="header">
+                            <h2>Welcome to AdmissionX!</h2>
+                        </div>
+                        <div class="content">
+                            <p>Dear Student,</p>
+                            <p>Thank you for registering with AdmissionX. Your account has been created successfully.</p>
+                            <p>Please verify your email address by clicking the button below:</p>
+                            <p style="text-align: center; margin: 30px 0;">
+                                <a href="' . $ecyEmailUrl . '" class="button">Verify Email Address</a>
+                            </p>
+                            <p>If the button doesn\'t work, copy and paste this URL in your browser:</p>
+                            <p style="word-break: break-all; background-color: #f9f9f9; padding: 10px; border-radius: 5px;">' . $ecyEmailUrl . '</p>
+                            <p>After verification, you can login and complete your profile.</p>
+                            <p>If you didn\'t create an account, please ignore this email.</p>
+                        </div>
+                        <div class="footer">
+                            <p>Best regards,<br><strong>AdmissionX Team</strong></p>
+                            <p>Need help? Contact us at: support@admissionx.info</p>
+                        </div>
+                    </div>
+                </body>
+                </html>';
 
                 $mail->isHTML(true);
-                $mail->Subject = 'Thank you for registering with AdmissionX';
+                $mail->Subject = 'Verify Your AdmissionX Account';
                 $mail->Body = $message;
+                $mail->AltBody = "Welcome to AdmissionX! Please verify your email by visiting: " . $ecyEmailUrl;
 
                 if(!$mail->send()) {
-                    error_log('Mail Error: ' . $mail->ErrorInfo);
+                    \Log::error('Email Error: ' . $mail->ErrorInfo);
                     return false;
                 } else {
-                    Session::flash('sendEmailMsg', 'Email sent successfully!');
+                    \Log::info('Email sent successfully to: ' . $email);
                     return true;
                 }
             }
-        } catch (Exception $e) {
-            error_log('Email sending failed: ' . $e->getMessage());
+        } catch (\Exception $e) {
+            \Log::error('Email sending failed: ' . $e->getMessage());
             return false;
         }        
     }
@@ -464,6 +521,21 @@ class studentSignUpController extends Controller
             return response()->json(['status' => 'error', 'message' => 'Failed to send test email']);
         }
     }
+    
+    // Test SMS functionality
+    public function testSMS()
+    {
+        $mobile = '91XXXXXXXXXX'; // Add your test number
+        $message = 'Test SMS from AdmissionX - SmartPing API';
+        
+        $result = $this->sendSmartPingSMS($mobile, $message);
+        
+        if ($result) {
+            return response()->json(['status' => 'success', 'message' => 'Test SMS sent successfully']);
+        } else {
+            return response()->json(['status' => 'error', 'message' => 'Failed to send test SMS']);
+        }
+    }
 
     public function verifyEmailAddress($token)
     {
@@ -472,6 +544,10 @@ class studentSignUpController extends Controller
             $userObj->token = '';
             $userObj->userstatus_id = '1';
             $userObj->save();
+
+            // Send welcome SMS after verification
+            $smsMessage = "Welcome! Your AdmissionX account has been verified successfully.";
+            $this->sendSmartPingSMS($userObj->phone, $smsMessage);
 
             Session::flash('verifiedEmail', 'Thank you for email confirmation! Happy to have you on our board.');
         } catch ( \Exception $e) {

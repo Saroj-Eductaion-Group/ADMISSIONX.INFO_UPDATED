@@ -17,4 +17,17 @@ class AddNewColInExamSectionsTable extends Migration
             $table->boolean('isShowOnHome')->default(0)->comment="0-Disable,1-Enabled";
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('exam_sections', function (Blueprint $table) {
+            $table->dropColumn('isShowOnTop');
+            $table->dropColumn('isShowOnHome');
+        });
+    }
 }

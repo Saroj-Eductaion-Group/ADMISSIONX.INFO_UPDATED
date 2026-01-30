@@ -1,0 +1,299 @@
+<?php $__env->startSection('content'); ?>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-12">
+        <h2>Welcome to AdmissionX</h2>
+    </div>
+</div>
+<div class="ibox-content margin-top20">
+    <div class="row">
+        <div class="col-md-12">
+            <label>Search Statistics</label>
+            <div class="row margin-top20">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-content">
+                            <form action="<?php echo e(URL::to('/administrator/dashboard')); ?>" method="GET" data-parsley-validate="">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <label>From Date</label>
+                                    <input type="text" id="txtFromCreateDate" class="form-control createdDateStart" name="startdate" value="<?php echo e(Request::get('startdate')); ?>" placeholder="Form Date" data-parsley-trigger="change" data-parsley-error-message="Please select From date" required readonly="" data-parsley-errors-container="#startdate-validation-error-block">
+                                    <div class="mb-2" id="startdate-validation-error-block"></div>
+                                </div>
+                                <div class="col-md-4">
+                                    <label>To Date</label>
+                                    <input type="text" id="txtToCreateDate" class="form-control createdDateEnd" name="enddate" value="<?php echo e(Request::get('enddate')); ?>" placeholder="To Date" data-parsley-trigger="change" data-parsley-error-message="Please select To date " required readonly="" data-parsley-errors-container="#enddate-validation-error-block">
+                                    <div class="mb-2" id="enddate-validation-error-block"></div>
+                                </div>
+                                <div class="col-md-4 text-right margin-top20">
+                                    <a href="<?php echo e(URL::to('/administrator/dashboard')); ?>" class="btn btn-md btn-danger">Clear</a>
+                                    <button class="btn btn-primary btn-md" id="weekdaywiseHub" >Submit</button>   
+                                </div>
+                            </div>                    
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ibox-content table-responsive">
+                
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="ibox float-e-margins transaction-graph animated slideInRight margin-top20">
+            <div class="ibox-content">
+                <h2>Updated transaction data</h2>
+                <hr class="hr-line-dashed"></hr>
+                <div id="morris-one-line-chart"></div>
+            </div>
+        </div>        
+    </div>
+</div>
+<div class="row wrapper border-bottom page-heading margin-top20 animated slideInLeft">
+    <div class="col-md-4 col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>New Colleges Registered</h5>                            
+            </div>
+            <div class="ibox-content">
+        		<?php /**/ $totalCol = '0'; /**/ ?>
+        		<?php /**/ $totalColActve = '0'; /**/ ?>
+        		<?php /**/ $totalColInactive = '0'; /**/ ?>
+        		<?php /**/ $totalColDisabled = '0'; /**/ ?>
+            	<?php foreach( $totalUsersRegistered as $totalUsers ): ?>
+                    <?php if( $totalUsers->userrole_id == 2 ): ?>
+            			<?php /**/ $totalCol += 1; /**/ ?>
+    				<?php endif; ?>
+    				<?php if( $totalUsers->userstatus_id == 1 && $totalUsers->userrole_id == 2 ): ?>
+            			<?php /**/ $totalColActve += 1; /**/ ?>
+    				<?php endif; ?>
+    				<?php if( $totalUsers->userstatus_id == 2 && $totalUsers->userrole_id == 2 ): ?>
+            			<?php /**/ $totalColInactive += 1; /**/ ?>
+    				<?php endif; ?>
+    				<?php if( $totalUsers->userstatus_id == 3 && $totalUsers->userrole_id == 2 ): ?>
+            			<?php /**/ $totalColDisabled += 1; /**/ ?>
+    				<?php endif; ?>
+            	<?php endforeach; ?>
+            	<h1><?php echo e($totalCol); ?></h1>
+            	<h5>Total Active College : <span class="label label-info"><?php echo e($totalColActve); ?></span></h5>
+            	<h5>Total Inactive College : <span class="label label-warning"><?php echo e($totalColInactive); ?></span></h5>
+            	<h5>Total Disable College : <span class="label label-danger"><?php echo e($totalColDisabled); ?></span></h5>
+        	</div>
+    	</div>
+	</div>
+	<div class="col-md-4 col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>New Student Registered</h5>                            
+            </div>
+            <div class="ibox-content">
+            	<?php /**/ $totalStu = '0'; /**/ ?>
+        		<?php /**/ $totalStuActve = '0'; /**/ ?>
+        		<?php /**/ $totalStuInactive = '0'; /**/ ?>
+        		<?php /**/ $totalStuDisabled = '0'; /**/ ?>
+            	<?php foreach( $totalUsersRegistered as $totalUsers ): ?>
+            		<?php if( $totalUsers->userrole_id == '3' ): ?>
+            			<?php /**/ $totalStu += 1; /**/ ?>
+    				<?php endif; ?>
+    				<?php if( $totalUsers->userstatus_id == '1' && $totalUsers->userrole_id == '3' ): ?>
+            			<?php /**/ $totalStuActve += 1; /**/ ?>
+    				<?php endif; ?>
+    				<?php if( $totalUsers->userstatus_id == '2' && $totalUsers->userrole_id == '3' ): ?>
+            			<?php /**/ $totalStuInactive += 1; /**/ ?>
+    				<?php endif; ?>
+    				<?php if( $totalUsers->userstatus_id == '3' && $totalUsers->userrole_id == '3' ): ?>
+            			<?php /**/ $totalStuDisabled += 1; /**/ ?>
+    				<?php endif; ?>
+            	<?php endforeach; ?>
+            	<h1><?php echo e($totalStu); ?></h1>
+            	<h5>Total Active Student : <span class="label label-info"><?php echo e($totalStuActve); ?></span></h5>
+            	<h5>Total Inactive Student : <span class="label label-warning"><?php echo e($totalStuInactive); ?></span></h5>
+            	<h5>Total Disable Student : <span class="label label-danger"><?php echo e($totalStuDisabled); ?></span></h5>
+        	</div>
+    	</div>
+	</div>
+	<div class="col-md-4 col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>New Admin &amp; Agent Registered</h5>                            
+            </div>
+            <div class="ibox-content">
+            	<?php /**/ $totalAgent = '0'; /**/ ?>
+        		<?php /**/ $totalAgentActve = '0'; /**/ ?>
+        		<?php /**/ $totalAgentInactive = '0'; /**/ ?>
+        		<?php /**/ $totalAgentDisabled = '0'; /**/ ?>
+            	<?php foreach( $totalUsersRegistered as $totalUsers ): ?>
+            		<?php if( $totalUsers->userrole_id == '4' ): ?>
+            			<?php /**/ $totalAgent += 1; /**/ ?>
+    				<?php endif; ?>
+    				<?php if( $totalUsers->userstatus_id == '1' && $totalUsers->userrole_id == '4' ): ?>
+            			<?php /**/ $totalAgentActve += 1; /**/ ?>
+    				<?php endif; ?>
+    				<?php if( $totalUsers->userstatus_id == '2' && $totalUsers->userrole_id == '4' ): ?>
+            			<?php /**/ $totalAgentInactive += 1; /**/ ?>
+    				<?php endif; ?>
+    				<?php if( $totalUsers->userstatus_id == '3' && $totalUsers->userrole_id == '4' ): ?>
+            			<?php /**/ $totalAgentDisabled += 1; /**/ ?>
+    				<?php endif; ?>
+            	<?php endforeach; ?>
+            	<h1><?php echo e($totalAgent); ?></h1>
+            	<h5>Total Active Agent : <span class="label label-info"><?php echo e($totalAgentActve); ?></span></h5>
+            	<h5>Total Inactive Agent : <span class="label label-warning"><?php echo e($totalAgentInactive); ?></span></h5>
+            	<h5>Total Disable Agent : <span class="label label-danger"><?php echo e($totalAgentDisabled); ?></span></h5>
+        	</div>
+    	</div>
+	</div>
+</div>
+<div class="row wrapper border-bottom page-heading margin-top20 animated slideInRight">
+    <div class="col-md-4 col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Query For Admission X</h5>                            
+            </div>
+            <div class="ibox-content">
+                <?php /**/ $totalQueryCount = '0'; /**/ ?>
+                <?php /**/ $totalQueryCollege = '0'; /**/ ?>
+                <?php /**/ $totalQueryStudent = '0'; /**/ ?>
+                <?php /**/ $totalQueryGuest = '0'; /**/ ?>
+                <?php foreach( $totalQuery as $queryResult ): ?>
+                    <?php if( $queryResult->userstatus_id == '1'  && $queryResult->userrole_id == '1' ): ?>
+                        <?php /**/ $totalQueryCount += 1; /**/ ?>
+                    <?php endif; ?>
+                    <?php if( $queryResult->queryflowtype == 'college-to-admin'): ?>
+                        <?php /**/ $totalQueryCollege += 1; /**/ ?>
+                    <?php endif; ?>
+                    <?php if( $queryResult->queryflowtype == 'student-to-admin'): ?>
+                        <?php /**/ $totalQueryStudent += 1; /**/ ?>
+                    <?php endif; ?>
+                    <?php if( $queryResult->queryflowtype == 'guest-to-admin'): ?>
+                        <?php /**/ $totalQueryGuest += 1; /**/ ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <h1><?php echo e($totalQueryCount); ?></h1>
+                <h5>College To Admission X: <span class="label label-info"><?php echo e($totalQueryCollege); ?></span></h5>
+                <h5>Student To Admission X : <span class="label label-info"><?php echo e($totalQueryStudent); ?></span></h5>
+                <h5>Guest To Admission X : <span class="label label-info"><?php echo e($totalQueryGuest); ?></span></h5>
+            </div>
+        </div>
+    </div> 
+    <div class="col-md-4 col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Pending Query Status </h5>                            
+            </div>
+            <div class="ibox-content">
+                <?php /**/ $totalQueryCount = '0'; /**/ ?>
+                <?php /**/ $totalQueryCollege = '0'; /**/ ?>
+                <?php /**/ $totalQueryStudentToCollege = '0'; /**/ ?>
+                <?php /**/ $totalQueryStudentToAdmin = '0'; /**/ ?>
+                <?php /**/ $totalQueryGuest = '0'; /**/ ?>
+                <?php foreach( $totalQuery as $queryResult ): ?>
+                    <?php if( $queryResult->userstatus_id == '1'  && $queryResult->userrole_id == '1' ): ?>
+                        <?php /**/ $totalQueryCount += 1; /**/ ?>
+                    <?php endif; ?>
+                    <?php if( $queryResult->queryflowtype == 'college-to-admin' && $queryResult->querytypeinfo == 'pending'): ?>
+                        <?php /**/ $totalQueryCollege += 1; /**/ ?>
+                    <?php endif; ?>
+                    <?php if( $queryResult->queryflowtype == 'student-to-admin' && $queryResult->querytypeinfo == 'pending'): ?>
+                        <?php /**/ $totalQueryStudentToAdmin += 1; /**/ ?>
+                    <?php endif; ?>
+                    <?php if( $queryResult->queryflowtype == 'student-to-college' && $queryResult->querytypeinfo == 'pending'): ?>
+                        <?php /**/ $totalQueryStudentToCollege += 1; /**/ ?>
+                    <?php endif; ?>
+                    <?php if( $queryResult->queryflowtype == 'guest-to-admin' && $queryResult->querytypeinfo == 'pending'): ?>
+                        <?php /**/ $totalQueryGuest += 1; /**/ ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <h1><?php echo e($totalQueryCount); ?></h1>
+                <h5>Pending Query For Guest To Admin : <span class="label label-warning"><?php echo e($totalQueryGuest); ?></span></h5>
+                <h5>Pending Query For College To Admin : <span class="label label-warning"><?php echo e($totalQueryCollege); ?></span></h5>
+                <h5>Pending Query For Student To Admin : <span class="label label-warning"><?php echo e($totalQueryStudentToAdmin); ?></span></h5>
+                <h5>Pending Query For Student To College : <span class="label label-warning"><?php echo e($totalQueryStudentToCollege); ?></span></h5>
+            </div>
+        </div>
+    </div>   
+    <div class="col-md-4 col-lg-4">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Application Status</h5>                            
+            </div>
+            <div class="ibox-content">
+                <?php /**/ $totalApplicationCount = '0'; /**/ ?>
+                <?php /**/ $totalApprovedApplication = '0'; /**/ ?>
+                <?php /**/ $totalPendingApplication = '0'; /**/ ?>
+                <?php /**/ $totalRejectedApplication = '0'; /**/ ?>
+                <?php /**/ $totalCancelledApplication = '0'; /**/ ?>
+                <?php foreach( $totalApplication as $applicationResult ): ?>
+                    
+                        <?php /**/ $totalApplicationCount += 1; /**/ ?>
+                   
+                    <?php if( $applicationResult->applicationstatusId == '1'): ?>
+                        <?php /**/ $totalApprovedApplication += 1; /**/ ?>
+                    <?php endif; ?>
+                    <?php if( $applicationResult->applicationstatusId == '2'): ?>
+                        <?php /**/ $totalPendingApplication += 1; /**/ ?>
+                    <?php endif; ?>
+                    <?php if( $applicationResult->applicationstatusId == '3'): ?>
+                        <?php /**/ $totalRejectedApplication += 1; /**/ ?>
+                    <?php endif; ?>
+                    <?php if( $applicationResult->applicationstatusId == '4'): ?>
+                        <?php /**/ $totalCancelledApplication += 1; /**/ ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+                <h1><?php echo e($totalApplicationCount); ?></h1>
+                <h5>Total Approved Application: <span class="label label-info"><?php echo e($totalApprovedApplication); ?></span></h5>
+                <h5>Total Pending Application : <span class="label label-warning"><?php echo e($totalPendingApplication); ?></span></h5>
+                <h5>Total Rejected Application: <span class="label label-danger"><?php echo e($totalRejectedApplication); ?></span></h5>
+                <h5>Total Cancelled Application: <span class="label label-danger"><?php echo e($totalCancelledApplication); ?></span></h5>
+            </div>
+        </div>
+    </div> 
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('script'); ?>
+<?php echo Html::script('assets/js/morris/morris.js'); ?>
+
+<?php echo Html::script('assets/js/morris/raphael-2.1.0.min.js'); ?>
+
+<script type="text/javascript">
+    $(function() {
+        var transactionAnalytics = <?php echo $transactionAnalytics; ?>;
+        if( transactionAnalytics != '0' ){
+            Morris.Line({
+                element: 'morris-one-line-chart',
+                data: transactionAnalytics,
+                xkey: 'transactionDate',
+                ykeys: ['transactionAnalytics'],
+                labels: ['Total Application'],
+                parseTime: false,
+                resize: true,
+                lineWidth:5,
+                pointSize:5,
+                lineColors: ['#1ab394'],
+            });    
+        }
+  });
+</script>
+<script type="text/javascript">
+    $("#txtFromCreateDate").datepicker({
+        numberOfMonths: 2,
+        format: "yyyy/mm/dd",
+        onSelect: function(selected) {
+          $("#txtToCreateDate").datepicker("option","minDate", selected)
+        }
+    });
+    $("#txtToCreateDate").datepicker({ 
+        numberOfMonths: 2,
+        format: "yyyy/mm/dd",
+        onSelect: function(selected) {
+           $("#txtFromCreateDate").datepicker("option","maxDate", selected)
+        }
+    });
+</script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('administrator/admin-layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

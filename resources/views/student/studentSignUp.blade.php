@@ -21,10 +21,8 @@
 <!--=== Content Part ===-->
 <div class="container-fluid">
 	<div class="row equal-height-columns">
-		<div class="col-md-6 col-sm-6 hidden-xs image-block equal-height-column left-backgrounf-form">
-			
+		<div class="col-md-6 col-sm-6 hidden-xs image-block equal-height-column left-backgrounf-form">		
 		</div>
-
 		<div class="col-md-6 col-sm-6 form-block equal-height-column form-block-main">
 			<div class="reg-block">
 				<a href="{{ URL::to('/') }}">

@@ -41,7 +41,7 @@ class CreateApplicationTable extends Migration
      */
     public function down()
     {
-        Schema::drop('application');
+        Schema::dropIfExists('application');
     }
 
 }

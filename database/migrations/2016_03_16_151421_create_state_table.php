@@ -33,7 +33,7 @@ class CreateStateTable extends Migration
      */
     public function down()
     {
-        Schema::drop('state');
+        Schema::dropIfExists('state');
     }
 
 }

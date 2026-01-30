@@ -30,7 +30,7 @@ class CreateCoursetypeTable extends Migration
      */
     public function down()
     {
-        Schema::drop('coursetype');
+        Schema::dropIfExists('coursetype');
     }
 
 }

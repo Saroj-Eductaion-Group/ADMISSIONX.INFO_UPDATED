@@ -52,7 +52,7 @@ class CreateCollegemasterTable extends Migration
      */
     public function down()
     {
-        Schema::drop('collegemaster');
+        Schema::dropIfExists('collegemaster');
     }
 
 }

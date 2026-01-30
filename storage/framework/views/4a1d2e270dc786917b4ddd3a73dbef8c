@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>" />
+	<link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon.png">
+	<meta name="theme-color" content="#ffffff">
+	<title>AdmissionX | v.1</title>
+	
+	<!--START STYLESHEETS  -->
+		<?php echo $__env->make('administrator/admin-layouts.style', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+	<!--END STYLESHEETS  -->
+
+</head>
+<body>
+	<div id="wrapper">
+		<!-- START HEADER  -->
+			<?php echo $__env->make('administrator/admin-layouts.header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<!-- END HEADER  -->
+
+		<!-- START CONTENT BLOCK -->
+			<?php echo $__env->yieldContent('content'); ?>
+		<!-- END CONTENT BLOCK -->
+		
+		<!--START JAVASCRIPTS  -->
+		<?php echo $__env->make('administrator/admin-layouts.script', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<!--END JAVASCRIPTS  -->
+
+		<!-- START FOOTER  -->
+			<?php echo $__env->make('administrator/admin-layouts.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<!-- END FOOTER  -->
+	</div>
+
+</body>
+</html> 

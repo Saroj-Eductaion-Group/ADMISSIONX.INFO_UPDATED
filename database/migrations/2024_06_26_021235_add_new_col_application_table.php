@@ -17,4 +17,17 @@ class AddNewColApplicationTable extends Migration
             $table->string('graduationMarksheet')->nullable();
         });            
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('application', function(Blueprint $table) {
+            $table->dropColumn('graduationPercent');
+            $table->dropColumn('graduationMarksheet');
+        });
+    }
 }

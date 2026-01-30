@@ -250,27 +250,20 @@ class SearchPageController extends Controller
                             ->groupBy('university.id')
                             //->take(10)
                             ->get();
-        $databaseUniversity   = [];
-        $universitySection      = '';
-        foreach ($databaseUniversityObj as $item) {
-            if(!empty($item->logo)){
-                $universitySection = '<img style="display: unset !important;width: auto !important;"  src=/common-logo/'.$item->slug.'/'.$item->logo.' class="rounded-3x searchimg" width="32" height="32">';
-            }else{
-                $universitySection = '<img style="display: unset !important;width: auto !important;" src="/new-assets/img/university.png" class="rounded-3x searchimg" width="32" height="32">';
-            }
-            $universityurl = URL::to('/university/'.$item->pageslug);
-            $databaseUniversity[] = array(
-                        'id'                => $item->id,
-                        'universityurl'     => $universityurl,
-                        'universityname'    => $item->name,
-                        'logo'              => $universitySection,
-                    );
-        }
         $resultUniversity = [];
-        foreach ($databaseUniversity as $key => $oneUniversity) {
-            if(!empty($oneUniversity['id'])){
-               $resultUniversity[] = $oneUniversity; 
+        foreach ($databaseUniversityObj as $item) {
+            if (!empty($item->logoimage) && !is_null($item->logoimage) && file_exists(public_path('common-logo/' . $item->pageslug . '/' . $item->logoimage))) {
+                $logo = '<img style="display: unset !important;width: auto !important;" src="/common-logo/'.$item->pageslug.'/'.$item->logoimage.'" class="rounded-3x searchimg" width="32" height="32">';
+            } else {
+                $logo = '<img style="display: unset !important;width: auto !important;" src="/new-assets/img/university.png" class="rounded-3x searchimg" width="32" height="32">';
             }
+            
+            $resultUniversity[] = [
+                'id' => $item->id,
+                'universityurl' => URL::to('/university/'.$item->pageslug),
+                'universityname' => $item->name,
+                'logo' => $logo,
+            ];
         }
 
         // Means no result were found

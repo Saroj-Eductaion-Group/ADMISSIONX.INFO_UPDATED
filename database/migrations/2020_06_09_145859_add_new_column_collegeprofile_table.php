@@ -27,4 +27,25 @@ class AddNewColumnCollegeprofileTable extends Migration
         
         });
     }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::table('collegeprofile', function (Blueprint $table) {
+            $table->dropColumn('mediumOfInstruction');
+            $table->dropColumn('studyForm');
+            $table->dropColumn('studyTo');
+            $table->dropColumn('admissionStart');
+            $table->dropColumn('admissionEnd');
+            $table->dropColumn('CCTVSurveillance');
+            $table->dropColumn('totalStudent');
+            $table->dropColumn('ACCampus');
+            $table->dropColumn('rating');
+            $table->dropColumn('totalRatingUser');
+        });
+    }
 }
